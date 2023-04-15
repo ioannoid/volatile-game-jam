@@ -1,4 +1,7 @@
 extends RichTextLabel
+signal change_scene
+
+var x = Color.RED
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +13,7 @@ func _process(delta):
 	pass
 	
 func _on_mouse_entered():
-	add_theme_color_override("default_color", Color.RED)
+	add_theme_color_override("default_color", x)
 	
 func _on_mouse_exited():
 	add_theme_color_override("default_color", Color.WHITE)
