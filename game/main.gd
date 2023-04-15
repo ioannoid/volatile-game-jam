@@ -18,7 +18,7 @@ func _process(delta):
 	pass
 	
 func _switch_scene():
-	get_node("/root/Node/Control").free()
+	get_node("/root/Node/Control").queue_free()
 	var instance = game.instantiate()
 	add_child(instance)
 	
