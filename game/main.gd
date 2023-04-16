@@ -36,6 +36,6 @@ func menu_handler(button):
 		2: 
 			pass
 		3: 
-			pass
+			get_tree().change_scene_to_file("res://credits.tscn")
 		4: 
 			get_tree().quit()

@@ -1,6 +1,7 @@
+Control
+Node
 TileMap
 Timer
-Node
 VBoxContainer
 MenuBar
 RichTextLabel
@@ -9,5 +10,4 @@ CenterContainer
 ColorRect
 HBoxContainer
 MarginContainer
-Control
 Panel
