@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://css1t8w6x3ev0"
-path="res://.godot/imported/MC_LeftFacing5.png-0e8d507649a2aca28a9299ceab99c429.ctex"
+uid="uid://djebuedfnvero"
+path="res://.godot/imported/MC_ForwardFacing5.png-07487a7d01f6bfd485f490eea8aa5e1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MC_LeftFacing/MC_LeftFacing5.png"
-dest_files=["res://.godot/imported/MC_LeftFacing5.png-0e8d507649a2aca28a9299ceab99c429.ctex"]
+source_file="res://assets/Movement/Forward/MC_ForwardFacing5.png"
+dest_files=["res://.godot/imported/MC_ForwardFacing5.png-07487a7d01f6bfd485f490eea8aa5e1a.ctex"]
 
 [params]
 

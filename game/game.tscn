@@ -1,16 +1,28 @@
-[gd_scene load_steps=16 format=3 uid="uid://jkuhc2ho0t4d"]
+[gd_scene load_steps=28 format=3 uid="uid://jkuhc2ho0t4d"]
 
 [ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Wood TIle.png" id="1_2626o"]
 [ext_resource type="Script" path="res://player.gd" id="1_osc6k"]
-[ext_resource type="Texture2D" uid="uid://bmm3jbqvskmro" path="res://dodge_assets/art/playerGrey_up1.png" id="2_eikxe"]
-[ext_resource type="Texture2D" uid="uid://lfy08sd5nlga" path="res://dodge_assets/art/playerGrey_up2.png" id="3_g0mjf"]
-[ext_resource type="Texture2D" uid="uid://dgsek2q1rj4ap" path="res://assets/MC_LeftFacing/MC_LeftFacing1.png" id="4_1qfoq"]
-[ext_resource type="Texture2D" uid="uid://dxr8c6jehc8rt" path="res://assets/MC_LeftFacing/MC_LeftFacing2.png" id="5_qd4mw"]
-[ext_resource type="Texture2D" uid="uid://dpc0hnoafoitv" path="res://assets/MC_LeftFacing/MC_LeftFacing3.png" id="6_tytc3"]
-[ext_resource type="Texture2D" uid="uid://bgf4qcndx56w5" path="res://assets/MC_LeftFacing/MC_LeftFacing4.png" id="7_g2h40"]
-[ext_resource type="Texture2D" uid="uid://css1t8w6x3ev0" path="res://assets/MC_LeftFacing/MC_LeftFacing5.png" id="8_wh50n"]
-[ext_resource type="Texture2D" uid="uid://cyfkq267iv54s" path="res://assets/MC_LeftFacing/MC_LeftFacing6.png" id="9_3mj7j"]
-[ext_resource type="Texture2D" uid="uid://bkokipg0cukcp" path="res://assets/MC_LeftFacing/MC_LeftFacing7.png" id="10_10pw4"]
+[ext_resource type="Texture2D" uid="uid://b6afykhuqtvit" path="res://assets/Movement/Backward/MC_Backwards2.png" id="3_85f21"]
+[ext_resource type="Texture2D" uid="uid://cv6wg2opl2iwh" path="res://assets/Movement/Backward/MC_Backwards3.png" id="4_bmeb7"]
+[ext_resource type="Texture2D" uid="uid://cnmlgegookv1f" path="res://assets/Movement/Backward/MC_Backwards4.png" id="5_wid57"]
+[ext_resource type="Texture2D" uid="uid://cluyrjtkx7xem" path="res://assets/Movement/Backward/MC_Backwards5.png" id="6_g0ljp"]
+[ext_resource type="Texture2D" uid="uid://dqpgntaw4buil" path="res://assets/Movement/Backward/MC_Backwards6.png" id="7_vl3iv"]
+[ext_resource type="Texture2D" uid="uid://coq73u1crd42m" path="res://assets/Movement/Backward/MC_Backwards7.png" id="8_bvqbn"]
+[ext_resource type="Texture2D" uid="uid://cm4ywcjgwmqsa" path="res://assets/Movement/Forward/MC_ForwardFacing2.png" id="9_dkgmy"]
+[ext_resource type="Texture2D" uid="uid://derw8gkq6bx87" path="res://assets/Movement/Forward/MC_ForwardFacing3.png" id="10_6a218"]
+[ext_resource type="Texture2D" uid="uid://bvf08byxf2v4i" path="res://assets/Movement/Forward/MC_ForwardFacing4.png" id="11_0ukal"]
+[ext_resource type="Texture2D" uid="uid://djebuedfnvero" path="res://assets/Movement/Forward/MC_ForwardFacing5.png" id="12_3vmrw"]
+[ext_resource type="Texture2D" uid="uid://ciutjyci3v6n3" path="res://assets/Movement/Forward/MC_ForwardFacing6.png" id="13_ofush"]
+[ext_resource type="Texture2D" uid="uid://c1blusnx2amy3" path="res://assets/Movement/Forward/MC_ForwardFacing7.png" id="14_xovrr"]
+[ext_resource type="Texture2D" uid="uid://c10gosdbon7t1" path="res://assets/Movement/Left/MC_LeftFacing1.png" id="15_g5v1c"]
+[ext_resource type="Texture2D" uid="uid://bcrsv3ofthxib" path="res://assets/Movement/Backward/MC_Backwards1.png" id="16_jdjjq"]
+[ext_resource type="Texture2D" uid="uid://es7nrl8n1iro" path="res://assets/Movement/Forward/MC_ForwardFacing1.png" id="17_dgtjj"]
+[ext_resource type="Texture2D" uid="uid://bb6c8gfa4xevc" path="res://assets/Movement/Left/MC_LeftFacing2.png" id="18_vg8gp"]
+[ext_resource type="Texture2D" uid="uid://c0blm47sdfag7" path="res://assets/Movement/Left/MC_LeftFacing3.png" id="19_1vty2"]
+[ext_resource type="Texture2D" uid="uid://cj4exsx4klbyd" path="res://assets/Movement/Left/MC_LeftFacing4.png" id="20_aevar"]
+[ext_resource type="Texture2D" uid="uid://nkk67jfgub4l" path="res://assets/Movement/Left/MC_LeftFacing5.png" id="21_vcd4p"]
+[ext_resource type="Texture2D" uid="uid://bvko34yr6boqg" path="res://assets/Movement/Left/MC_LeftFacing6.png" id="22_20tty"]
+[ext_resource type="Texture2D" uid="uid://bsfjw0orpufjr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="23_gr0dv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
 texture = ExtResource("1_2626o")
@@ -34,7 +46,53 @@ height = 26.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_1qfoq")
+"texture": ExtResource("3_85f21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bmeb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wid57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g0ljp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vl3iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bvqbn")
+}],
+"loop": true,
+"name": &"back",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dkgmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6a218")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0ukal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3vmrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ofush")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xovrr")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_g5v1c")
 }],
 "loop": true,
 "name": &"idle",
@@ -42,33 +100,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_eikxe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_g0mjf")
+"texture": ExtResource("16_jdjjq")
 }],
 "loop": true,
-"name": &"up",
+"name": &"idle_back",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_qd4mw")
+"texture": ExtResource("17_dgtjj")
+}],
+"loop": true,
+"name": &"idle_forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_vg8gp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_tytc3")
+"texture": ExtResource("19_1vty2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_g2h40")
+"texture": ExtResource("20_aevar")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_wh50n")
+"texture": ExtResource("21_vcd4p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_3mj7j")
+"texture": ExtResource("22_20tty")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_10pw4")
+"texture": ExtResource("23_gr0dv")
 }],
 "loop": true,
 "name": &"walk",
@@ -95,4 +158,4 @@ texture_filter = 1
 position = Vector2(-1, -2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_yjxj7")
-animation = &"walk"
+animation = &"forward"

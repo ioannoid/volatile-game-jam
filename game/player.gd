@@ -2,6 +2,7 @@ extends Area2D
 signal hit
 @export var speed = 400
 var screen_size
+var prev_velocity = Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -39,14 +40,27 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x > 0
-	elif velocity.y != 0:
-		$AnimatedSprite2D.animation = "up"
+		prev_velocity = velocity
+	elif velocity.y < 0:
+		$AnimatedSprite2D.animation = "back"
 		$AnimatedSprite2D.flip_v = false
+		prev_velocity = velocity
+	elif velocity.y > 0:
+		$AnimatedSprite2D.animation = "forward"
+		$AnimatedSprite2D.flip_v = false
+		prev_velocity = velocity
 	else:
-		$AnimatedSprite2D.animation = "idle"
-		$AnimatedSprite2D.flip_v = false
-
-
+		if prev_velocity.x != 0:
+			$AnimatedSprite2D.animation = "idle"
+			$AnimatedSprite2D.flip_v = false
+			$AnimatedSprite2D.flip_h = velocity.x > 0
+		elif prev_velocity.y < 0:
+			$AnimatedSprite2D.animation = "back"
+			$AnimatedSprite2D.flip_v = false
+		else:
+			$AnimatedSprite2D.animation = "forward"
+			$AnimatedSprite2D.flip_v = false
+			
 func _on_area_2d_body_entered(body):
 	hide()
 	hit.emit()
