@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jkuhc2ho0t4d"]
+[gd_scene load_steps=8 format=3 uid="uid://dha75dmhlasci"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_73u80"]
 [ext_resource type="Texture2D" uid="uid://bmm3jbqvskmro" path="res://dodge_assets/art/playerGrey_up1.png" id="2_eikxe"]
