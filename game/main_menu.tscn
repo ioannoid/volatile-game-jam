@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://lttu1b1kygi2"]
+[gd_scene load_steps=2 format=3 uid="uid://jtnjmatiqcwj"]
 
 [ext_resource type="Script" path="res://menu_options.gd" id="2_uimo6"]
 
@@ -99,11 +99,15 @@ layout_mode = 2
 [connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit" to="MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit" method="_on_mouse_exited"]

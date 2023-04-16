@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://jkuhc2ho0t4d"]
+[gd_scene load_steps=28 format=3 uid="uid://dha75dmhlasci"]
 
 [ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Wood TIle.png" id="1_2626o"]
 [ext_resource type="Script" path="res://player.gd" id="1_osc6k"]
