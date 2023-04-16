@@ -5,11 +5,15 @@ var game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	main_menu = load("res://node_2d.tscn")
-	game = load("res://area_2d.tscn")
+	main_menu = load("res://main_menu.tscn")
+	game = load("res://game.tscn")
 	var instance = main_menu.instantiate()
 	add_child(instance)
-	instance.get_node("/root/Node/Control/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/RichTextLabel2").gui_input.connect(_on_gui_input)
+	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame.option_clicked.connect(menu_handler)
+	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit.option_clicked.connect(menu_handler)
+	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits.option_clicked.connect(menu_handler)
+	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings.option_clicked.connect(menu_handler)
+	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue.option_clicked.connect(menu_handler)
 	pass # Replace with function body.
 
 
@@ -18,11 +22,11 @@ func _process(delta):
 	pass
 	
 func _switch_scene():
-	get_node("/root/Node/Control").free()
+	$MainMenu.queue_free()
 	var instance = game.instantiate()
 	add_child(instance)
 	
-func _on_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+func menu_handler(button):
+	match button:
+		0:
 			_switch_scene()
