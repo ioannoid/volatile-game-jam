@@ -3,3 +3,4 @@ res://game.tscn
 res://main_menu.tscn
 res://menu_options.gd
 res://main.gd
+res://player.gd
