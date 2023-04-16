@@ -1,5 +1,5 @@
 extends RichTextLabel
-signal change_scene
+signal option_clicked(button)
 
 var rng = RandomNumberGenerator.new()
 var clr = Color.RED
@@ -14,7 +14,7 @@ func _process(delta):
 	pass
 	
 func _on_mouse_entered():
-		add_theme_color_override("default_color", clr)
+	add_theme_color_override("default_color", clr)
 	
 func _on_mouse_exited():
 	match val:
@@ -32,3 +32,23 @@ func _on_mouse_exited():
 			clr = Color.GOLD
 	val = rng.randi_range(0,5);
 	add_theme_color_override("default_color", Color.WHITE)
+	
+func get_button(name):
+	match name:
+		"NewGame":
+			return 0
+		"Continue":
+			return 1
+		"Settings":
+			return 2
+		"Credits":
+			return 3
+		"Exit":
+			return 4
+	
+	return -1
+
+func _on_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+			option_clicked.emit(get_button(self.name))
