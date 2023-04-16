@@ -7,6 +7,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	position.x = screen_size.x / 2;
 	position.y = screen_size.y / 2;
+	$AnimatedSprite2D.scale = Vector2(2, 2)
 
 func start(pos):
 	position = pos
@@ -37,9 +38,12 @@ func _process(delta):
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
-		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$AnimatedSprite2D.flip_h = velocity.x > 0
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
+		$AnimatedSprite2D.flip_v = false
+	else:
+		$AnimatedSprite2D.animation = "idle"
 		$AnimatedSprite2D.flip_v = false
 
 
