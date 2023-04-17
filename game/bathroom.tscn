@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dvgc4cubnd8ok"]
+[gd_scene load_steps=39 format=3 uid="uid://dvgc4cubnd8ok"]
 
 [ext_resource type="Script" path="res://camera.gd" id="2_20jqg"]
 [ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="2_ydbnn"]
@@ -26,7 +26,7 @@
 [ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
 [ext_resource type="Texture2D" uid="uid://bkeggsvyup2qr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="26_oq0fg"]
 [ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="26_sdxqh"]
-[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="27_4vg4o"]
+[ext_resource type="PackedScene" uid="uid://drpj3jen5fmse" path="res://pause_menu.tscn" id="27_4vg4o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
 texture_region_size = Vector2i(64, 64)
@@ -165,6 +165,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1x658"]
 size = Vector2(60, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj4ka"]
+size = Vector2(895, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjs51"]
+size = Vector2(71, 637.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgh3c"]
+size = Vector2(898, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42vbu"]
+size = Vector2(82, 641)
+
 [node name="TileMap" type="TileMap"]
 texture_filter = 1
 tile_set = SubResource("TileSet_6w8nt")
@@ -200,5 +212,25 @@ sprite_frames = SubResource("SpriteFrames_qvovs")
 [node name="SinkCollidor" type="CollisionShape2D" parent="Node2D/Sink"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_1x658")
+
+[node name="Wall" type="StaticBody2D" parent="Node2D"]
+
+[node name="Top" type="CollisionShape2D" parent="Node2D/Wall"]
+position = Vector2(-3, -343)
+shape = SubResource("RectangleShape2D_tj4ka")
+one_way_collision_margin = 3.5
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Right" type="CollisionShape2D" parent="Node2D/Wall"]
+position = Vector2(479, -3)
+shape = SubResource("RectangleShape2D_xjs51")
+
+[node name="Bottom" type="CollisionShape2D" parent="Node2D/Wall"]
+position = Vector2(0, 345)
+shape = SubResource("RectangleShape2D_tgh3c")
+
+[node name="Left" type="CollisionShape2D" parent="Node2D/Wall"]
+position = Vector2(-479, 0.5)
+shape = SubResource("RectangleShape2D_42vbu")
 
 [node name="Girl@PauseMenu" parent="." instance=ExtResource("27_4vg4o")]
