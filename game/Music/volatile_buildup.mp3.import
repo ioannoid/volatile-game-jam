@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://djhad5qokigep"
+=======
+uid="uid://bqblnkl3c2wi2"
+>>>>>>> refs/remotes/origin/main
 path="res://.godot/imported/volatile_buildup.mp3-d4a3f48b7914cdc3ec0cec41198127e8.mp3str"
 
 [deps]
