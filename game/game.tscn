@@ -15,13 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://djebuedfnvero" path="res://assets/Movement/Forward/MC_ForwardFacing5.png" id="12_3vmrw"]
 [ext_resource type="Texture2D" uid="uid://ciutjyci3v6n3" path="res://assets/Movement/Forward/MC_ForwardFacing6.png" id="13_ofush"]
 [ext_resource type="Texture2D" uid="uid://c1blusnx2amy3" path="res://assets/Movement/Forward/MC_ForwardFacing7.png" id="14_xovrr"]
-[ext_resource type="Texture2D" uid="uid://c10gosdbon7t1" path="res://assets/Movement/Left/MC_LeftFacing1.png" id="15_g5v1c"]
+[ext_resource type="Texture2D" uid="uid://b6ux86co646wj" path="res://assets/Movement/Left/MC_LeftFacing1.png" id="15_g5v1c"]
 [ext_resource type="Texture2D" uid="uid://bcrsv3ofthxib" path="res://assets/Movement/Backward/MC_Backwards1.png" id="16_jdjjq"]
 [ext_resource type="Texture2D" uid="uid://es7nrl8n1iro" path="res://assets/Movement/Forward/MC_ForwardFacing1.png" id="17_dgtjj"]
-[ext_resource type="Texture2D" uid="uid://bb6c8gfa4xevc" path="res://assets/Movement/Left/MC_LeftFacing2.png" id="18_vg8gp"]
+[ext_resource type="Texture2D" uid="uid://b8tltl4c5sin5" path="res://assets/Movement/Left/MC_LeftFacing2.png" id="18_vg8gp"]
 [ext_resource type="Texture2D" uid="uid://c0blm47sdfag7" path="res://assets/Movement/Left/MC_LeftFacing3.png" id="19_1vty2"]
 [ext_resource type="Texture2D" uid="uid://cj4exsx4klbyd" path="res://assets/Movement/Left/MC_LeftFacing4.png" id="20_aevar"]
-[ext_resource type="Texture2D" uid="uid://nkk67jfgub4l" path="res://assets/Movement/Left/MC_LeftFacing5.png" id="21_vcd4p"]
+[ext_resource type="Texture2D" uid="uid://b77ewucyiniy1" path="res://assets/Movement/Left/MC_LeftFacing5.png" id="21_vcd4p"]
 [ext_resource type="Texture2D" uid="uid://bvko34yr6boqg" path="res://assets/Movement/Left/MC_LeftFacing6.png" id="22_20tty"]
 [ext_resource type="Texture2D" uid="uid://bsfjw0orpufjr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="23_gr0dv"]
 [ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Chair Front.png" id="24_tadjw"]
@@ -162,7 +162,7 @@ zoom = Vector2(2.5, 2.5)
 script = ExtResource("2_n54ww")
 
 [node name="chair" type="RigidBody2D" parent="Node2D"]
-position = Vector2(289, 159)
+position = Vector2(288, 160)
 gravity_scale = 0.0
 custom_integrator = true
 can_sleep = false
@@ -176,7 +176,7 @@ texture = ExtResource("24_tadjw")
 shape = SubResource("RectangleShape2D_6tkaj")
 
 [node name="chair2" type="RigidBody2D" parent="Node2D"]
-position = Vector2(351, 159)
+position = Vector2(352, 160)
 gravity_scale = 0.0
 custom_integrator = true
 can_sleep = false
@@ -201,4 +201,4 @@ frame_progress = 0.916812
 [node name="GirlCollidor" type="CollisionShape2D" parent="Node2D/Girl"]
 shape = SubResource("CapsuleShape2D_ckukt")
 
-[node name="Girl@PauseMenu" parent="." instance=ExtResource("26_x8u7b")]
+[node name="GirlPauseMenu" parent="." instance=ExtResource("26_x8u7b")]
