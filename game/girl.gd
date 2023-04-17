@@ -73,10 +73,6 @@ func check_collision(motion : Vector2):
 func unstop():
 	stopped = false
 	
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
-		$PauseMenu.pause()
-	
 	#position += velocity * delta
 	#position.x = clamp(position.x, 0, screen_size.x)
 	#position.y = clamp(position.y, 0, screen_size.y)

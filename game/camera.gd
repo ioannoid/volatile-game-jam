@@ -12,3 +12,7 @@ func _process(delta):
 	var view_size = get_viewport_rect().size / get_canvas_transform().get_scale()
 	position.x = clamp(get_parent().get_node("Girl").position.x, -room_size.x*64 + view_size.x/2, room_size.x*64 - view_size.x/2)
 	position.y = clamp(get_parent().get_node("Girl").position.y, -room_size.y*64 + view_size.y/2, room_size.y*64 - view_size.y/2)
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		$PauseMenu.pause()
