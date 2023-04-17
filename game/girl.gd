@@ -1,5 +1,4 @@
-extends Area2D
-signal hit
+extends CharacterBody2D
 @export var speed = 100
 var screen_size
 var prev_velocity = Vector2(0,0)
@@ -13,8 +12,8 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+# Called every frame. 'delta' is the elapsed time since the previous frame
+func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x +=1
@@ -58,8 +57,3 @@ func _process(delta):
 		else:
 			$AnimatedSprite2D.animation = "forward"
 			$AnimatedSprite2D.flip_v = false
-
-
-
-
-

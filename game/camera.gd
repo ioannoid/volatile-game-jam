@@ -9,6 +9,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x = clamp(get_parent().get_node("Player").position.x, 0, room_size.x)
-	position.y = clamp(get_parent().get_node("Player").position.y, 0, room_size.y)
+	position.x = clamp(get_parent().get_node("Girl").position.x, 0, room_size.x)
+	position.y = clamp(get_parent().get_node("Girl").position.y, 0, room_size.y)
 	

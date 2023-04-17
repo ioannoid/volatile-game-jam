@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://jkuhc2ho0t4d"]
+[gd_scene load_steps=32 format=3 uid="uid://jkuhc2ho0t4d"]
 
 [ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Wood TIle.png" id="1_2626o"]
 [ext_resource type="Script" path="res://player.gd" id="1_osc6k"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bvko34yr6boqg" path="res://assets/Movement/Left/MC_LeftFacing6.png" id="22_20tty"]
 [ext_resource type="Texture2D" uid="uid://bsfjw0orpufjr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="23_gr0dv"]
 [ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Chair Front.png" id="24_tadjw"]
+[ext_resource type="Script" path="res://girl.gd" id="26_mf1rg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
 texture = ExtResource("1_2626o")
@@ -40,8 +41,8 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 0, 0.25098, 1)
 sources/0 = SubResource("TileSetAtlasSource_mal1d")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8116o"]
-size = Vector2(64, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tkaj"]
+size = Vector2(32, 64)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckukt"]
 radius = 12.0
@@ -157,13 +158,19 @@ script = ExtResource("2_n54ww")
 position = Vector2(289, 159)
 gravity_scale = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="chair"]
+[node name="ChairSprite" type="Sprite2D" parent="chair"]
 texture = ExtResource("24_tadjw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chair"]
-shape = SubResource("RectangleShape2D_8116o")
+[node name="ChairBox" type="CollisionShape2D" parent="chair"]
+shape = SubResource("RectangleShape2D_6tkaj")
+
+[node name="Area2D" type="Area2D" parent="chair"]
+
+[node name="ChairBox2" type="CollisionShape2D" parent="chair/Area2D"]
+shape = SubResource("RectangleShape2D_6tkaj")
 
 [node name="Player" type="Area2D" parent="."]
+visible = false
 disable_mode = 1
 script = ExtResource("1_osc6k")
 
@@ -175,3 +182,16 @@ shape = SubResource("CapsuleShape2D_ckukt")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yjxj7")
 animation = &"walk"
+
+[node name="Girl" type="CharacterBody2D" parent="."]
+script = ExtResource("26_mf1rg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Girl"]
+texture_filter = 1
+position = Vector2(-66, 50)
+sprite_frames = SubResource("SpriteFrames_yjxj7")
+animation = &"walk"
+
+[node name="GirlCollidor" type="CollisionShape2D" parent="Girl"]
+position = Vector2(-66, 53)
+shape = SubResource("CapsuleShape2D_ckukt")
