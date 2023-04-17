@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuplik3v020y8"
-path="res://.godot/imported/Chair Left.png-a6dc6a446d48abd0e995d9f20d53f8a4.ctex"
+uid="uid://bcwedgea3463q"
+path="res://.godot/imported/Sink Overflow.png-0ea33f24d025cce1abf975b6991a2ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Chair Left.png"
-dest_files=["res://.godot/imported/Chair Left.png-a6dc6a446d48abd0e995d9f20d53f8a4.ctex"]
+source_file="res://assets/Bathroom/Sink/Sink Overflow.png"
+dest_files=["res://.godot/imported/Sink Overflow.png-0ea33f24d025cce1abf975b6991a2ca2.ctex"]
 
 [params]
 

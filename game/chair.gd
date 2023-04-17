@@ -1,9 +1,11 @@
-extends RigidBody2D
+class_name Chair extends RigidBody2D
 signal finished
+
 
 var push_dir := Vector2(0,0)
 var last_pos := Vector2(0,0)
 var pushed := false
+var is_chair := true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
