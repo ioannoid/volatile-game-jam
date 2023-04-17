@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dai67jbrpnasr"
-path="res://.godot/imported/Dresser.png-ed6c6fd0ff7414a4004829cd3c80c29d.ctex"
+uid="uid://bopv7rv2bsbro"
+path="res://.godot/imported/Sink Filled.png-379b536cd48bd485cb51b659231701e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dresser.png"
-dest_files=["res://.godot/imported/Dresser.png-ed6c6fd0ff7414a4004829cd3c80c29d.ctex"]
+source_file="res://assets/Bathroom/Sink/Sink Filled.png"
+dest_files=["res://.godot/imported/Sink Filled.png-379b536cd48bd485cb51b659231701e9.ctex"]
 
 [params]
 

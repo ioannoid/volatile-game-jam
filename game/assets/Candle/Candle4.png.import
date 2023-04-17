@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbkukuoj36h81"
-path="res://.godot/imported/Table.png-ed9e4c957d765e3c1c1f5f43b2783df6.ctex"
+uid="uid://dv63dckx55jry"
+path="res://.godot/imported/Candle4.png-3799aa0e33b8f4e5ead131e62f5e6d85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Table.png"
-dest_files=["res://.godot/imported/Table.png-ed9e4c957d765e3c1c1f5f43b2783df6.ctex"]
+source_file="res://assets/Candle/Candle4.png"
+dest_files=["res://.godot/imported/Candle4.png-3799aa0e33b8f4e5ead131e62f5e6d85.ctex"]
 
 [params]
 

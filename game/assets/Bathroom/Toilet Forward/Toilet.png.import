@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daisret7ajaha"
-path="res://.godot/imported/Chair Front.png-857f5d7296459028c396e7419358576c.ctex"
+uid="uid://hkm616cala4i"
+path="res://.godot/imported/Toilet.png-c553c15600e80772b606666ff17ea5e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Chair Front.png"
-dest_files=["res://.godot/imported/Chair Front.png-857f5d7296459028c396e7419358576c.ctex"]
+source_file="res://assets/Bathroom/Toilet Forward/Toilet.png"
+dest_files=["res://.godot/imported/Toilet.png-c553c15600e80772b606666ff17ea5e1.ctex"]
 
 [params]
 

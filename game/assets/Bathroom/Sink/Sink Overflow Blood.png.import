@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n6xfnjn3ye1p"
-path="res://.godot/imported/Wood TIle.png-f7f6d4225f3fd6a5ebb2aa4e42ad1ebc.ctex"
+uid="uid://c8c0d7nfwdks5"
+path="res://.godot/imported/Sink Overflow Blood.png-b9ce19aa71f43a62e58c57ce1ef43f93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wood TIle.png"
-dest_files=["res://.godot/imported/Wood TIle.png-f7f6d4225f3fd6a5ebb2aa4e42ad1ebc.ctex"]
+source_file="res://assets/Bathroom/Sink/Sink Overflow Blood.png"
+dest_files=["res://.godot/imported/Sink Overflow Blood.png-b9ce19aa71f43a62e58c57ce1ef43f93.ctex"]
 
 [params]
 

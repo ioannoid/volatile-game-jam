@@ -1,8 +1,8 @@
 [gd_scene load_steps=33 format=3 uid="uid://jkuhc2ho0t4d"]
 
-[ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Wood TIle.png" id="1_2626o"]
+[ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Generic/Wood TIle.png" id="1_gbpnm"]
 [ext_resource type="Script" path="res://camera.gd" id="2_n54ww"]
-[ext_resource type="Texture2D" uid="uid://b6afykhuqtvit" path="res://assets/Movement/Backward/MC_Backwards2.png" id="3_85f21"]
+[ext_resource type="Texture2D" uid="uid://1hp4btgrpp1i" path="res://assets/Movement/Backward/MC_Backwards2.png" id="3_85f21"]
 [ext_resource type="Script" path="res://chair.gd" id="3_d8sme"]
 [ext_resource type="Texture2D" uid="uid://cv6wg2opl2iwh" path="res://assets/Movement/Backward/MC_Backwards3.png" id="4_bmeb7"]
 [ext_resource type="Texture2D" uid="uid://cnmlgegookv1f" path="res://assets/Movement/Backward/MC_Backwards4.png" id="5_wid57"]
@@ -29,11 +29,9 @@
 [ext_resource type="PackedScene" path="res://pause_menu.tscn" id="26_x8u7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
-texture = ExtResource("1_2626o")
+texture = ExtResource("1_gbpnm")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
-0:0/0/terrain_set = 0
-0:0/0/terrain = 0
 
 [sub_resource type="TileSet" id="TileSet_6w8nt"]
 tile_size = Vector2i(64, 64)
@@ -144,9 +142,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckukt"]
-radius = 12.0
-height = 58.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hc34"]
+size = Vector2(12, 25)
 
 [node name="TileMap" type="TileMap"]
 texture_filter = 1
@@ -170,7 +167,7 @@ lock_rotation = true
 script = ExtResource("3_d8sme")
 
 [node name="ChairSprite" type="Sprite2D" parent="Node2D/chair"]
-texture = ExtResource("24_tadjw")
+texture = ExtResource("4_2uvth")
 
 [node name="ChairBox" type="CollisionShape2D" parent="Node2D/chair"]
 shape = SubResource("RectangleShape2D_6tkaj")
@@ -184,7 +181,7 @@ lock_rotation = true
 script = ExtResource("3_d8sme")
 
 [node name="ChairSprite" type="Sprite2D" parent="Node2D/chair2"]
-texture = ExtResource("24_tadjw")
+texture = ExtResource("4_2uvth")
 
 [node name="ChairBox" type="CollisionShape2D" parent="Node2D/chair2"]
 shape = SubResource("RectangleShape2D_6tkaj")
@@ -199,6 +196,12 @@ animation = &"walk"
 frame_progress = 0.916812
 
 [node name="GirlCollidor" type="CollisionShape2D" parent="Node2D/Girl"]
-shape = SubResource("CapsuleShape2D_ckukt")
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_4hc34")
 
+<<<<<<< HEAD
 [node name="GirlPauseMenu" parent="." instance=ExtResource("26_x8u7b")]
+=======
+[node name="Girl@PauseMenu" parent="." instance=ExtResource("26_x8u7b")]
+metadata/_edit_use_anchors_ = true
+>>>>>>> ac0423791f4df2d0f29de4eeaf8b27d42efdab01

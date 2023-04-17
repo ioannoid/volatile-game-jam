@@ -1,0 +1,204 @@
+[gd_scene load_steps=35 format=3 uid="uid://dvgc4cubnd8ok"]
+
+[ext_resource type="Script" path="res://camera.gd" id="2_20jqg"]
+[ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="2_ydbnn"]
+[ext_resource type="Script" path="res://girl.gd" id="5_twc0i"]
+[ext_resource type="Texture2D" uid="uid://1hp4btgrpp1i" path="res://assets/Movement/Backward/MC_Backwards2.png" id="6_bp2uy"]
+[ext_resource type="Texture2D" uid="uid://0n52weh6qief" path="res://assets/Movement/Backward/MC_Backwards3.png" id="7_ebyv4"]
+[ext_resource type="Texture2D" uid="uid://niw2ytpwjhqo" path="res://assets/Movement/Backward/MC_Backwards4.png" id="8_vm2m8"]
+[ext_resource type="Texture2D" uid="uid://d25ejq31r4cqe" path="res://assets/Movement/Backward/MC_Backwards5.png" id="9_srkrb"]
+[ext_resource type="Texture2D" uid="uid://ddw0yrkxommn1" path="res://assets/Movement/Backward/MC_Backwards6.png" id="10_ibom1"]
+[ext_resource type="Texture2D" uid="uid://cu8uty11h4rb1" path="res://assets/Movement/Backward/MC_Backwards7.png" id="11_ml8cb"]
+[ext_resource type="Texture2D" uid="uid://xp26p2yfvwkt" path="res://assets/Movement/Forward/MC_ForwardFacing2.png" id="12_hloq3"]
+[ext_resource type="Texture2D" uid="uid://cv8ycu40swhk4" path="res://assets/Movement/Forward/MC_ForwardFacing3.png" id="13_i15vu"]
+[ext_resource type="Texture2D" uid="uid://b542o4mrs7f28" path="res://assets/Movement/Forward/MC_ForwardFacing4.png" id="14_h53gq"]
+[ext_resource type="Texture2D" uid="uid://cpn5c7r1b0vhq" path="res://assets/Movement/Forward/MC_ForwardFacing5.png" id="15_2ptfj"]
+[ext_resource type="Texture2D" uid="uid://dt5lveq60x4hf" path="res://assets/Movement/Forward/MC_ForwardFacing6.png" id="16_b46fk"]
+[ext_resource type="Texture2D" uid="uid://so8qf8v6onfp" path="res://assets/Movement/Forward/MC_ForwardFacing7.png" id="17_bv7nw"]
+[ext_resource type="Texture2D" uid="uid://b6ux86co646wj" path="res://assets/Movement/Left/MC_LeftFacing1.png" id="18_rg54x"]
+[ext_resource type="Texture2D" uid="uid://b7ccyj30uckeh" path="res://assets/Movement/Backward/MC_Backwards1.png" id="19_pvs3b"]
+[ext_resource type="Texture2D" uid="uid://bnfcmnsqohqht" path="res://assets/Movement/Forward/MC_ForwardFacing1.png" id="20_3tgsq"]
+[ext_resource type="Texture2D" uid="uid://b8tltl4c5sin5" path="res://assets/Movement/Left/MC_LeftFacing2.png" id="21_0c8py"]
+[ext_resource type="Texture2D" uid="uid://d2srxete36s5p" path="res://assets/Movement/Left/MC_LeftFacing3.png" id="22_r18j1"]
+[ext_resource type="Texture2D" uid="uid://crs1460pbvfbw" path="res://assets/Movement/Left/MC_LeftFacing4.png" id="23_g6exj"]
+[ext_resource type="Texture2D" uid="uid://b77ewucyiniy1" path="res://assets/Movement/Left/MC_LeftFacing5.png" id="24_548yv"]
+[ext_resource type="Texture2D" uid="uid://dcyct8qooe675" path="res://assets/Movement/Left/MC_LeftFacing6.png" id="25_hg1rj"]
+[ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
+[ext_resource type="Texture2D" uid="uid://bkeggsvyup2qr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="26_oq0fg"]
+[ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="26_sdxqh"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="27_4vg4o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xobqv"]
+texture = ExtResource("2_ydbnn")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6w8nt"]
+tile_size = Vector2i(64, 64)
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.501961, 0, 0.25098, 1)
+sources/0 = SubResource("TileSetAtlasSource_mal1d")
+sources/2 = SubResource("TileSetAtlasSource_xobqv")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjxj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bp2uy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ebyv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vm2m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_srkrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ibom1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ml8cb")
+}],
+"loop": true,
+"name": &"back",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_hloq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i15vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_h53gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2ptfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_b46fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bv7nw")
+}],
+"loop": true,
+"name": &"forward",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_rg54x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_pvs3b")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_3tgsq")
+}],
+"loop": true,
+"name": &"idle_forward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_rg54x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0c8py")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_r18j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_g6exj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_548yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hg1rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_oq0fg")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j8mn"]
+size = Vector2(12, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvovs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_sdxqh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"glitchy",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x658"]
+size = Vector2(60, 8)
+
+[node name="TileMap" type="TileMap"]
+texture_filter = 1
+tile_set = SubResource("TileSet_6w8nt")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262151, 2, 0, -262150, 2, 0, -262149, 2, 0, -262148, 2, 0, -262147, 2, 0, -262146, 2, 0, -262145, 2, 0, -327680, 2, 0, -327679, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 2, 0, -262138, 2, 0, -262139, 2, 0, -262140, 2, 0, -262141, 2, 0, -262142, 2, 0, -262143, 2, 0, -262144, 2, 0, -196609, 2, 0, -196610, 2, 0, -196611, 2, 0, -196612, 2, 0, -196613, 2, 0, -196614, 2, 0, -196615, 2, 0, -131079, 2, 0, -131078, 2, 0, -131077, 2, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -131066, 2, 0, -65530, 2, 0, -65531, 2, 0, -131067, 2, 0, -131068, 2, 0, -131069, 2, 0, -131070, 2, 0, -131071, 2, 0, -131072, 2, 0, -65537, 2, 0, -65538, 2, 0, -65539, 2, 0, -65540, 2, 0, -65541, 2, 0, -65542, 2, 0, -65543, 2, 0, -7, 2, 0, -6, 2, 0, -5, 2, 0, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, 6, 2, 0, 5, 2, 0, 4, 2, 0, 3, 2, 0, 2, 2, 0, 1, 2, 0, 0, 2, 0, 65535, 2, 0, 65534, 2, 0, 65530, 2, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65529, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 131078, 2, 0, 131077, 2, 0, 131076, 2, 0, 131075, 2, 0, 131074, 2, 0, 131073, 2, 0, 131072, 2, 0, 196607, 2, 0, 196606, 2, 0, 196605, 2, 0, 196604, 2, 0, 196603, 2, 0, 196602, 2, 0, 196601, 2, 0, 262137, 2, 0, 262138, 2, 0, 262139, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 262150, 2, 0, 262149, 2, 0, 262148, 2, 0, 262147, 2, 0, 262146, 2, 0, 262145, 2, 0, 262144, 2, 0, 327679, 2, 0, 327678, 2, 0, 327677, 2, 0, 327676, 2, 0, 327675, 2, 0, 327674, 2, 0, 327673, 2, 0)
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Camera" type="Camera2D" parent="Node2D"]
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("2_20jqg")
+
+[node name="Girl" type="CharacterBody2D" parent="Node2D"]
+script = ExtResource("5_twc0i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Girl"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_yjxj7")
+animation = &"idle_forward"
+
+[node name="GirlCollidor" type="CollisionShape2D" parent="Node2D/Girl"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_6j8mn")
+
+[node name="Sink" type="StaticBody2D" parent="Node2D"]
+position = Vector2(-250, -47)
+script = ExtResource("26_hi4d8")
+
+[node name="Sink" type="AnimatedSprite2D" parent="Node2D/Sink"]
+sprite_frames = SubResource("SpriteFrames_qvovs")
+
+[node name="SinkCollidor" type="CollisionShape2D" parent="Node2D/Sink"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_1x658")
+
+[node name="Girl@PauseMenu" parent="." instance=ExtResource("27_4vg4o")]
