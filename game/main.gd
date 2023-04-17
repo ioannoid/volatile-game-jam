@@ -27,6 +27,15 @@ func _switch_scene():
 	add_child(instance)
 	
 func menu_handler(button):
+	print(button)
 	match button:
 		0:
 			_switch_scene()
+		1:
+			pass
+		2: 
+			pass
+		3: 
+			get_tree().change_scene_to_file("res://credits.tscn")
+		4: 
+			get_tree().quit()

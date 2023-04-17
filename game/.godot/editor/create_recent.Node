@@ -4,6 +4,8 @@ Node
 Panel
 ColorRect
 TextureRect
+Control
+Node
 TileMap
 Timer
 VBoxContainer
@@ -13,3 +15,4 @@ CenterContainer
 HBoxContainer
 MarginContainer
 Control
+Panel

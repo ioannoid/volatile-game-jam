@@ -2,3 +2,5 @@ res://main.tscn
 res://game.tscn
 res://main_menu.tscn
 res://main.gd
+res://credits.tscn
+res://credits.gd
