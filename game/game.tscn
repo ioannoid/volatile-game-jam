@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cggin0u8li4pl"]
+[gd_scene load_steps=55 format=3 uid="uid://cggin0u8li4pl"]
 
 [ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Generic/Wood TIle.png" id="1_gbpnm"]
 [ext_resource type="Texture2D" uid="uid://drbgcoyn8djuf" path="res://assets/Generic/Wall.png" id="2_ffc5o"]
@@ -14,10 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://niw2ytpwjhqo" path="res://assets/Movement/Backward/MC_Backwards4.png" id="5_wid57"]
 [ext_resource type="Texture2D" uid="uid://blw0aqa4agblk" path="res://assets/Generic/WallRight.png" id="6_et6d1"]
 [ext_resource type="Texture2D" uid="uid://d25ejq31r4cqe" path="res://assets/Movement/Backward/MC_Backwards5.png" id="6_g0ljp"]
+[ext_resource type="Texture2D" uid="uid://ca5vl3yvu1hi" path="res://assets/Generic/WallCornerFr.png" id="7_pobao"]
 [ext_resource type="Texture2D" uid="uid://ddw0yrkxommn1" path="res://assets/Movement/Backward/MC_Backwards6.png" id="7_vl3iv"]
+[ext_resource type="Texture2D" uid="uid://ca70h3nwqhl62" path="res://assets/Generic/WallCornerFrBL.png" id="8_6n03n"]
 [ext_resource type="Texture2D" uid="uid://cu8uty11h4rb1" path="res://assets/Movement/Backward/MC_Backwards7.png" id="8_bvqbn"]
 [ext_resource type="Texture2D" uid="uid://xp26p2yfvwkt" path="res://assets/Movement/Forward/MC_ForwardFacing2.png" id="9_dkgmy"]
+[ext_resource type="Texture2D" uid="uid://rx2tnc4idkrl" path="res://assets/Generic/WallCornerFrBR.png" id="9_wlyv5"]
 [ext_resource type="Texture2D" uid="uid://cv8ycu40swhk4" path="res://assets/Movement/Forward/MC_ForwardFacing3.png" id="10_6a218"]
+[ext_resource type="Texture2D" uid="uid://b2enxqr08s7kx" path="res://assets/Generic/WallCornerFrTL.png" id="10_o8vui"]
 [ext_resource type="Texture2D" uid="uid://b542o4mrs7f28" path="res://assets/Movement/Forward/MC_ForwardFacing4.png" id="11_0ukal"]
 [ext_resource type="Texture2D" uid="uid://cpn5c7r1b0vhq" path="res://assets/Movement/Forward/MC_ForwardFacing5.png" id="12_3vmrw"]
 [ext_resource type="Texture2D" uid="uid://dt5lveq60x4hf" path="res://assets/Movement/Forward/MC_ForwardFacing6.png" id="13_ofush"]
@@ -63,6 +67,26 @@ texture = ExtResource("6_et6d1")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofp6u"]
+texture = ExtResource("7_pobao")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkr10"]
+texture = ExtResource("8_6n03n")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0pbfo"]
+texture = ExtResource("9_wlyv5")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmjl5"]
+texture = ExtResource("10_o8vui")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_6w8nt"]
 tile_size = Vector2i(64, 64)
 terrain_set_0/mode = 2
@@ -74,6 +98,10 @@ sources/2 = SubResource("TileSetAtlasSource_b47a5")
 sources/3 = SubResource("TileSetAtlasSource_4sosa")
 sources/4 = SubResource("TileSetAtlasSource_ejfi8")
 sources/5 = SubResource("TileSetAtlasSource_uexgw")
+sources/6 = SubResource("TileSetAtlasSource_ofp6u")
+sources/7 = SubResource("TileSetAtlasSource_lkr10")
+sources/8 = SubResource("TileSetAtlasSource_0pbfo")
+sources/9 = SubResource("TileSetAtlasSource_qmjl5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tkaj"]
 size = Vector2(32, 4)
@@ -181,25 +209,24 @@ animations = [{
 size = Vector2(12, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4kcx"]
-size = Vector2(894.5, 41.5)
+size = Vector2(894.5, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27var"]
-size = Vector2(53, 639)
+size = Vector2(90, 639)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpyp6"]
-size = Vector2(898, 59.5)
+size = Vector2(898, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8t5i"]
-size = Vector2(60, 638.5)
+size = Vector2(90, 638.5)
 
 [node name="TileMap" type="TileMap"]
 texture_filter = 1
 tile_set = SubResource("TileSet_6w8nt")
 format = 2
-layer_0/tile_data = PackedInt32Array(-262151, 1, 0, -262150, 1, 0, -262149, 1, 0, -262148, 1, 0, -262147, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -262138, 5, 0, -262139, 0, 0, -262140, 0, 0, -262141, 0, 0, -262142, 0, 0, -262143, 0, 0, -262144, 0, 0, -196609, 0, 0, -196610, 0, 0, -196611, 0, 0, -196612, 0, 0, -196613, 0, 0, -196614, 0, 0, -196615, 4, 0, -131079, 4, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 5, 0, -131066, 5, 0, -65530, 5, 0, -65531, 0, 0, -131067, 0, 0, -131068, 0, 0, -131069, 0, 0, -131070, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -65539, 0, 0, -65540, 0, 0, -65541, 0, 0, -65542, 0, 0, -65543, 4, 0, -7, 4, 0, -6, 0, 0, -5, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, 6, 5, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 65535, 0, 0, 65534, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65529, 4, 0, 131065, 4, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 5, 0, 131078, 5, 0, 131077, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 196607, 0, 0, 196606, 0, 0, 196605, 0, 0, 196604, 0, 0, 196603, 0, 0, 196602, 0, 0, 196601, 4, 0, 262137, 4, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 5, 0, 262150, 3, 0, 262149, 3, 0, 262148, 3, 0, 262147, 3, 0, 262146, 3, 0, 262145, 3, 0, 262144, 3, 0, 327679, 3, 0, 327678, 3, 0, 327677, 3, 0, 327676, 3, 0, 327675, 3, 0, 327674, 3, 0, 327673, 3, 0, -4, 0, 0)
+layer_0/tile_data = PackedInt32Array(-262151, 9, 0, -262150, 1, 0, -262149, 1, 0, -262148, 1, 0, -262147, 1, 0, -262146, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 6, 0, -262138, 5, 0, -262139, 0, 0, -262140, 0, 0, -262141, 0, 0, -262142, 0, 0, -262143, 0, 0, -262144, 0, 0, -196609, 0, 0, -196610, 0, 0, -196611, 0, 0, -196612, 0, 0, -196613, 0, 0, -196614, 0, 0, -196615, 4, 0, -131079, 4, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 5, 0, -131066, 5, 0, -65530, 5, 0, -65531, 0, 0, -131067, 0, 0, -131068, 0, 0, -131069, 0, 0, -131070, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -65539, 0, 0, -65540, 0, 0, -65541, 0, 0, -65542, 0, 0, -65543, 4, 0, -7, 4, 0, -6, 0, 0, -5, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, 6, 5, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 65535, 0, 0, 65534, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65529, 4, 0, 131065, 4, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 5, 0, 131078, 5, 0, 131077, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 196607, 0, 0, 196606, 0, 0, 196605, 0, 0, 196604, 0, 0, 196603, 0, 0, 196602, 0, 0, 196601, 4, 0, 262137, 4, 0, 262138, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 5, 0, 262150, 8, 0, 262149, 3, 0, 262148, 3, 0, 262147, 3, 0, 262146, 3, 0, 262145, 3, 0, 262144, 3, 0, 327679, 3, 0, 327678, 3, 0, 327677, 3, 0, 327676, 3, 0, 327675, 3, 0, 327674, 3, 0, 327673, 7, 0, -4, 0, 0)
 
 [node name="Node2D" type="Node2D" parent="."]
-visible = false
 y_sort_enabled = true
 
 [node name="Camera" type="Camera2D" parent="Node2D"]
@@ -253,17 +280,17 @@ shape = SubResource("RectangleShape2D_4hc34")
 [node name="Wall" type="StaticBody2D" parent="Node2D"]
 
 [node name="Top" type="CollisionShape2D" parent="Node2D/Wall"]
-position = Vector2(-0.25, -325.25)
+position = Vector2(-0.25, -305.5)
 shape = SubResource("RectangleShape2D_u4kcx")
 
 [node name="Right" type="CollisionShape2D" parent="Node2D/Wall"]
-position = Vector2(448.5, -0.5)
+position = Vector2(430, -0.5)
 shape = SubResource("RectangleShape2D_27var")
 
 [node name="Bottom" type="CollisionShape2D" parent="Node2D/Wall"]
-position = Vector2(0, 319.25)
+position = Vector2(0, 302.5)
 shape = SubResource("RectangleShape2D_tpyp6")
 
 [node name="Left" type="CollisionShape2D" parent="Node2D/Wall"]
-position = Vector2(-445, 0.75)
+position = Vector2(-430, 0.75)
 shape = SubResource("RectangleShape2D_r8t5i")
