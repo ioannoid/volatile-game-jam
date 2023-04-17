@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://irltpjqyfxef"
+=======
+uid="uid://7lwolkwuts8w"
+>>>>>>> 175e311952887b7ef2708670002031f44c28c8d9
 path="res://.godot/imported/volatile_buildup.mp3-d4a3f48b7914cdc3ec0cec41198127e8.mp3str"
 
 [deps]
