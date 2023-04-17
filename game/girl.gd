@@ -5,8 +5,7 @@ var prev_velocity := Vector2(0,0)
 var stopped := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	screen_size = get_viewport_rect().size
-	# $AnimatedSprite2D.scale = Vector2(2, 2)
+	pass
 
 func start(pos):
 	position = pos
@@ -74,6 +73,9 @@ func check_collision(motion : Vector2):
 func unstop():
 	stopped = false
 	
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		$PauseMenu.pause()
 	
 	#position += velocity * delta
 	#position.x = clamp(position.x, 0, screen_size.x)

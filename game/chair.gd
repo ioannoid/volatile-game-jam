@@ -1,7 +1,6 @@
 class_name Chair extends RigidBody2D
 signal finished
 
-
 var push_dir := Vector2(0,0)
 var last_pos := Vector2(0,0)
 var pushed := false
@@ -24,7 +23,6 @@ func _integrate_forces(state):
 			finished.emit()
 	else:
 		state.set_linear_velocity(Vector2(0,0))
-	#state.set_linear_velocity(Vector2(0, vel.y))
 func push(motion : Vector2):
 	if not pushed:
 		push_dir = motion

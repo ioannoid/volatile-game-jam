@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://jkuhc2ho0t4d"]
+[gd_scene load_steps=32 format=3 uid="uid://cggin0u8li4pl"]
 
 [ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Generic/Wood TIle.png" id="1_gbpnm"]
 [ext_resource type="Script" path="res://camera.gd" id="2_n54ww"]
-[ext_resource type="Texture2D" uid="uid://1hp4btgrpp1i" path="res://assets/Movement/Backward/MC_Backwards2.png" id="3_85f21"]
+[ext_resource type="Texture2D" uid="uid://b6afykhuqtvit" path="res://assets/Movement/Backward/MC_Backwards2.png" id="3_85f21"]
 [ext_resource type="Script" path="res://chair.gd" id="3_d8sme"]
+[ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Generic/Chair Front.png" id="4_2uvth"]
 [ext_resource type="Texture2D" uid="uid://cv6wg2opl2iwh" path="res://assets/Movement/Backward/MC_Backwards3.png" id="4_bmeb7"]
 [ext_resource type="Texture2D" uid="uid://cnmlgegookv1f" path="res://assets/Movement/Backward/MC_Backwards4.png" id="5_wid57"]
 [ext_resource type="Texture2D" uid="uid://cluyrjtkx7xem" path="res://assets/Movement/Backward/MC_Backwards5.png" id="6_g0ljp"]
@@ -24,9 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://b77ewucyiniy1" path="res://assets/Movement/Left/MC_LeftFacing5.png" id="21_vcd4p"]
 [ext_resource type="Texture2D" uid="uid://bvko34yr6boqg" path="res://assets/Movement/Left/MC_LeftFacing6.png" id="22_20tty"]
 [ext_resource type="Texture2D" uid="uid://bsfjw0orpufjr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="23_gr0dv"]
-[ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Chair Front.png" id="24_tadjw"]
 [ext_resource type="Script" path="res://girl.gd" id="26_mf1rg"]
-[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="26_x8u7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
 texture = ExtResource("1_gbpnm")
@@ -159,7 +158,7 @@ zoom = Vector2(2.5, 2.5)
 script = ExtResource("2_n54ww")
 
 [node name="chair" type="RigidBody2D" parent="Node2D"]
-position = Vector2(288, 160)
+position = Vector2(289, 159)
 gravity_scale = 0.0
 custom_integrator = true
 can_sleep = false
@@ -173,7 +172,7 @@ texture = ExtResource("4_2uvth")
 shape = SubResource("RectangleShape2D_6tkaj")
 
 [node name="chair2" type="RigidBody2D" parent="Node2D"]
-position = Vector2(352, 160)
+position = Vector2(351, 159)
 gravity_scale = 0.0
 custom_integrator = true
 can_sleep = false
@@ -198,6 +197,3 @@ frame_progress = 0.916812
 [node name="GirlCollidor" type="CollisionShape2D" parent="Node2D/Girl"]
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_4hc34")
-
-[node name="Girl@PauseMenu" parent="." instance=ExtResource("26_x8u7b")]
-metadata/_edit_use_anchors_ = true
