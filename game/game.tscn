@@ -199,9 +199,5 @@ frame_progress = 0.916812
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_4hc34")
 
-<<<<<<< HEAD
-[node name="GirlPauseMenu" parent="." instance=ExtResource("26_x8u7b")]
-=======
 [node name="Girl@PauseMenu" parent="." instance=ExtResource("26_x8u7b")]
 metadata/_edit_use_anchors_ = true
->>>>>>> ac0423791f4df2d0f29de4eeaf8b27d42efdab01
