@@ -1,7 +1,8 @@
 extends CharacterBody2D
 @export var speed = 100
 var screen_size
-var prev_velocity = Vector2(0,0)
+var prev_velocity := Vector2(0,0)
+var stopped := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -11,28 +12,12 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame
-func _physics_process(delta):
-	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_right"):
-		velocity.x +=1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
 	
+func _process(delta):
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop() 
-	position += velocity * delta
-	#position.x = clamp(position.x, 0, screen_size.x)
-	#position.y = clamp(position.y, 0, screen_size.y)
-	
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
@@ -57,3 +42,39 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.animation = "forward"
 			$AnimatedSprite2D.flip_v = false
+
+# Called every frame. 'delta' is the elapsed time since the previous frame
+func _physics_process(delta):
+	if not stopped:
+		var motion = Vector2(0,0)
+		if Input.is_action_pressed("move_right"):
+			motion.x = 1
+		if Input.is_action_pressed("move_left"):
+			motion.x = -1
+		if Input.is_action_pressed("move_up"):
+			motion.y = -1
+		if Input.is_action_pressed("move_down"):
+			motion.y = 1
+		
+		velocity = motion * speed
+		
+		move_and_slide()
+		if get_slide_collision_count() > 0:
+			check_collision(motion)
+	
+func check_collision(motion : Vector2):
+	if abs(motion.x) + abs(motion.y) > 1:
+		return
+	var test := get_slide_collision(0).get_collider()
+	if test:
+		stopped = true
+		test.finished.connect(unstop)
+		test.push(motion)
+	
+func unstop():
+	stopped = false
+	
+	
+	#position += velocity * delta
+	#position.x = clamp(position.x, 0, screen_size.x)
+	#position.y = clamp(position.y, 0, screen_size.y)
