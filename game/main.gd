@@ -9,11 +9,11 @@ func _ready():
 	game = load("res://game.tscn")
 	var instance = main_menu.instantiate()
 	add_child(instance)
-	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame.option_clicked.connect(menu_handler)
-	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit.option_clicked.connect(menu_handler)
-	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits.option_clicked.connect(menu_handler)
-	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings.option_clicked.connect(menu_handler)
-	$MainMenu/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue.option_clicked.connect(menu_handler)
+	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame.option_clicked.connect(menu_handler)
+	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit.option_clicked.connect(menu_handler)
+	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits.option_clicked.connect(menu_handler)
+	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings.option_clicked.connect(menu_handler)
+	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue.option_clicked.connect(menu_handler)
 	pass # Replace with function body.
 
 
