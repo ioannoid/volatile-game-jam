@@ -12,7 +12,7 @@ var started = false
 func _ready():
 	if not started:
 		main_menu = load("res://main_menu.tscn")
-		game = load("res://bathroom.tscn")
+		game = load("res://game.tscn")
 		credits = load("res://credits.tscn")
 		started = true
 	var instance = main_menu.instantiate()
