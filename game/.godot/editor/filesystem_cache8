@@ -1,17 +1,18 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681607836
-game.tscn::PackedScene::653570357789734513::1681607818::0::1::::<><>::uid://n6xfnjn3ye1p<>res://player.gd<>uid://b6afykhuqtvit<>uid://cv6wg2opl2iwh<>uid://cnmlgegookv1f<>uid://cluyrjtkx7xem<>uid://dqpgntaw4buil<>uid://coq73u1crd42m<>uid://cm4ywcjgwmqsa<>uid://derw8gkq6bx87<>uid://bvf08byxf2v4i<>uid://djebuedfnvero<>uid://ciutjyci3v6n3<>uid://c1blusnx2amy3<>uid://c10gosdbon7t1<>uid://bcrsv3ofthxib<>uid://es7nrl8n1iro<>uid://bb6c8gfa4xevc<>uid://c0blm47sdfag7<>uid://cj4exsx4klbyd<>uid://nkk67jfgub4l<>uid://bvko34yr6boqg<>uid://bsfjw0orpufjr
+::res://::1681704501
+game.tscn::PackedScene::653570357789734513::1681611862::0::1::::<><>::uid://n6xfnjn3ye1p<>res://player.gd<>uid://b6afykhuqtvit<>uid://cv6wg2opl2iwh<>uid://cnmlgegookv1f<>uid://cluyrjtkx7xem<>uid://dqpgntaw4buil<>uid://coq73u1crd42m<>uid://cm4ywcjgwmqsa<>uid://derw8gkq6bx87<>uid://bvf08byxf2v4i<>uid://djebuedfnvero<>uid://ciutjyci3v6n3<>uid://c1blusnx2amy3<>uid://c10gosdbon7t1<>uid://bcrsv3ofthxib<>uid://es7nrl8n1iro<>uid://bb6c8gfa4xevc<>uid://c0blm47sdfag7<>uid://cj4exsx4klbyd<>uid://nkk67jfgub4l<>uid://bvko34yr6boqg<>uid://bsfjw0orpufjr
 icon.svg::CompressedTexture2D::6331716955268607711::1681449633::1681449767::1::::<><>::
-main.gd::GDScript::-1::1681607818::0::1::::<>Node<>::
-main.tscn::PackedScene::543330187732891207::1681607818::0::1::::<><>::res://main.gd
-main_menu.tscn::PackedScene::812491164433695779::1681607818::0::1::::<><>::res://menu_options.gd
-menu_options.gd::GDScript::-1::1681607757::0::1::::<>RichTextLabel<>::
-player.gd::GDScript::-1::1681606700::0::1::::<>Area2D<>::
-::res://assets/::1681606061
+main.gd::GDScript::-1::1681611553::0::1::::<>Node<>::
+main.tscn::PackedScene::543330187732891207::1681611862::0::1::::<><>::res://main.gd
+main_menu.tscn::PackedScene::812491164433695779::1681611862::0::1::::<><>::res://menu_options.gd
+menu_options.gd::GDScript::-1::1681607874::0::1::::<>RichTextLabel<>::
+player.gd::GDScript::-1::1681609072::0::1::::<>Area2D<>::
+::res://assets/::1681611652
 Chair Front.png::CompressedTexture2D::7176900578376932982::1681601911::1681601936::1::::<><>::
 Chair Left.png::CompressedTexture2D::6208266649206085053::1681601911::1681606038::1::::<><>::
 Dresser.png::CompressedTexture2D::7177716920340412973::1681601911::1681601936::1::::<><>::
 Table.png::CompressedTexture2D::2478486575207938032::1681601911::1681601936::1::::<><>::
+Title.png::CompressedTexture2D::2827655574466253531::1681610140::1681610142::1::::<><>::
 Wood TIle.png::CompressedTexture2D::977856794809245555::1681601911::1681601936::1::::<><>::
 ::res://assets/Fire/::1681601936
 Fire1.png::CompressedTexture2D::7611657730968103973::1681601911::1681601936::1::::<><>::
@@ -54,6 +55,10 @@ MC_RightFacing4.png::CompressedTexture2D::68411682885639931::1681604934::1681606
 MC_RightFacing5.png::CompressedTexture2D::6746800658456066245::1681604934::1681606127::1::::<><>::
 MC_RightFacing6.png::CompressedTexture2D::5561029972694161214::1681604934::1681606127::1::::<><>::
 MC_RightFacing7.png::CompressedTexture2D::1316167322067253503::1681604934::1681606127::1::::<><>::
+::res://assets/Title/::1681611658
+Title.png::CompressedTexture2D::7939699074480139676::1681610852::1681611658::1::::<><>::
+TitleGradient.png::CompressedTexture2D::474956106096920084::1681610784::1681611658::1::::<><>::
+TitleLightpng.png::CompressedTexture2D::2068853645550764986::1681610802::1681611658::1::::<><>::
 ::res://dodge_assets/::1681532586
 ::res://dodge_assets/art/::1681598024
 enemyFlyingAlt_1.png::CompressedTexture2D::6715557021145105688::1681532586::1681598024::1::::<><>::
