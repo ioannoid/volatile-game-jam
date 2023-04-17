@@ -188,8 +188,6 @@ script = ExtResource("2_n54ww")
 [node name="chair" type="RigidBody2D" parent="YSort"]
 position = Vector2(289, 159)
 gravity_scale = 0.0
-custom_integrator = true
-can_sleep = false
 lock_rotation = true
 script = ExtResource("3_d8sme")
 
@@ -202,8 +200,6 @@ shape = SubResource("RectangleShape2D_6tkaj")
 [node name="chair2" type="RigidBody2D" parent="YSort"]
 position = Vector2(351, 159)
 gravity_scale = 0.0
-custom_integrator = true
-can_sleep = false
 lock_rotation = true
 script = ExtResource("3_d8sme")
 

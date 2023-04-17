@@ -66,13 +66,4 @@ func check_collision(motion : Vector2):
 		return
 	var object := get_slide_collision(0).get_collider() as Chair
 	if object: 
-		stopped = true
-		object.finished.connect(unstop)
-		object.push(motion)
-	
-func unstop():
-	stopped = false
-	
-	#position += velocity * delta
-	#position.x = clamp(position.x, 0, screen_size.x)
-	#position.y = clamp(position.y, 0, screen_size.y)
+		object.push(motion, speed)

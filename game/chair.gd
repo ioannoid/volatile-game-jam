@@ -1,11 +1,7 @@
 class_name Chair extends RigidBody2D
-signal finished
 
-var push_dir := Vector2(0,0)
-var last_pos := Vector2(0,0)
+var velocity := Vector2(0,0)
 var pushed := false
-var is_chair := true
-var bounced := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,30 +9,15 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	pass
-
-func _integrate_forces(state):
-	if pushed:
-		state.set_linear_velocity(100*push_dir)
-		if abs(position.x - last_pos.x) >= 64 or abs(position.y - last_pos.y) >= 64:
-			pushed = false
-			finished.emit()
-		else:
-			print("true")
-			for i in get_colliding_bodies():
-				bounced = true
-				pushed = false
-	elif bounced:
-		state.set_linear_velocity(-100*push_dir)
-		if position.x == last_pos.x and position.y == last_pos.y:
-			bounced = false
-			finished.emit()
-	else:
-		state.set_linear_velocity(Vector2(0,0))
-func push(motion : Vector2):
-	if not pushed:
-		push_dir = motion
-		last_pos = position
-		pushed = true
 	
+func _integrate_forces(state : PhysicsDirectBodyState2D):
+	if pushed:
+		state.linear_velocity = velocity
+		pushed = false
+	state.linear_velocity = 0.8*state.linear_velocity
+
+func push(motion : Vector2, speed : int):
+	velocity = speed * motion
+	pushed = true
