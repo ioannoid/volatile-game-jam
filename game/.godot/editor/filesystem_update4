@@ -1,5 +1,6 @@
-res://main.tscn
 res://game.tscn
+res://main.tscn
 res://main_menu.tscn
 res://credits.tscn
-res://credits.gd
+res://player2.gd
+res://player.gd
