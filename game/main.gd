@@ -4,11 +4,17 @@ var main_menu
 var game
 var credits
 
+var i = 0
+
+var started = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	main_menu = load("res://main_menu.tscn")
-	game = load("res://game.tscn")
-	credits = load("res://credits.tscn")
+	if not started:
+		main_menu = load("res://main_menu.tscn")
+		game = load("res://game.tscn")
+		credits = load("res://credits.tscn")
+		started = true
 	var instance = main_menu.instantiate()
 	add_child(instance)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame.option_clicked.connect(menu_handler)
@@ -16,7 +22,6 @@ func _ready():
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits.option_clicked.connect(menu_handler)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings.option_clicked.connect(menu_handler)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue.option_clicked.connect(menu_handler)
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,8 +39,9 @@ func menu_handler(button):
 		-1:
 			for n in get_children():
 				n.queue_free()
-			var instance = main_menu.instantiate()
-			add_child(instance)
+			_ready()
+			#var instance = main_menu.instantiate()
+			#add_child(instance)
 		0:
 			_switch_scene()
 		1:
