@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://jkuhc2ho0t4d"]
+[gd_scene load_steps=33 format=3 uid="uid://jkuhc2ho0t4d"]
 
 [ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Wood TIle.png" id="1_2626o"]
 [ext_resource type="Script" path="res://camera.gd" id="2_n54ww"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bsfjw0orpufjr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="23_gr0dv"]
 [ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Chair Front.png" id="24_tadjw"]
 [ext_resource type="Script" path="res://girl.gd" id="26_mf1rg"]
-[ext_resource type="PackedScene" uid="uid://drpj3jen5fmse" path="res://pause_menu.tscn" id="26_x8u7b"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="26_x8u7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
 texture = ExtResource("1_2626o")
@@ -197,4 +197,4 @@ animation = &"walk"
 [node name="GirlCollidor" type="CollisionShape2D" parent="Node2D/Girl"]
 shape = SubResource("CapsuleShape2D_ckukt")
 
-[node name="PauseMenu" parent="Girl" instance=ExtResource("26_x8u7b")]
+[node name="Girl@PauseMenu" parent="." instance=ExtResource("26_x8u7b")]
