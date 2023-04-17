@@ -98,13 +98,7 @@ func _process(delta):
 				lines.erase(l)
 				l.queue_free()
 	elif started:
-		finish()
-
-func finish():
-	if not finished:
-		finished = true
-		if Input.is_action_pressed("escape"):
-			exit_credits.emit(-1)
+		exit_credits.emit(-1)
 		
 func add_line():
 	var new_line = line.duplicate()
@@ -122,7 +116,7 @@ func add_line():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		finish()
+		exit_credits.emit(-1)	
 	if event.is_action_pressed("ui_down") and !event.is_echo():
 		speed_up = true
 	if event.is_action_released("ui_down") and !event.is_echo():
