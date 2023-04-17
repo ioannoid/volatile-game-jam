@@ -1,12 +1,12 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681623457
-credits.gd::GDScript::-1::1681622698::0::1::::<>Node2D<>::
-credits.tscn::PackedScene::9072072433766230290::1681622706::0::1::::<><>::res://credits.gd
-game.tscn::PackedScene::653570357789734513::1681622705::0::1::::<><>::uid://n6xfnjn3ye1p<>res://player.gd<>uid://b6afykhuqtvit<>uid://cv6wg2opl2iwh<>uid://cnmlgegookv1f<>uid://cluyrjtkx7xem<>uid://dqpgntaw4buil<>uid://coq73u1crd42m<>uid://cm4ywcjgwmqsa<>uid://derw8gkq6bx87<>uid://bvf08byxf2v4i<>uid://djebuedfnvero<>uid://ciutjyci3v6n3<>uid://c1blusnx2amy3<>uid://c10gosdbon7t1<>uid://bcrsv3ofthxib<>uid://es7nrl8n1iro<>uid://bb6c8gfa4xevc<>uid://c0blm47sdfag7<>uid://cj4exsx4klbyd<>uid://nkk67jfgub4l<>uid://bvko34yr6boqg<>uid://bsfjw0orpufjr
+::res://::1681698299
+credits.gd::GDScript::-1::1681623670::0::1::::<>Node2D<>::
+credits.tscn::PackedScene::9072072433766230290::1681623756::0::1::::<><>::res://credits.gd
+game.tscn::PackedScene::653570357789734513::1681623756::0::1::::<><>::uid://n6xfnjn3ye1p<>res://player.gd<>uid://b6afykhuqtvit<>uid://cv6wg2opl2iwh<>uid://cnmlgegookv1f<>uid://cluyrjtkx7xem<>uid://dqpgntaw4buil<>uid://coq73u1crd42m<>uid://cm4ywcjgwmqsa<>uid://derw8gkq6bx87<>uid://bvf08byxf2v4i<>uid://djebuedfnvero<>uid://ciutjyci3v6n3<>uid://c1blusnx2amy3<>uid://c10gosdbon7t1<>uid://bcrsv3ofthxib<>uid://es7nrl8n1iro<>uid://bb6c8gfa4xevc<>uid://c0blm47sdfag7<>uid://cj4exsx4klbyd<>uid://nkk67jfgub4l<>uid://bvko34yr6boqg<>uid://bsfjw0orpufjr
 icon.svg::CompressedTexture2D::6331716955268607711::1681268007::1681269436::1::::<><>::
 main.gd::GDScript::-1::1681616960::0::1::::<>Node<>::
-main.tscn::PackedScene::2699607897806450837::1681622705::0::1::::<><>::res://main.gd
-main_menu.tscn::PackedScene::812491164433695779::1681622705::0::1::::<><>::res://menu_options.gd
+main.tscn::PackedScene::2699607897806450837::1681623756::0::1::::<><>::res://main.gd
+main_menu.tscn::PackedScene::812491164433695779::1681623756::0::1::::<><>::res://menu_options.gd
 menu_options.gd::GDScript::-1::1681608657::0::1::::<>RichTextLabel<>::
 player.gd::GDScript::-1::1681619896::0::1::::<>Area2D<>::
 ::res://assets/::1681608657
@@ -74,5 +74,6 @@ playerGrey_walk2.png::CompressedTexture2D::1643757256190680379::1681598470::1681
 FONTLOG.txt::TextFile::-1::1681598470::0::1::::<><>::
 LICENSE.txt::TextFile::-1::1681598470::0::1::::<><>::
 Xolonium-Regular.ttf::FontFile::1391736610996784366::1681598470::1681598574::1::::<><>::
-::res://Music/::1681616608
+::res://Music/::1681624068
+volatile_buildup.mp3::AudioStreamMP3::7805419246548883535::1681624039::1681624068::1::::<><>::
 volatile_title.mp3::AudioStreamMP3::6328925310666259987::1681616608::1681616608::1::::<><>::
