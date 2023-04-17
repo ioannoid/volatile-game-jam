@@ -5,6 +5,8 @@ var push_dir := Vector2(0,0)
 var last_pos := Vector2(0,0)
 var pushed := false
 var is_chair := true
+var bounced := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -18,8 +20,17 @@ func _integrate_forces(state):
 	if pushed:
 		state.set_linear_velocity(100*push_dir)
 		if abs(position.x - last_pos.x) >= 64 or abs(position.y - last_pos.y) >= 64:
-			state.set_linear_velocity(Vector2(0,0))
 			pushed = false
+			finished.emit()
+		else:
+			print("true")
+			for i in get_colliding_bodies():
+				bounced = true
+				pushed = false
+	elif bounced:
+		state.set_linear_velocity(-100*push_dir)
+		if position.x == last_pos.x and position.y == last_pos.y:
+			bounced = false
 			finished.emit()
 	else:
 		state.set_linear_velocity(Vector2(0,0))
