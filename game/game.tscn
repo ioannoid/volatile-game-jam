@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bsfjw0orpufjr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="23_gr0dv"]
 [ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Chair Front.png" id="24_tadjw"]
 [ext_resource type="Script" path="res://girl.gd" id="26_mf1rg"]
+[ext_resource type="PackedScene" uid="uid://drpj3jen5fmse" path="res://pause_menu.tscn" id="26_x8u7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
 texture = ExtResource("1_2626o")
@@ -195,3 +196,5 @@ animation = &"walk"
 
 [node name="GirlCollidor" type="CollisionShape2D" parent="Node2D/Girl"]
 shape = SubResource("CapsuleShape2D_ckukt")
+
+[node name="PauseMenu" parent="Girl" instance=ExtResource("26_x8u7b")]

@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://lttu1b1kygi2"]
+[gd_scene load_steps=5 format=3 uid="uid://lttu1b1kygi2"]
 
+[ext_resource type="AudioStream" uid="uid://db0ru0oaatdwd" path="res://Music/volatile_title.wav" id="2_1j2a1"]
 [ext_resource type="Script" path="res://menu_options.gd" id="2_uimo6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfy6t"]
 bg_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[sub_resource type="GDScript" id="GDScript_f5w83"]
+script/source = "extends AudioStreamPlayer
+
+func _ready():
+	pass
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+"
 
 [node name="MainMenu" type="Node"]
 
@@ -100,6 +113,11 @@ script = ExtResource("2_uimo6")
 
 [node name="CenterContainer" type="CenterContainer" parent="Layout/MarginContainer/HBoxContainer"]
 layout_mode = 2
+
+[node name="title_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1j2a1")
+autoplay = true
+script = SubResource("GDScript_f5w83")
 
 [connection signal="gui_input" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" method="_on_mouse_entered"]
