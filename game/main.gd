@@ -2,11 +2,13 @@ extends Node
 
 var main_menu
 var game
+var credits
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	main_menu = load("res://main_menu.tscn")
 	game = load("res://game.tscn")
+	credits = load("res://credits.tscn")
 	var instance = main_menu.instantiate()
 	add_child(instance)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame.option_clicked.connect(menu_handler)
@@ -29,6 +31,11 @@ func _switch_scene():
 func menu_handler(button):
 	print(button)
 	match button:
+		-1:
+			for n in get_children():
+				n.queue_free()
+			var instance = main_menu.instantiate()
+			add_child(instance)
 		0:
 			_switch_scene()
 		1:
@@ -36,6 +43,10 @@ func menu_handler(button):
 		2: 
 			pass
 		3: 
-			get_tree().change_scene_to_file("res://credits.tscn")
+			for n in get_children():
+				n.queue_free()
+			var instance = credits.instantiate()
+			add_child(instance)
+			$Control/Control/credits.exit_credits.connect(menu_handler)
 		4: 
 			get_tree().quit()

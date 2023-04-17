@@ -1,4 +1,5 @@
 extends Node2D
+signal exit_credits
 
 const section_time := 4.0
 const line_time := 0.3
@@ -6,6 +7,8 @@ const base_speed := 100
 const speed_up_multiplier := 10.0
 const title_color := Color.RED
 
+var main_menu
+var game
 var scroll_speed := base_speed
 var speed_up := false
 
@@ -26,9 +29,9 @@ var credits = [
 	],[
 		"Programming",
 		" ",
-		"Dimitri Haralampopoulos",
-		" ",
 		"Luke Evanago",
+		" ",
+		"Dimitri Haralampopoulos",
 		" ",
 		"Izabel Miminoshvili",
 		" ",
@@ -101,9 +104,8 @@ func finish():
 	if not finished:
 		finished = true
 		if Input.is_action_pressed("escape"):
-			get_tree().change_scene_to_file("res://main_menu.tscn")
-		get_tree().change_scene_to_file("res://main_menu.tscn")
-
+			exit_credits.emit(-1)
+		
 func add_line():
 	var new_line = line.duplicate()
 	new_line.text = section.pop_front()
