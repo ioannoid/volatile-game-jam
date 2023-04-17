@@ -1,13 +1,11 @@
 extends Area2D
 signal hit
-@export var speed = 200
+@export var speed = 100
 var screen_size
 var prev_velocity = Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
-	position.x = screen_size.x / 2;
-	position.y = screen_size.y / 2;
 	# $AnimatedSprite2D.scale = Vector2(2, 2)
 
 func start(pos):
@@ -33,8 +31,8 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.stop() 
 	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	#position.x = clamp(position.x, 0, screen_size.x)
+	#position.y = clamp(position.y, 0, screen_size.y)
 	
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
