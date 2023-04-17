@@ -119,6 +119,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("15_g5v1c")
+}, {
+"duration": 1.0,
 "texture": ExtResource("18_vg8gp")
 }, {
 "duration": 1.0,
@@ -193,6 +196,7 @@ script = ExtResource("26_mf1rg")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yjxj7")
 animation = &"walk"
+frame_progress = 0.916812
 
 [node name="GirlCollidor" type="CollisionShape2D" parent="Node2D/Girl"]
 shape = SubResource("CapsuleShape2D_ckukt")
