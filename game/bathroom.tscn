@@ -1,16 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://h5c3vkv4m2vq"]
+[gd_scene load_steps=19 format=3 uid="uid://h5c3vkv4m2vq"]
 
-[ext_resource type="PackedScene" path="res://room.tscn" id="2_v7sn0"]
-[ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="2_ydbnn"]
+[ext_resource type="PackedScene" uid="uid://dkjtqok28kyh0" path="res://room.tscn" id="2_v7sn0"]
 [ext_resource type="Script" path="res://phone.gd" id="4_yvfxy"]
 [ext_resource type="Texture2D" uid="uid://c70wt50mg7kb1" path="res://assets/Generic/Phone.png" id="5_ia5im"]
+[ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="8_die3c"]
 [ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
 [ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="26_sdxqh"]
 [ext_resource type="Script" path="res://door.gd" id="28_wjm66"]
 [ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="30_gavoh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrs3"]
-size = Vector2(63, 61)
+size = Vector2(63, 87.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q7i6h"]
 
@@ -40,18 +40,50 @@ size = Vector2(895, 57)
 size = Vector2(71, 637.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgh3c"]
-size = Vector2(898, 63)
+size = Vector2(898, 84.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42vbu"]
 size = Vector2(82, 641)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
-texture_region_size = Vector2i(64, 64)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xobqv"]
-texture = ExtResource("2_ydbnn")
+texture = ExtResource("8_die3c")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+0:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_6w8nt"]
 tile_size = Vector2i(64, 64)
@@ -59,12 +91,12 @@ terrain_set_0/mode = 2
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 0, 0.25098, 1)
 sources/0 = SubResource("TileSetAtlasSource_mal1d")
-sources/2 = SubResource("TileSetAtlasSource_xobqv")
 
 [node name="Bathroom" type="Node2D"]
 y_sort_enabled = true
 
 [node name="BR2L" type="Area2D" parent="."]
+position = Vector2(33, 3)
 script = ExtResource("28_wjm66")
 target_scene = ExtResource("2_v7sn0")
 
@@ -74,10 +106,11 @@ scale = Vector2(1, 0.984375)
 texture = ExtResource("30_gavoh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BR2L"]
-position = Vector2(0, 281)
+position = Vector2(0, 267.75)
 shape = SubResource("RectangleShape2D_cbrs3")
 
 [node name="Phone" type="Area2D" parent="."]
+visible = false
 position = Vector2(-79, -312)
 script = ExtResource("4_yvfxy")
 
@@ -104,21 +137,21 @@ shape = SubResource("RectangleShape2D_1x658")
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="Top" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-3, -343)
+position = Vector2(0, -291)
 shape = SubResource("RectangleShape2D_tj4ka")
 one_way_collision_margin = 3.5
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Right" type="CollisionShape2D" parent="Wall"]
-position = Vector2(479, -3)
+position = Vector2(418, 2)
 shape = SubResource("RectangleShape2D_xjs51")
 
 [node name="Bottom" type="CollisionShape2D" parent="Wall"]
-position = Vector2(0, 345)
+position = Vector2(1, 279.25)
 shape = SubResource("RectangleShape2D_tgh3c")
 
 [node name="Left" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-479, 0.5)
+position = Vector2(-425, 3)
 shape = SubResource("RectangleShape2D_42vbu")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -126,4 +159,4 @@ z_index = -1
 texture_filter = 1
 tile_set = SubResource("TileSet_6w8nt")
 format = 2
-layer_0/tile_data = PackedInt32Array(-262151, 2, 0, -262150, 2, 0, -262149, 2, 0, -262148, 2, 0, -262147, 2, 0, -262146, 2, 0, -262145, 2, 0, -327680, 2, 0, -327679, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 2, 0, -262138, 2, 0, -262139, 2, 0, -262140, 2, 0, -262141, 2, 0, -262142, 2, 0, -262143, 2, 0, -262144, 2, 0, -196609, 2, 0, -196610, 2, 0, -196611, 2, 0, -196612, 2, 0, -196613, 2, 0, -196614, 2, 0, -196615, 2, 0, -131079, 2, 0, -131078, 2, 0, -131077, 2, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -131066, 2, 0, -65530, 2, 0, -65531, 2, 0, -131067, 2, 0, -131068, 2, 0, -131069, 2, 0, -131070, 2, 0, -131071, 2, 0, -131072, 2, 0, -65537, 2, 0, -65538, 2, 0, -65539, 2, 0, -65540, 2, 0, -65541, 2, 0, -65542, 2, 0, -65543, 2, 0, -7, 2, 0, -6, 2, 0, -5, 2, 0, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, 6, 2, 0, 5, 2, 0, 4, 2, 0, 3, 2, 0, 2, 2, 0, 1, 2, 0, 0, 2, 0, 65535, 2, 0, 65534, 2, 0, 65530, 2, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65529, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 131078, 2, 0, 131077, 2, 0, 131076, 2, 0, 131075, 2, 0, 131074, 2, 0, 131073, 2, 0, 131072, 2, 0, 196607, 2, 0, 196606, 2, 0, 196605, 2, 0, 196604, 2, 0, 196603, 2, 0, 196602, 2, 0, 196601, 2, 0, 262137, 2, 0, 262138, 2, 0, 262139, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 262150, 2, 0, 262149, 2, 0, 262148, 2, 0, 262147, 2, 0, 262146, 2, 0, 262145, 2, 0, 262144, 2, 0, 327679, 2, 0, 327678, 2, 0, 327677, 2, 0, 327676, 2, 0, 327675, 2, 0, 327674, 2, 0, 327673, 2, 0)
+layer_0/tile_data = PackedInt32Array(-262151, 0, 1, -262150, 131072, 1, -262149, 131072, 1, -262148, 131072, 1, -262147, 131072, 1, -262146, 131072, 1, -262145, 131072, 1, -327680, 131072, 1, -327679, 131072, 1, -327678, 131072, 1, -327677, 131072, 1, -327676, 131072, 1, -327675, 131072, 1, -262139, 0, 0, -262140, 0, 0, -262141, 0, 0, -262142, 0, 0, -262143, 0, 0, -262144, 0, 0, -196609, 0, 0, -196610, 0, 0, -196611, 0, 0, -196612, 0, 0, -196613, 0, 0, -196614, 0, 0, -196615, 196608, 1, -131079, 196608, 1, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -65531, 0, 0, -131067, 0, 0, -131068, 0, 0, -131069, 0, 0, -131070, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -65539, 0, 0, -65540, 0, 0, -65541, 0, 0, -65542, 0, 0, -65543, 196608, 1, -7, 196608, 1, -6, 0, 0, -5, 0, 0, -4, 0, 0, -3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 65535, 0, 0, 65534, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65529, 196608, 1, 131065, 196608, 1, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 131077, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 196607, 0, 0, 196606, 0, 0, 196602, 0, 0, 196601, 196608, 1, 262137, 196608, 1, 262138, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 262150, 196608, 0, 262149, 65536, 0, 262148, 65536, 0, 262147, 65536, 0, 262146, 65536, 0, 262145, 65536, 0, 262144, 0, 0, 327679, 65536, 0, 327678, 65536, 0, 327677, 65536, 0, 327676, 65536, 0, 327675, 65536, 0, 327674, 65536, 0, 327673, 131072, 0, 196604, 0, 0, 262140, 0, 0, 196605, 0, 0, 262141, 0, 0, 196603, 0, 0, 262139, 0, 0, -327674, 262144, 0, -262138, 65536, 1, -196602, 65536, 1, -131066, 65536, 1, -65530, 65536, 1, 6, 65536, 1, 65542, 65536, 1, 131078, 65536, 1, 196614, 65536, 1)

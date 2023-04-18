@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://cggin0u8li4pl"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_du8si"]
-[ext_resource type="PackedScene" uid="uid://h5c3vkv4m2vq" path="res://bathroom.tscn" id="2_at8kr"]
+[ext_resource type="PackedScene" uid="uid://dkjtqok28kyh0" path="res://room.tscn" id="2_fxu0c"]
 [ext_resource type="Script" path="res://camera.gd" id="2_n54ww"]
 [ext_resource type="Texture2D" uid="uid://1hp4btgrpp1i" path="res://assets/Movement/Backward/MC_Backwards2.png" id="3_85f21"]
 [ext_resource type="PackedScene" uid="uid://mrji06ev57r5" path="res://pause_menu.tscn" id="3_td0kf"]
@@ -129,7 +129,7 @@ size = Vector2(12, 25)
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_du8si")
-current_scene = ExtResource("2_at8kr")
+current_scene = ExtResource("2_fxu0c")
 
 [node name="Camera" type="Camera2D" parent="."]
 z_index = 10

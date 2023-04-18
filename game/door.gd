@@ -11,11 +11,11 @@ func _input(event):
 		if !target_scene:
 			print("no scene in this door")
 			return
-		if get_overlapping_bodies().size() > 0:
+		if get_overlapping_bodies().size() > 1:
 			next_room()
 
 func next_room():
-	var ERR = get_parent().get_parent().switch_room("res://room.tscn")
+	var ERR = get_parent().get_parent().switch_room(target_scene)
 	if ERR != OK:
 		print("Something failed in the door scene") 
 
