@@ -2,7 +2,6 @@ extends Node2D
 
 @export var current_scene : PackedScene
 var current_node : Node
-<<<<<<< Updated upstream
 var state = 0
 
 enum GAME_STATE{
@@ -11,9 +10,6 @@ enum GAME_STATE{
 	aloneSequence,
 	endingSequence
 }
-
-=======
->>>>>>> Stashed changes
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if !current_scene:
@@ -50,8 +46,6 @@ func sequenceUpdater(seq : int):
 			state = GAME_STATE.endingSequence
 			print("changing to ending sequence")
 
-<<<<<<< Updated upstream
-=======
 func save_game():
 	var save_game = FileAccess.open("res://savegame.json", FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
@@ -105,4 +99,3 @@ func load_game():
 			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
 				continue
 			new_object.set(i, node_data[i])
->>>>>>> Stashed changes
