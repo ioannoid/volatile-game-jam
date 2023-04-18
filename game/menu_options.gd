@@ -33,8 +33,8 @@ func _on_mouse_exited():
 	val = rng.randi_range(0,5);
 	add_theme_color_override("default_color", Color.WHITE)
 	
-func get_button(name):
-	match name:
+func get_button(buttonname):
+	match buttonname:
 		"NewGame":
 			return 0
 		"Continue":
