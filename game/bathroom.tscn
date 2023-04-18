@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://phone.gd" id="4_yvfxy"]
 [ext_resource type="Texture2D" uid="uid://c70wt50mg7kb1" path="res://assets/Generic/Phone.png" id="5_ia5im"]
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="8_die3c"]
-
-[ext_resource type="PackedScene" uid="uid://ccxl2gmgq8wt7" path="res://room.tscn" id="2_v7sn0"]
-[ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="2_ydbnn"]
 [ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
 [ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="26_sdxqh"]
 [ext_resource type="Script" path="res://door.gd" id="28_wjm66"]

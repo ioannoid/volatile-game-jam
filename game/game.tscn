@@ -1,8 +1,8 @@
 [gd_scene load_steps=29 format=3 uid="uid://cggin0u8li4pl"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_du8si"]
+[ext_resource type="PackedScene" uid="uid://dkjtqok28kyh0" path="res://room.tscn" id="2_fxu0c"]
 [ext_resource type="Script" path="res://camera.gd" id="2_n54ww"]
-[ext_resource type="PackedScene" uid="uid://ccxl2gmgq8wt7" path="res://room.tscn" id="2_wwusr"]
 [ext_resource type="Texture2D" uid="uid://1hp4btgrpp1i" path="res://assets/Movement/Backward/MC_Backwards2.png" id="3_85f21"]
 [ext_resource type="PackedScene" uid="uid://mrji06ev57r5" path="res://pause_menu.tscn" id="3_td0kf"]
 [ext_resource type="Texture2D" uid="uid://0n52weh6qief" path="res://assets/Movement/Backward/MC_Backwards3.png" id="4_bmeb7"]
