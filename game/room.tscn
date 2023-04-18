@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://cr4yomj8j45o6"]
+
+[ext_resource type="Script" path="res://chair.gd" id="1_w814k"]
+[ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Generic/Chair Front.png" id="2_45asl"]
+[ext_resource type="Texture2D" uid="uid://cyqq3rkt6hae6" path="res://assets/Generic/out.png" id="3_hf1q8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6ktm"]
+size = Vector2(32, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jx2j"]
+size = Vector2(894.5, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2g0j"]
+size = Vector2(90, 639)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wcw"]
+size = Vector2(898, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g3el"]
+size = Vector2(90, 638.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xks0p"]
+texture = ExtResource("3_hf1q8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2lou2"]
+tile_size = Vector2i(64, 64)
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.501961, 0, 0.25098, 1)
+sources/10 = SubResource("TileSetAtlasSource_xks0p")
+
+[node name="Room" type="Node2D"]
+y_sort_enabled = true
+
+[node name="chair" type="RigidBody2D" parent="."]
+position = Vector2(289, 159)
+gravity_scale = 0.0
+custom_integrator = true
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_w814k")
+
+[node name="ChairSprite" type="Sprite2D" parent="chair"]
+texture = ExtResource("2_45asl")
+
+[node name="ChairBox" type="CollisionShape2D" parent="chair"]
+shape = SubResource("RectangleShape2D_b6ktm")
+
+[node name="chair2" type="RigidBody2D" parent="."]
+position = Vector2(351, 159)
+gravity_scale = 0.0
+custom_integrator = true
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_w814k")
+
+[node name="ChairSprite" type="Sprite2D" parent="chair2"]
+texture = ExtResource("2_45asl")
+
+[node name="ChairBox" type="CollisionShape2D" parent="chair2"]
+shape = SubResource("RectangleShape2D_b6ktm")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-0.25, -305.5)
+shape = SubResource("RectangleShape2D_3jx2j")
+
+[node name="Right" type="CollisionShape2D" parent="Wall"]
+position = Vector2(430, -0.5)
+shape = SubResource("RectangleShape2D_p2g0j")
+
+[node name="Bottom" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 302.5)
+shape = SubResource("RectangleShape2D_c4wcw")
+
+[node name="Left" type="CollisionShape2D" parent="Wall"]
+position = Vector2(-430, 0.75)
+shape = SubResource("RectangleShape2D_0g3el")
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+texture_filter = 1
+tile_set = SubResource("TileSet_2lou2")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262151, 65546, 1, -262150, 262154, 1, -262149, 262154, 1, -262148, 262154, 1, -262147, 262154, 1, -262146, 262154, 1, -262145, 262154, 1, -327680, 262154, 1, -327679, 262154, 1, -327678, 262154, 1, -327677, 262154, 1, -327676, 262154, 1, -327675, 262154, 1, -327674, 10, 1, -262138, 327690, 1, -262139, 10, 2, -262140, 10, 2, -262141, 10, 2, -262142, 10, 2, -262143, 10, 2, -262144, 10, 2, -196609, 10, 2, -196610, 10, 2, -196611, 10, 2, -196612, 10, 2, -196613, 10, 2, -196614, 10, 2, -196615, 196618, 1, -131079, 196618, 1, -131078, 10, 2, -131077, 10, 2, -131076, 10, 2, -131075, 10, 2, -131074, 10, 2, -131073, 10, 2, -196608, 10, 2, -196607, 10, 2, -196606, 10, 2, -196605, 10, 2, -196604, 10, 2, -196603, 10, 2, -196602, 327690, 1, -131066, 327690, 1, -65530, 327690, 1, -65531, 10, 2, -131067, 10, 2, -131068, 10, 2, -131069, 10, 2, -131070, 10, 2, -131071, 10, 2, -131072, 10, 2, -65537, 10, 2, -65538, 10, 2, -65539, 10, 2, -65540, 10, 2, -65541, 10, 2, -65542, 10, 2, -65543, 196618, 1, -7, 196618, 1, -6, 10, 2, -5, 10, 2, -3, 10, 2, -2, 10, 2, -1, 10, 2, -65536, 10, 2, -65535, 10, 2, -65534, 10, 2, -65533, 10, 2, -65532, 10, 2, 6, 327690, 1, 5, 10, 2, 4, 10, 2, 3, 10, 2, 2, 10, 2, 1, 10, 2, 0, 10, 2, 65535, 10, 2, 65534, 10, 2, 65530, 10, 2, 65531, 10, 2, 65532, 10, 2, 65533, 10, 2, 65529, 196618, 1, 131065, 196618, 1, 131066, 10, 2, 131067, 10, 2, 131068, 10, 2, 131069, 10, 2, 131070, 10, 2, 131071, 10, 2, 65536, 10, 2, 65537, 10, 2, 65538, 10, 2, 65539, 10, 2, 65540, 10, 2, 65541, 10, 2, 65542, 327690, 1, 131078, 327690, 1, 131077, 10, 2, 131076, 10, 2, 131075, 10, 2, 131074, 10, 2, 131073, 10, 2, 131072, 10, 2, 196607, 10, 2, 196606, 10, 2, 196605, 10, 2, 196604, 10, 2, 196603, 10, 2, 196602, 10, 2, 196601, 196618, 1, 262137, 196618, 1, 262138, 10, 2, 262139, 10, 2, 262140, 10, 2, 262141, 10, 2, 262142, 10, 2, 262143, 10, 2, 196608, 10, 2, 196609, 10, 2, 196610, 10, 2, 196611, 10, 2, 196612, 10, 2, 196613, 10, 2, 196614, 327690, 1, 262150, 327690, 0, 262149, 131082, 1, 262148, 131082, 1, 262147, 131082, 1, 262146, 131082, 1, 262145, 131082, 1, 262144, 131082, 1, 327679, 131082, 1, 327678, 131082, 1, 327677, 131082, 1, 327676, 131082, 1, 327675, 131082, 1, 327674, 131082, 1, 327673, 262154, 0, -4, 10, 2)

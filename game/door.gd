@@ -15,7 +15,7 @@ func _input(event):
 			next_room()
 
 func next_room():
-	var ERR = get_tree().change_scene_to_packed(target_scene)
+	var ERR = get_parent().get_parent().switch_room("res://room.tscn")
 	if ERR != OK:
 		print("Something failed in the door scene") 
 
