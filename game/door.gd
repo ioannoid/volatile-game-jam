@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var target_scene: PackedScene
+@export var target_scene: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,7 +8,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Interact"):
-		if !target_scene:
+		if target_scene.is_empty():
 			print("no scene in this door")
 			return
 		if get_overlapping_bodies().size() > 1:

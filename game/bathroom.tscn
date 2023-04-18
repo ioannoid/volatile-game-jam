@@ -1,12 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://h5c3vkv4m2vq"]
+[gd_scene load_steps=18 format=3 uid="uid://h5c3vkv4m2vq"]
 
-[ext_resource type="PackedScene" uid="uid://dkjtqok28kyh0" path="res://room.tscn" id="2_v7sn0"]
 [ext_resource type="Script" path="res://phone.gd" id="4_yvfxy"]
-
 [ext_resource type="Texture2D" uid="uid://c70wt50mg7kb1" path="res://assets/Generic/Phone.png" id="5_ia5im"]
-
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="8_die3c"]
-
 [ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
 [ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="26_sdxqh"]
 [ext_resource type="Script" path="res://door.gd" id="28_wjm66"]
@@ -101,7 +97,7 @@ y_sort_enabled = true
 [node name="BR2L" type="Area2D" parent="."]
 position = Vector2(33, 3)
 script = ExtResource("28_wjm66")
-target_scene = ExtResource("2_v7sn0")
+target_scene = "res://room.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="BR2L"]
 position = Vector2(0, 282)
