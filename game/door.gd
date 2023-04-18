@@ -1,4 +1,4 @@
-extends Area2D
+class_name Door extends Area2D
 
 @export var target_scene: String
 @export var player_pos: Vector2

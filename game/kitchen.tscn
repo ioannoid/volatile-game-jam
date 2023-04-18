@@ -151,6 +151,7 @@ texture = ExtResource("1_j0j6c")
 y_sort_enabled = true
 position = Vector2(17, -85)
 script = ExtResource("6_7x3c4")
+target_scene = "res://corruptbathroom.tscn"
 
 [node name="PhoneSprite" type="Sprite2D" parent="Phone"]
 z_index = 1
