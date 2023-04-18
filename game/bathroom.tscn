@@ -1,11 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://h5c3vkv4m2vq"]
+[gd_scene load_steps=27 format=3 uid="uid://h5c3vkv4m2vq"]
 
 [ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="2_ydbnn"]
-[ext_resource type="Script" path="res://phone.gd" id="4_yvfxy"]
-[ext_resource type="Texture2D" uid="uid://c70wt50mg7kb1" path="res://assets/Generic/Phone.png" id="5_ia5im"]
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="7_aj3ho"]
+[ext_resource type="Texture2D" uid="uid://c7431kuggva5e" path="res://assets/Bathroom/Bathtub/Bathtub Empty.png" id="9_if3po"]
 [ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="9_j3lyb"]
 [ext_resource type="Script" path="res://eKey.gd" id="9_ttjqc"]
+[ext_resource type="Texture2D" uid="uid://cf67ddtvg8duo" path="res://assets/Bathroom/Toilet Side/Toilet_Side Empty.png" id="10_c7xxq"]
+[ext_resource type="Texture2D" uid="uid://br31y56xnwg0m" path="res://assets/SurfaceTopers/flower pot.png" id="11_h1jfd"]
+[ext_resource type="Texture2D" uid="uid://dxun60kbhav8f" path="res://assets/Living Area/Lamp.png" id="12_2vsq0"]
 [ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
 [ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="26_sdxqh"]
 [ext_resource type="Script" path="res://door.gd" id="28_wjm66"]
@@ -13,8 +15,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrs3"]
 size = Vector2(63, 23.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_q7i6h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvovs"]
 animations = [{
@@ -36,16 +36,16 @@ animations = [{
 size = Vector2(60, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj4ka"]
-size = Vector2(406.75, 57)
+size = Vector2(406.75, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjs51"]
-size = Vector2(71, 260.375)
+size = Vector2(74.5, 260.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgh3c"]
-size = Vector2(403, 63)
+size = Vector2(403, 79.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42vbu"]
-size = Vector2(82, 267)
+size = Vector2(84, 267)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
 texture = ExtResource("7_aj3ho")
@@ -103,6 +103,14 @@ sources/2 = SubResource("TileSetAtlasSource_xobqv")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5nxp"]
 size = Vector2(62, 23)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxnxa"]
+size = Vector2(43, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45f6t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5g47p"]
+radius = 6.0
+
 [node name="Bathroom" type="Node2D"]
 y_sort_enabled = true
 
@@ -117,22 +125,11 @@ position = Vector2(32, 160)
 texture = ExtResource("30_gavoh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BR2L"]
-position = Vector2(32, 115)
+position = Vector2(32, 96)
 shape = SubResource("RectangleShape2D_cbrs3")
 
-[node name="Phone" type="Area2D" parent="."]
-position = Vector2(20, -81)
-script = ExtResource("4_yvfxy")
-
-[node name="PhoneSprite" type="Sprite2D" parent="Phone"]
-scale = Vector2(1, 0.984375)
-texture = ExtResource("5_ia5im")
-
-[node name="PhoneCollision" type="CollisionShape2D" parent="Phone"]
-shape = SubResource("CircleShape2D_q7i6h")
-
 [node name="Sink" type="StaticBody2D" parent="."]
-position = Vector2(-56, -36)
+position = Vector2(-159, -95)
 script = ExtResource("26_hi4d8")
 
 [node name="Sink" type="AnimatedSprite2D" parent="Sink"]
@@ -145,21 +142,21 @@ shape = SubResource("RectangleShape2D_1x658")
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="Top" type="CollisionShape2D" parent="Wall"]
-position = Vector2(0, -167)
+position = Vector2(0, -166.25)
 shape = SubResource("RectangleShape2D_tj4ka")
 one_way_collision_margin = 3.5
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Right" type="CollisionShape2D" parent="Wall"]
-position = Vector2(230, -3.8125)
+position = Vector2(228.25, -3.8125)
 shape = SubResource("RectangleShape2D_xjs51")
 
 [node name="Bottom" type="CollisionShape2D" parent="Wall"]
-position = Vector2(0.5, 168)
+position = Vector2(0.5, 159.75)
 shape = SubResource("RectangleShape2D_tgh3c")
 
 [node name="Left" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-235, -0.5)
+position = Vector2(-234, -0.5)
 shape = SubResource("RectangleShape2D_42vbu")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -179,8 +176,45 @@ scale = Vector2(0.0484032, 0.0403226)
 texture = ExtResource("9_j3lyb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]
-position = Vector2(31, -164)
+position = Vector2(31, -183)
 shape = SubResource("RectangleShape2D_p5nxp")
+
+[node name="Bathtub" type="StaticBody2D" parent="."]
+position = Vector2(122, -95)
+
+[node name="BTSprite" type="Sprite2D" parent="Bathtub"]
+position = Vector2(37, 0)
+texture = ExtResource("9_if3po")
+
+[node name="BTCollidor" type="CollisionShape2D" parent="Bathtub"]
+position = Vector2(36.5, -4)
+shape = SubResource("RectangleShape2D_lxnxa")
+
+[node name="Toliet" type="StaticBody2D" parent="."]
+position = Vector2(162, 96)
+
+[node name="Sprite2D" type="Sprite2D" parent="Toliet"]
+texture = ExtResource("10_c7xxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toliet"]
+position = Vector2(1, 6)
+scale = Vector2(2.27987, 2.25013)
+shape = SubResource("RectangleShape2D_45f6t")
+
+[node name="Toliet Flower" type="Sprite2D" parent="."]
+position = Vector2(162, 76)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("11_h1jfd")
+
+[node name="Lamp" type="StaticBody2D" parent="."]
+position = Vector2(-110, -72)
+
+[node name="Lamp" type="Sprite2D" parent="Lamp"]
+position = Vector2(0, -26)
+texture = ExtResource("12_2vsq0")
+
+[node name="LampCollidor" type="CollisionShape2D" parent="Lamp"]
+shape = SubResource("CircleShape2D_5g47p")
 
 [connection signal="body_entered" from="KeyHint" to="KeyHint" method="_on_key_hint_body_entered"]
 [connection signal="body_exited" from="KeyHint" to="KeyHint" method="_on_body_exited"]

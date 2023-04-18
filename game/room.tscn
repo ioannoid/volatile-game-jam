@@ -253,6 +253,7 @@ script = ExtResource("17_frfdv")
 position = Vector2(-80, -2)
 
 [node name="BookshelfSprite" type="Sprite2D" parent="BookShelf"]
+texture_filter = 1
 position = Vector2(-48, 7)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_8700i")
@@ -271,6 +272,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_8700i")
 
 [node name="BookshelfCollidor2" type="CollisionShape2D" parent="BookShelf2"]
+texture_filter = 2
 position = Vector2(35, 163)
 shape = SubResource("RectangleShape2D_oea5p")
 
@@ -297,6 +299,7 @@ scale = Vector2(1, 0.719641)
 shape = SubResource("RectangleShape2D_bi3ae")
 
 [node name="DresserSprite2" type="Sprite2D" parent="Dresser2"]
+texture_filter = 2
 position = Vector2(-74, 105)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_1wh4k")

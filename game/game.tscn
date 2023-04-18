@@ -140,6 +140,7 @@ script = ExtResource("2_n54ww")
 
 [node name="Girl" type="CharacterBody2D" parent="."]
 script = ExtResource("26_mf1rg")
+speed = 200
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Girl"]
 texture_filter = 1

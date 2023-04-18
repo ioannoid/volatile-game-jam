@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://deyky20kpmop1"]
+[gd_scene load_steps=42 format=3 uid="uid://deyky20kpmop1"]
 
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="1_qcwij"]
 [ext_resource type="Script" path="res://eKey.gd" id="2_anhm2"]
@@ -8,6 +8,23 @@
 [ext_resource type="Texture2D" uid="uid://df1n1welywbd3" path="res://assets/Locks/redLock.png" id="6_7uy5k"]
 [ext_resource type="Texture2D" uid="uid://f4rmc1m0fyyr" path="res://assets/Generic/DoorRight.png" id="6_cdniw"]
 [ext_resource type="Texture2D" uid="uid://cap22dq0ts4e6" path="res://assets/Locks/lockedLock.png" id="8_lonc0"]
+[ext_resource type="Texture2D" uid="uid://cuplik3v020y8" path="res://assets/Generic/Chair Left.png" id="9_nj2gh"]
+[ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Generic/Chair Front.png" id="10_cjhqc"]
+[ext_resource type="Texture2D" uid="uid://dxun60kbhav8f" path="res://assets/Living Area/Lamp.png" id="11_73oa2"]
+[ext_resource type="Texture2D" uid="uid://dgpe5jyd4y6ur" path="res://assets/Fire/Fire1.png" id="12_2r1mt"]
+[ext_resource type="Texture2D" uid="uid://bcn65ig4tcdqg" path="res://assets/SurfaceTopers/flower pot Tricolor.png" id="12_oh78j"]
+[ext_resource type="Texture2D" uid="uid://dbj3t2hvs8k6j" path="res://assets/Fire/Fire2.png" id="13_nl8kv"]
+[ext_resource type="Texture2D" uid="uid://cm48lw7akaant" path="res://assets/Fire/Fire3.png" id="14_m5xqf"]
+[ext_resource type="Texture2D" uid="uid://edmwi5m26pn1" path="res://assets/Fire/Fire4.png" id="15_gkjqx"]
+[ext_resource type="Texture2D" uid="uid://b5a3rooc67ieq" path="res://assets/Fire/Fire5.png" id="16_jkmym"]
+[ext_resource type="Texture2D" uid="uid://bxxsca0b5cg4g" path="res://assets/Fire/Fire6.png" id="17_npdcj"]
+[ext_resource type="Texture2D" uid="uid://ds3fku0dum00e" path="res://assets/Fire/Fire7.png" id="18_dx8lq"]
+[ext_resource type="Script" path="res://startani.gd" id="19_8ahey"]
+[ext_resource type="Texture2D" uid="uid://drey38qnxovxa" path="res://assets/Living Area/Couch.png" id="21_ply0d"]
+[ext_resource type="Texture2D" uid="uid://clblwqqacubc" path="res://assets/Bathroom/Bathtub/Bathtub Overflow Blood.png" id="22_hrsmk"]
+[ext_resource type="Texture2D" uid="uid://byhqje3aufev6" path="res://assets/Bathroom/Bathtub/Bathtub Filled.png" id="22_smgv2"]
+[ext_resource type="Texture2D" uid="uid://bj42mhq2yhw70" path="res://assets/Bathroom/Bathtub/Bathtub Filled Blood.png" id="23_d5pjn"]
+[ext_resource type="Texture2D" uid="uid://db7i06mer7ibb" path="res://assets/Bathroom/Bathtub/Bathtub Overflow.png" id="25_0ujpe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xks0p"]
 texture = ExtResource("1_qcwij")
@@ -77,6 +94,113 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jqny"]
+size = Vector2(30, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5a38"]
+size = Vector2(33, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdocs"]
+radius = 7.07107
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw7mn"]
+size = Vector2(179, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2ymi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_2r1mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nl8kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m5xqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gkjqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jkmym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_npdcj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dx8lq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.5
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1e5of"]
+radius = 13.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4v6lc"]
+height = 84.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lv1py"]
+radius = 83.0241
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uxmkh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_smgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_smgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_smgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_smgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_smgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_d5pjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_d5pjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_d5pjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hrsmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_hrsmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_d5pjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_smgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_smgv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0ujpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0ujpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0ujpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 25.0
 }]
 
 [node name="Room" type="Node2D"]
@@ -154,8 +278,9 @@ position = Vector2(-268.75, -537.25)
 shape = SubResource("RectangleShape2D_e3kjb")
 
 [node name="Masterbedroom Door" type="Sprite2D" parent="."]
+visibility_layer = 2
 y_sort_enabled = true
-position = Vector2(224.5, -481.5)
+position = Vector2(225, -481)
 scale = Vector2(1.04688, 0.953125)
 texture = ExtResource("6_cdniw")
 
@@ -210,8 +335,8 @@ position = Vector2(281, 32)
 rotation = 0.00791074
 script = ExtResource("4_y46u0")
 target_scene = "res://kitchen.tscn"
-player_pos = Vector2(3, 4)
-room_size = Vector2(4, 9)
+player_pos = Vector2(-5, 0)
+room_size = Vector2(6, 4)
 
 [node name="LivingDoorCollidor" type="CollisionShape2D" parent="H2K"]
 position = Vector2(-114.963, 257.917)
@@ -221,6 +346,125 @@ debug_color = Color(0.933333, 0, 0.643137, 0.419608)
 [node name="DoorSprite" type="Sprite2D" parent="H2K"]
 position = Vector2(-54.9494, 259.443)
 texture = ExtResource("6_cdniw")
+
+[node name="ChairLeft" type="Sprite2D" parent="."]
+position = Vector2(162, -67)
+texture = ExtResource("9_nj2gh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ChairLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChairLeft/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_6jqny")
+
+[node name="ChairFront" type="Sprite2D" parent="."]
+position = Vector2(76, -503)
+texture = ExtResource("10_cjhqc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ChairFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChairFront/StaticBody2D"]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_o5a38")
+
+[node name="Lamp" type="Sprite2D" parent="."]
+position = Vector2(162, -109)
+texture = ExtResource("11_73oa2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Lamp"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lamp/StaticBody2D"]
+position = Vector2(0, 25)
+shape = SubResource("CircleShape2D_pdocs")
+
+[node name="Fire" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-51, -380)
+
+[node name="FireCollidor1" type="CollisionShape2D" parent="Fire"]
+position = Vector2(-44, 17)
+shape = SubResource("RectangleShape2D_kw7mn")
+
+[node name="FireAnimation11" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(-106, 2)
+sprite_frames = SubResource("SpriteFrames_l2ymi")
+script = ExtResource("19_8ahey")
+
+[node name="FireAnimation12" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(-62, 12)
+sprite_frames = SubResource("SpriteFrames_l2ymi")
+script = ExtResource("19_8ahey")
+
+[node name="FireAnimation13" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(-26, 4)
+sprite_frames = SubResource("SpriteFrames_l2ymi")
+script = ExtResource("19_8ahey")
+
+[node name="FireAnimation14" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(15, 17)
+sprite_frames = SubResource("SpriteFrames_l2ymi")
+script = ExtResource("19_8ahey")
+
+[node name="FireCollidor2" type="CollisionShape2D" parent="Fire"]
+position = Vector2(145, 184)
+shape = SubResource("RectangleShape2D_kw7mn")
+
+[node name="FireAnimation15" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(83, 169)
+sprite_frames = SubResource("SpriteFrames_l2ymi")
+script = ExtResource("19_8ahey")
+
+[node name="FireAnimation16" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(127, 179)
+sprite_frames = SubResource("SpriteFrames_l2ymi")
+script = ExtResource("19_8ahey")
+
+[node name="FireAnimation17" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(163, 171)
+sprite_frames = SubResource("SpriteFrames_l2ymi")
+script = ExtResource("19_8ahey")
+
+[node name="FireAnimation18" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(204, 184)
+sprite_frames = SubResource("SpriteFrames_l2ymi")
+script = ExtResource("19_8ahey")
+
+[node name="Lamp2" type="Sprite2D" parent="."]
+position = Vector2(-176, 226)
+texture = ExtResource("11_73oa2")
+
+[node name="FlowerPotTricolor" type="Sprite2D" parent="Lamp2"]
+position = Vector2(1, 24)
+texture = ExtResource("12_oh78j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Lamp2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lamp2/StaticBody2D"]
+position = Vector2(0, 35)
+shape = SubResource("CapsuleShape2D_1e5of")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-106, -176)
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(25, 52)
+texture = ExtResource("21_ply0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(26, 66)
+shape = SubResource("CapsuleShape2D_4v6lc")
+
+[node name="Bloody Tub" type="StaticBody2D" parent="."]
+position = Vector2(-149, 467)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bloody Tub"]
+shape = SubResource("CircleShape2D_lv1py")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bloody Tub"]
+sprite_frames = SubResource("SpriteFrames_uxmkh")
+frame_progress = 0.0014732
+script = ExtResource("19_8ahey")
 
 [connection signal="body_entered" from="KeyHint" to="KeyHint" method="_on_key_hint_body_entered"]
 [connection signal="body_exited" from="KeyHint" to="KeyHint" method="_on_body_exited"]
