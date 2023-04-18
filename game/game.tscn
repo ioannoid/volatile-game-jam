@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cggin0u8li4pl"]
+[gd_scene load_steps=42 format=3 uid="uid://cggin0u8li4pl"]
 
 [ext_resource type="Texture2D" uid="uid://cyqq3rkt6hae6" path="res://assets/Generic/out.png" id="1_csxed"]
 [ext_resource type="Script" path="res://camera.gd" id="2_n54ww"]
@@ -27,10 +27,10 @@
 [ext_resource type="Texture2D" uid="uid://dcyct8qooe675" path="res://assets/Movement/Left/MC_LeftFacing6.png" id="22_20tty"]
 [ext_resource type="Texture2D" uid="uid://bkeggsvyup2qr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="23_gr0dv"]
 [ext_resource type="Script" path="res://girl.gd" id="26_mf1rg"]
-[ext_resource type="Script" path="res://door.gd" id="37_gr5vk"]
-[ext_resource type="PackedScene" uid="uid://h5c3vkv4m2vq" path="res://bathroom.tscn" id="38_k3exb"]
-[ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="39_p6800"]
-[ext_resource type="Texture2D" uid="uid://cuwedkw0ocmth" path="res://assets/Generic/DoorLeft.png" id="40_xi0e0"]
+[ext_resource type="Script" path="res://door.gd" id="28_5ivb3"]
+[ext_resource type="PackedScene" uid="uid://h5c3vkv4m2vq" path="res://bathroom.tscn" id="29_dfcob"]
+[ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="30_yvgig"]
+[ext_resource type="Texture2D" uid="uid://cuwedkw0ocmth" path="res://assets/Generic/DoorLeft.png" id="31_ih03m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xks0p"]
 texture = ExtResource("1_csxed")
@@ -173,6 +173,9 @@ size = Vector2(898, 93)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8t5i"]
 size = Vector2(90, 638.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rj07"]
+size = Vector2(63, 61)
+
 [node name="TileMap" type="TileMap"]
 texture_filter = 1
 tile_set = SubResource("TileSet_6w8nt")
@@ -222,7 +225,6 @@ script = ExtResource("26_mf1rg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="YSort/Girl"]
 texture_filter = 1
-position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_yjxj7")
 animation = &"walk"
 frame_progress = 0.916812
@@ -249,16 +251,20 @@ shape = SubResource("RectangleShape2D_tpyp6")
 position = Vector2(-430, 0.75)
 shape = SubResource("RectangleShape2D_r8t5i")
 
-[node name="FrontDoor" type="Area2D" parent="Node2D"]
+[node name="BR2L" type="Area2D" parent="YSort"]
 y_sort_enabled = true
-script = ExtResource("37_gr5vk")
-target_scene = ExtResource("38_k3exb")
+script = ExtResource("28_5ivb3")
+target_scene = ExtResource("29_dfcob")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/FrontDoor"]
-position = Vector2(-416, -1.00002)
+[node name="Sprite2D" type="Sprite2D" parent="YSort/BR2L"]
+position = Vector2(0, -288)
 scale = Vector2(1, 0.984375)
-texture = ExtResource("40_xi0e0")
+texture = ExtResource("30_yvgig")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/FrontDoor"]
-position = Vector2(-416, -2)
-shape = SubResource("RectangleShape2D_uedmv")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/BR2L"]
+position = Vector2(0, -288)
+shape = SubResource("RectangleShape2D_5rj07")
+
+[node name="Sprite2D" type="Sprite2D" parent="YSort"]
+position = Vector2(-416, 0)
+texture = ExtResource("31_ih03m")
