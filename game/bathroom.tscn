@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://h5c3vkv4m2vq"]
 
-[ext_resource type="PackedScene" uid="uid://cr4yomj8j45o6" path="res://room.tscn" id="2_v7sn0"]
+[ext_resource type="PackedScene" uid="uid://ccxl2gmgq8wt7" path="res://room.tscn" id="2_v7sn0"]
 [ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="2_ydbnn"]
 [ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
 [ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="26_sdxqh"]
