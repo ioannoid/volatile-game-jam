@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cl8w5fyypk7es"]
+[gd_scene load_steps=36 format=3 uid="uid://cl8w5fyypk7es"]
 
 [ext_resource type="Texture2D" uid="uid://bbkukuoj36h81" path="res://assets/Generic/Table.png" id="1_j0j6c"]
 [ext_resource type="Script" path="res://door.gd" id="1_yuo0u"]
@@ -12,6 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://dp5n1x7dbd4m4" path="res://assets/Kitchen/Counter.png" id="9_ienol"]
 [ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Generic/Chair Front.png" id="11_uykoo"]
 [ext_resource type="Texture2D" uid="uid://cuplik3v020y8" path="res://assets/Generic/Chair Left.png" id="12_j5iiu"]
+[ext_resource type="Texture2D" uid="uid://tjenj0klycmo" path="res://assets/Fire/Fire with Blue/Fire1.png" id="13_bkeyb"]
+[ext_resource type="Texture2D" uid="uid://25jxhmdafqd" path="res://assets/Fire/Fire with Blue/Fire2.png" id="14_htjp1"]
+[ext_resource type="Texture2D" uid="uid://chppitv1u75cp" path="res://assets/Fire/Fire with Blue/Fire3.png" id="15_jnd26"]
+[ext_resource type="Texture2D" uid="uid://3llafrefp033" path="res://assets/Fire/Fire with Blue/Fire4.png" id="16_hfeji"]
+[ext_resource type="Texture2D" uid="uid://br6m8n7y77ofn" path="res://assets/Fire/Fire with Blue/Fire5.png" id="17_gg57e"]
+[ext_resource type="Texture2D" uid="uid://dxcwjhp2roved" path="res://assets/Fire/Fire with Blue/Fire6.png" id="18_iyped"]
+[ext_resource type="Texture2D" uid="uid://trx5nq8tlmgo" path="res://assets/Fire/Fire with Blue/Fire7.png" id="19_ohh2u"]
+[ext_resource type="Script" path="res://startani.gd" id="20_asuen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdwse"]
 size = Vector2(58, 34)
@@ -92,6 +100,38 @@ size = Vector2(16.25, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2q1w"]
 size = Vector2(32, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_il1dk"]
+size = Vector2(70, 183.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdco5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_bkeyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_htjp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jnd26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hfeji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gg57e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_iyped")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ohh2u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.5
+}]
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -233,6 +273,34 @@ texture = ExtResource("12_j5iiu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftChair"]
 position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_o2q1w")
+
+[node name="Fire" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-79, -48)
+
+[node name="FireCollidor1" type="CollisionShape2D" parent="Fire"]
+position = Vector2(-97, 59.25)
+shape = SubResource("RectangleShape2D_il1dk")
+
+[node name="FireAnimation11" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(-107, -25)
+sprite_frames = SubResource("SpriteFrames_rdco5")
+script = ExtResource("20_asuen")
+
+[node name="FireAnimation12" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(-89, 26)
+sprite_frames = SubResource("SpriteFrames_rdco5")
+script = ExtResource("20_asuen")
+
+[node name="FireAnimation13" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(-106, 75)
+sprite_frames = SubResource("SpriteFrames_rdco5")
+script = ExtResource("20_asuen")
+
+[node name="FireAnimation14" type="AnimatedSprite2D" parent="Fire"]
+position = Vector2(-85, 123)
+sprite_frames = SubResource("SpriteFrames_rdco5")
+script = ExtResource("20_asuen")
 
 [connection signal="body_entered" from="K2Hkey" to="K2Hkey" method="_on_key_hint_body_entered"]
 [connection signal="body_exited" from="K2Hkey" to="K2Hkey" method="_on_body_exited"]

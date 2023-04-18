@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dkjtqok28kyh0"]
+[gd_scene load_steps=50 format=3 uid="uid://dkjtqok28kyh0"]
 
 [ext_resource type="Texture2D" uid="uid://dyn6q2har6sf0" path="res://assets/Bedroom/Bed.png" id="1_hxduw"]
 [ext_resource type="Script" path="res://chair.gd" id="1_w814k"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="23_x36iy"]
 [ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="24_t8f32"]
 [ext_resource type="Texture2D" uid="uid://f4rmc1m0fyyr" path="res://assets/Generic/DoorRight.png" id="25_1fp0s"]
+[ext_resource type="Texture2D" uid="uid://bcn65ig4tcdqg" path="res://assets/SurfaceTopers/flower pot Tricolor.png" id="26_0yhpu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaokk"]
 size = Vector2(63, 29.766)
@@ -202,6 +203,9 @@ size = Vector2(20, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku37f"]
 size = Vector2(30, 60)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qksol"]
+radius = 24.0208
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -508,6 +512,17 @@ debug_color = Color(0.933333, 0, 0.643137, 0.419608)
 position = Vector2(74.2623, 281.115)
 scale = Vector2(1.03019, 1.00905)
 texture = ExtResource("25_1fp0s")
+
+[node name="Bigflower" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bigflower"]
+position = Vector2(-355, -47)
+shape = SubResource("CircleShape2D_qksol")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bigflower"]
+position = Vector2(-355, -89)
+scale = Vector2(1.89063, 1.89063)
+texture = ExtResource("26_0yhpu")
 
 [connection signal="body_entered" from="KeyHint" to="KeyHint" method="_on_key_hint_body_entered"]
 [connection signal="body_exited" from="KeyHint" to="KeyHint" method="_on_body_exited"]
