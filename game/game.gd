@@ -1,4 +1,5 @@
 extends Node2D
+signal updateGirl(val)
 
 @export var current_scene : PackedScene
 var current_node : Node
@@ -19,6 +20,7 @@ func _ready():
 	else:
 		current_node = current_scene.instantiate()
 		add_child(current_node)
+	updateGirl.connect(get_node("Girl").girlUpdate)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -39,7 +41,7 @@ func sequenceUpdater(seq : int):
 			print("changing to start sequence")
 		GAME_STATE.bathroomSequence: 
 			state = GAME_STATE.bathroomSequence
-			print("changing to bathroom sequence")
+			updateGirl.emit(1)
 		GAME_STATE.aloneSequence:
 			state = GAME_STATE.aloneSequence
 			print("changing to alone sequence")

@@ -1,39 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://bdxbo6nw1rrui"]
+[gd_scene load_steps=16 format=3 uid="uid://bdxbo6nw1rrui"]
 
 [ext_resource type="Script" path="res://door.gd" id="1_s8npv"]
 [ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="2_okei4"]
-[ext_resource type="Script" path="res://sink.gd" id="3_1iyis"]
-[ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="4_251aa"]
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="5_81m8i"]
 [ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="6_b1qs8"]
 [ext_resource type="Script" path="res://eKey.gd" id="7_wvnwx"]
 [ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="8_oq78w"]
-[ext_resource type="Texture2D" uid="uid://c7431kuggva5e" path="res://assets/Bathroom/Bathtub/Bathtub Empty.png" id="9_5f4p2"]
-[ext_resource type="Texture2D" uid="uid://cf67ddtvg8duo" path="res://assets/Bathroom/Toilet Side/Toilet_Side Empty.png" id="10_nj32u"]
-[ext_resource type="Texture2D" uid="uid://br31y56xnwg0m" path="res://assets/SurfaceTopers/flower pot.png" id="11_idkm3"]
-[ext_resource type="Texture2D" uid="uid://dxun60kbhav8f" path="res://assets/Living Area/Lamp.png" id="12_x4n5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrs3"]
 size = Vector2(63, 23.5)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qvovs"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_251aa")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"glitchy",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x658"]
-size = Vector2(60, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj4ka"]
 size = Vector2(406.75, 58.5)
@@ -103,14 +78,6 @@ sources/2 = SubResource("TileSetAtlasSource_xobqv")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5nxp"]
 size = Vector2(62, 23)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxnxa"]
-size = Vector2(43, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_45f6t"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5g47p"]
-radius = 6.0
-
 [node name="Bathroom" type="Node2D"]
 y_sort_enabled = true
 
@@ -127,17 +94,6 @@ texture = ExtResource("2_okei4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BR2L"]
 position = Vector2(32, 96)
 shape = SubResource("RectangleShape2D_cbrs3")
-
-[node name="Sink" type="StaticBody2D" parent="."]
-position = Vector2(-159, -95)
-script = ExtResource("3_1iyis")
-
-[node name="Sink" type="AnimatedSprite2D" parent="Sink"]
-sprite_frames = SubResource("SpriteFrames_qvovs")
-
-[node name="SinkCollidor" type="CollisionShape2D" parent="Sink"]
-position = Vector2(0, -6)
-shape = SubResource("RectangleShape2D_1x658")
 
 [node name="Wall" type="StaticBody2D" parent="."]
 
@@ -178,43 +134,6 @@ texture = ExtResource("8_oq78w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]
 position = Vector2(31, -183)
 shape = SubResource("RectangleShape2D_p5nxp")
-
-[node name="Bathtub" type="StaticBody2D" parent="."]
-position = Vector2(122, -95)
-
-[node name="BTSprite" type="Sprite2D" parent="Bathtub"]
-position = Vector2(37, 0)
-texture = ExtResource("9_5f4p2")
-
-[node name="BTCollidor" type="CollisionShape2D" parent="Bathtub"]
-position = Vector2(36.5, -4)
-shape = SubResource("RectangleShape2D_lxnxa")
-
-[node name="Toliet" type="StaticBody2D" parent="."]
-position = Vector2(162, 96)
-
-[node name="Sprite2D" type="Sprite2D" parent="Toliet"]
-texture = ExtResource("10_nj32u")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Toliet"]
-position = Vector2(1, 6)
-scale = Vector2(2.27987, 2.25013)
-shape = SubResource("RectangleShape2D_45f6t")
-
-[node name="Toliet Flower" type="Sprite2D" parent="."]
-position = Vector2(162, 76)
-scale = Vector2(0.59375, 0.59375)
-texture = ExtResource("11_idkm3")
-
-[node name="Lamp" type="StaticBody2D" parent="."]
-position = Vector2(-110, -72)
-
-[node name="Lamp" type="Sprite2D" parent="Lamp"]
-position = Vector2(0, -26)
-texture = ExtResource("12_x4n5y")
-
-[node name="LampCollidor" type="CollisionShape2D" parent="Lamp"]
-shape = SubResource("CircleShape2D_5g47p")
 
 [connection signal="body_entered" from="KeyHint" to="KeyHint" method="_on_key_hint_body_entered"]
 [connection signal="body_exited" from="KeyHint" to="KeyHint" method="_on_body_exited"]

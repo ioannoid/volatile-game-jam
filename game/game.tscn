@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cggin0u8li4pl"]
+[gd_scene load_steps=37 format=3 uid="uid://cggin0u8li4pl"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_du8si"]
 [ext_resource type="PackedScene" uid="uid://dkjtqok28kyh0" path="res://room.tscn" id="2_fxu0c"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mrji06ev57r5" path="res://pause_menu.tscn" id="3_td0kf"]
 [ext_resource type="Texture2D" uid="uid://0n52weh6qief" path="res://assets/Movement/Backward/MC_Backwards3.png" id="4_bmeb7"]
 [ext_resource type="Texture2D" uid="uid://niw2ytpwjhqo" path="res://assets/Movement/Backward/MC_Backwards4.png" id="5_wid57"]
+[ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="6_cg0by"]
 [ext_resource type="Texture2D" uid="uid://d25ejq31r4cqe" path="res://assets/Movement/Backward/MC_Backwards5.png" id="6_g0ljp"]
 [ext_resource type="Texture2D" uid="uid://ddw0yrkxommn1" path="res://assets/Movement/Backward/MC_Backwards6.png" id="7_vl3iv"]
 [ext_resource type="Texture2D" uid="uid://cu8uty11h4rb1" path="res://assets/Movement/Backward/MC_Backwards7.png" id="8_bvqbn"]
@@ -14,11 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://cv8ycu40swhk4" path="res://assets/Movement/Forward/MC_ForwardFacing3.png" id="10_6a218"]
 [ext_resource type="Texture2D" uid="uid://b542o4mrs7f28" path="res://assets/Movement/Forward/MC_ForwardFacing4.png" id="11_0ukal"]
 [ext_resource type="Texture2D" uid="uid://cpn5c7r1b0vhq" path="res://assets/Movement/Forward/MC_ForwardFacing5.png" id="12_3vmrw"]
+[ext_resource type="Texture2D" uid="uid://xqiaelam447o" path="res://assets/Movement/Cry/Cry5.png" id="12_ggv0w"]
+[ext_resource type="Texture2D" uid="uid://b1ewki2iu0bsn" path="res://assets/Movement/Cry/Cry6.png" id="13_nngye"]
 [ext_resource type="Texture2D" uid="uid://dt5lveq60x4hf" path="res://assets/Movement/Forward/MC_ForwardFacing6.png" id="13_ofush"]
+[ext_resource type="Texture2D" uid="uid://besext7xdvc77" path="res://assets/Movement/Cry/Cry7.png" id="14_flyd1"]
 [ext_resource type="Texture2D" uid="uid://so8qf8v6onfp" path="res://assets/Movement/Forward/MC_ForwardFacing7.png" id="14_xovrr"]
 [ext_resource type="Texture2D" uid="uid://b6ux86co646wj" path="res://assets/Movement/Left/MC_LeftFacing1.png" id="15_g5v1c"]
+[ext_resource type="Texture2D" uid="uid://nnjhafmfotkw" path="res://assets/Movement/Cry/Cry8.png" id="15_wq58t"]
 [ext_resource type="Texture2D" uid="uid://b7ccyj30uckeh" path="res://assets/Movement/Backward/MC_Backwards1.png" id="16_jdjjq"]
+[ext_resource type="Texture2D" uid="uid://cutdt8i65xkv0" path="res://assets/Movement/Cry/Cry9.png" id="16_txp4l"]
 [ext_resource type="Texture2D" uid="uid://bnfcmnsqohqht" path="res://assets/Movement/Forward/MC_ForwardFacing1.png" id="17_dgtjj"]
+[ext_resource type="Texture2D" uid="uid://caypak1e3rw48" path="res://assets/Movement/Cry/Cry10.png" id="17_pw5vd"]
+[ext_resource type="Texture2D" uid="uid://b4cbbebx5y87q" path="res://assets/Movement/Cry/Cry11.png" id="18_6y2t7"]
 [ext_resource type="Texture2D" uid="uid://b8tltl4c5sin5" path="res://assets/Movement/Left/MC_LeftFacing2.png" id="18_vg8gp"]
 [ext_resource type="Texture2D" uid="uid://d2srxete36s5p" path="res://assets/Movement/Left/MC_LeftFacing3.png" id="19_1vty2"]
 [ext_resource type="Texture2D" uid="uid://crs1460pbvfbw" path="res://assets/Movement/Left/MC_LeftFacing4.png" id="20_aevar"]
@@ -51,6 +59,32 @@ animations = [{
 "loop": true,
 "name": &"back",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ggv0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nngye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_flyd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wq58t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_txp4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pw5vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6y2t7")
+}],
+"loop": true,
+"name": &"crying",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -142,10 +176,17 @@ script = ExtResource("2_n54ww")
 script = ExtResource("26_mf1rg")
 speed = 200
 
+[node name="Sprite2D" type="Sprite2D" parent="Girl"]
+visible = false
+position = Vector2(0, -33)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_cg0by")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Girl"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yjxj7")
-animation = &"forward"
+animation = &"crying"
+frame_progress = 0.889078
 
 [node name="GirlCollidor" type="CollisionShape2D" parent="Girl"]
 position = Vector2(0, 8.5)
