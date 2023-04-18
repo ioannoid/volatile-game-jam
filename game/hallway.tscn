@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://deyky20kpmop1"]
+[gd_scene load_steps=45 format=3 uid="uid://deyky20kpmop1"]
 
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="1_qcwij"]
 [ext_resource type="Script" path="res://eKey.gd" id="2_anhm2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Generic/Chair Front.png" id="10_cjhqc"]
 [ext_resource type="Texture2D" uid="uid://bcqa3mie7ui62" path="res://assets/Locks/unlockedLock.png" id="10_inmtp"]
 [ext_resource type="Texture2D" uid="uid://dxun60kbhav8f" path="res://assets/Living Area/Lamp.png" id="11_73oa2"]
+[ext_resource type="Script" path="res://lockedDoor.gd" id="11_ce78b"]
 [ext_resource type="Texture2D" uid="uid://dgpe5jyd4y6ur" path="res://assets/Fire/Fire1.png" id="12_2r1mt"]
 [ext_resource type="Texture2D" uid="uid://bcn65ig4tcdqg" path="res://assets/SurfaceTopers/flower pot Tricolor.png" id="12_oh78j"]
 [ext_resource type="Texture2D" uid="uid://dbj3t2hvs8k6j" path="res://assets/Fire/Fire2.png" id="13_nl8kv"]
@@ -276,7 +277,7 @@ shape = SubResource("RectangleShape2D_gpvso")
 [node name="LockedDoorIcon" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(441, 59)
-script = ExtResource("2_anhm2")
+script = ExtResource("11_ce78b")
 
 [node name="Sprite" type="Sprite2D" parent="LockedDoorIcon"]
 position = Vector2(-268.653, -539.137)
@@ -342,9 +343,9 @@ sprite_frames = SubResource("SpriteFrames_4fqrv")
 [node name="H2K" type="Area2D" parent="."]
 position = Vector2(281, 32)
 rotation = 0.00791074
-script = ExtResource("4_y46u0")
+script = ExtResource("11_ce78b")
 target_scene = "res://kitchen.tscn"
-player_pos = Vector2(-5, 0)
+player_pos = Vector2(-5, -0.5)
 room_size = Vector2(6, 4)
 
 [node name="LivingDoorCollidor" type="CollisionShape2D" parent="H2K"]

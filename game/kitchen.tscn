@@ -189,7 +189,7 @@ script = ExtResource("3_mfic2")
 
 [node name="Sprite2D" type="Sprite2D" parent="K2Hkey"]
 position = Vector2(-270, -536)
-scale = Vector2(0.0484032, 0.0403226)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_u26bl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="K2Hkey"]
@@ -248,7 +248,7 @@ script = ExtResource("3_mfic2")
 
 [node name="Sprite2D" type="Sprite2D" parent="PhoneKey"]
 position = Vector2(-270, -536)
-scale = Vector2(0.0484032, 0.0403226)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_u26bl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PhoneKey"]
