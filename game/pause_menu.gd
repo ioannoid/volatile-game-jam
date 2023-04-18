@@ -6,7 +6,7 @@ extends ColorRect
 
 func _ready() -> void:
 	resume_button.pressed.connect(unpause)
-	quit_button.pressed.connect(get_tree().quit)
+	quit_button.pressed.connect(quit)
 
 func unpause():
 	animator.play("Unpause")
@@ -15,3 +15,7 @@ func unpause():
 func pause():
 	animator.play("Pause")
 	get_tree().paused = true
+	
+func quit():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://main.tscn")
