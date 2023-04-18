@@ -27,15 +27,21 @@ var credits = [
 	[
 		"A game by 306 Studios"
 	],[
+		"Project Director",
+		" ",
+		"Luke Evanego"
+	],[
+		"Head Programmer",
+		" ",
+		"Ioannis Skoulidas"
+	],[
 		"Programming",
 		" ",
 		"Luke Evanago",
 		" ",
 		"Dimitri Haralampopoulos",
 		" ",
-		"Izabel Miminoshvili",
-		" ",
-		"Ioannis Skoulidas"
+		"Izabel Miminoshvili"
 	],[
 		"Art",
 		" ",
@@ -48,10 +54,6 @@ var credits = [
 		"Sound Effects",
 		" ",
 		"Dimitri Haralampopoulos"
-	],[
-		"Testers",
-		" ",
-		"Izabel Miminoshvili"
 	],[
 		"Tools used",
 		" ",

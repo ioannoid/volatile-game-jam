@@ -152,6 +152,7 @@ y_sort_enabled = true
 position = Vector2(17, -85)
 script = ExtResource("6_7x3c4")
 target_scene = "res://corruptbathroom.tscn"
+player_pos = Vector2(0, -2)
 room_size = Vector2(4, 3)
 
 [node name="PhoneSprite" type="Sprite2D" parent="Phone"]

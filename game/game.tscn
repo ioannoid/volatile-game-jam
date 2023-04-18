@@ -186,8 +186,18 @@ texture = ExtResource("6_cg0by")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yjxj7")
 animation = &"crying"
-frame_progress = 0.889078
+frame_progress = 0.252765
 
 [node name="GirlCollidor" type="CollisionShape2D" parent="Girl"]
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_4hc34")
+
+[node name="ColorRect" type="ColorRect" parent="Girl"]
+visible = false
+z_index = 100
+z_as_relative = false
+offset_left = -367.0
+offset_top = -170.0
+offset_right = 296.0
+offset_bottom = 192.0
+color = Color(0, 0, 0, 1)

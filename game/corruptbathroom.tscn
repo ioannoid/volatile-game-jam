@@ -83,9 +83,8 @@ y_sort_enabled = true
 
 [node name="BR2L" type="Area2D" parent="."]
 script = ExtResource("1_s8npv")
-target_scene = "res://room.tscn"
-player_pos = Vector2(-4, -4)
-room_size = Vector2(7, 5)
+target_scene = "res://credits.tscn"
+room_size = Vector2(100, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="BR2L"]
 position = Vector2(32, 160)

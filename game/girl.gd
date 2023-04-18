@@ -12,10 +12,12 @@ func _ready():
 	position.y = 0
 	
 func _process(delta):
-	if crying and time < 700:
+	if crying and time < 1000:
 		time+=1
-	elif crying and time == 700:
+	if crying and time == 1000:
 		$Sprite2D.visible = true
+	if crying and time == 300:
+		$ColorRect.visible = false
 	if crying:
 		$AnimatedSprite2D.play()
 		$AnimatedSprite2D.animation = "crying"
@@ -69,7 +71,7 @@ func _physics_process(delta):
 			check_collision(motion)
 
 func _unhandled_input(event):
-	if Input.is_action_pressed("Interact") and crying and time == 700:
+	if Input.is_action_pressed("Interact") and crying and time == 1000:
 		crying = false
 		$Sprite2D.visible = false
 	
@@ -83,6 +85,8 @@ func check_collision(motion : Vector2):
 func girlUpdate(val : int):
 	if val == 1:
 		crying = true
+		$ColorRect.visible = true
+		speed = 50
 		
 
 
