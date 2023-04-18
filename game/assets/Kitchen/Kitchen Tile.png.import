@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ri0xaw4bbk37"
-path="res://.godot/imported/Candle2.png-e1bdfbb68da8669367d914924e1c6d72.ctex"
+uid="uid://5uilejdywaxm"
+path="res://.godot/imported/Kitchen Tile.png-7327598001f8de86701aee8fbe6ea7a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Candle/Candle2.png"
-dest_files=["res://.godot/imported/Candle2.png-e1bdfbb68da8669367d914924e1c6d72.ctex"]
+source_file="res://assets/Kitchen/Kitchen Tile.png"
+dest_files=["res://.godot/imported/Kitchen Tile.png-7327598001f8de86701aee8fbe6ea7a2.ctex"]
 
 [params]
 
