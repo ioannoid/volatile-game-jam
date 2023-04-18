@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cggin0u8li4pl"]
+[gd_scene load_steps=60 format=3 uid="uid://cggin0u8li4pl"]
 
 [ext_resource type="Texture2D" uid="uid://n6xfnjn3ye1p" path="res://assets/Generic/Wood TIle.png" id="1_gbpnm"]
 [ext_resource type="Texture2D" uid="uid://drbgcoyn8djuf" path="res://assets/Generic/Wall.png" id="2_ffc5o"]
@@ -39,6 +39,7 @@
 [ext_resource type="Script" path="res://door.gd" id="37_gr5vk"]
 [ext_resource type="PackedScene" uid="uid://h5c3vkv4m2vq" path="res://bathroom.tscn" id="38_k3exb"]
 [ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="39_p6800"]
+[ext_resource type="Texture2D" uid="uid://cuwedkw0ocmth" path="res://assets/Generic/DoorLeft.png" id="40_xi0e0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
 texture = ExtResource("1_gbpnm")
@@ -247,6 +248,8 @@ script = ExtResource("2_n54ww")
 [node name="chair" type="RigidBody2D" parent="Node2D"]
 position = Vector2(289, 159)
 gravity_scale = 0.0
+custom_integrator = true
+can_sleep = false
 lock_rotation = true
 script = ExtResource("3_d8sme")
 
@@ -259,6 +262,8 @@ shape = SubResource("RectangleShape2D_6tkaj")
 [node name="chair2" type="RigidBody2D" parent="Node2D"]
 position = Vector2(351, 159)
 gravity_scale = 0.0
+custom_integrator = true
+can_sleep = false
 lock_rotation = true
 script = ExtResource("3_d8sme")
 
@@ -287,6 +292,7 @@ script = ExtResource("26_mf1rg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Girl"]
 texture_filter = 1
+position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_yjxj7")
 animation = &"walk"
 frame_progress = 0.916812
@@ -312,3 +318,17 @@ shape = SubResource("RectangleShape2D_tpyp6")
 [node name="Left" type="CollisionShape2D" parent="Node2D/Wall"]
 position = Vector2(-430, 0)
 shape = SubResource("RectangleShape2D_r8t5i")
+
+[node name="FrontDoor" type="Area2D" parent="Node2D"]
+y_sort_enabled = true
+script = ExtResource("37_gr5vk")
+target_scene = ExtResource("38_k3exb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/FrontDoor"]
+position = Vector2(-416, -1.00002)
+scale = Vector2(1, 0.984375)
+texture = ExtResource("40_xi0e0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/FrontDoor"]
+position = Vector2(-416, -2)
+shape = SubResource("RectangleShape2D_uedmv")
