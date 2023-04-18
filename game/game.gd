@@ -3,6 +3,7 @@ extends Node2D
 @export var current_scene : PackedScene
 var current_node : Node
 var state = 0
+var hasKey = 0
 
 enum GAME_STATE{
 	startSequence,

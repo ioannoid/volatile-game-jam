@@ -474,7 +474,7 @@ script = ExtResource("23_csls6")
 
 [node name="Sprite2D" type="Sprite2D" parent="KeyHint"]
 position = Vector2(-221, -521)
-scale = Vector2(0.0484032, 0.0403226)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("24_t8f32")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]
@@ -488,7 +488,7 @@ script = ExtResource("23_csls6")
 
 [node name="e" type="Sprite2D" parent="KeyHint2"]
 position = Vector2(-152, -528)
-scale = Vector2(0.0484032, 0.0403226)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("24_t8f32")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint2"]

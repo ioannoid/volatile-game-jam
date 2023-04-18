@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://c3uq1gd03v1q7"]
+[gd_scene load_steps=23 format=3 uid="uid://c3uq1gd03v1q7"]
 
 [ext_resource type="Script" path="res://door.gd" id="1_s6qof"]
+[ext_resource type="Script" path="res://doorKey.gd" id="6_3p4ka"]
 [ext_resource type="Texture2D" uid="uid://bi6gg5e1x6gay" path="res://assets/Locks/key.png" id="6_j3wna"]
 [ext_resource type="Texture2D" uid="uid://bg75d78fej2sr" path="res://assets/Living Area/Table.png" id="7_wx2af"]
 [ext_resource type="Texture2D" uid="uid://cp0wvp8qfdg5l" path="res://assets/Bedroom/Bookshelf.png" id="8_hpm15"]
@@ -147,6 +148,7 @@ position = Vector2(-1, 216)
 shape = SubResource("RectangleShape2D_wd481")
 
 [node name="Key2" type="Area2D" parent="."]
+script = ExtResource("6_3p4ka")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key2"]
 position = Vector2(-282, -8)

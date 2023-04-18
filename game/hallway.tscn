@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://deyky20kpmop1"]
+[gd_scene load_steps=44 format=3 uid="uid://deyky20kpmop1"]
 
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="1_qcwij"]
 [ext_resource type="Script" path="res://eKey.gd" id="2_anhm2"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cuwedkw0ocmth" path="res://assets/Generic/DoorLeft.png" id="5_o7a5d"]
 [ext_resource type="Texture2D" uid="uid://df1n1welywbd3" path="res://assets/Locks/redLock.png" id="6_7uy5k"]
 [ext_resource type="Texture2D" uid="uid://f4rmc1m0fyyr" path="res://assets/Generic/DoorRight.png" id="6_cdniw"]
+[ext_resource type="Script" path="res://lock.gd" id="8_jx4sv"]
 [ext_resource type="Texture2D" uid="uid://cap22dq0ts4e6" path="res://assets/Locks/lockedLock.png" id="8_lonc0"]
 [ext_resource type="Texture2D" uid="uid://cuplik3v020y8" path="res://assets/Generic/Chair Left.png" id="9_nj2gh"]
 [ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Generic/Chair Front.png" id="10_cjhqc"]
+[ext_resource type="Texture2D" uid="uid://bcqa3mie7ui62" path="res://assets/Locks/unlockedLock.png" id="10_inmtp"]
 [ext_resource type="Texture2D" uid="uid://dxun60kbhav8f" path="res://assets/Living Area/Lamp.png" id="11_73oa2"]
 [ext_resource type="Texture2D" uid="uid://dgpe5jyd4y6ur" path="res://assets/Fire/Fire1.png" id="12_2r1mt"]
 [ext_resource type="Texture2D" uid="uid://bcn65ig4tcdqg" path="res://assets/SurfaceTopers/flower pot Tricolor.png" id="12_oh78j"]
@@ -93,6 +95,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_inmtp")
+}],
+"loop": true,
+"name": &"unlocked",
 "speed": 5.0
 }]
 
@@ -220,7 +230,7 @@ script = ExtResource("2_anhm2")
 
 [node name="Sprite2D" type="Sprite2D" parent="KeyHint"]
 position = Vector2(-270, -536)
-scale = Vector2(0.0484032, 0.0403226)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_e7bcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]
@@ -291,7 +301,7 @@ script = ExtResource("2_anhm2")
 
 [node name="Sprite2D" type="Sprite2D" parent="H2LRKey"]
 position = Vector2(-270, -536)
-scale = Vector2(0.0484032, 0.0403226)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_e7bcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="H2LRKey"]
@@ -318,7 +328,7 @@ texture = ExtResource("5_o7a5d")
 [node name="H2KKey" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(443, 822)
-script = ExtResource("2_anhm2")
+script = ExtResource("8_jx4sv")
 
 [node name="KitchenLockCollider" type="CollisionShape2D" parent="H2KKey"]
 position = Vector2(-279, -535)
@@ -328,7 +338,6 @@ shape = SubResource("RectangleShape2D_e3kjb")
 position = Vector2(-278, -532)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_4fqrv")
-frame_progress = 0.205771
 
 [node name="H2K" type="Area2D" parent="."]
 position = Vector2(281, 32)
