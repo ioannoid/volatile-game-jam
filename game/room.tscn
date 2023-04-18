@@ -50,8 +50,10 @@ y_sort_enabled = true
 position = Vector2(289, 159)
 gravity_scale = 0.0
 custom_integrator = true
+max_contacts_reported = 1
 can_sleep = false
 lock_rotation = true
+linear_damp = 5.0
 script = ExtResource("1_w814k")
 
 [node name="ChairSprite" type="Sprite2D" parent="chair"]
@@ -62,10 +64,13 @@ shape = SubResource("RectangleShape2D_b6ktm")
 
 [node name="chair2" type="RigidBody2D" parent="."]
 position = Vector2(351, 159)
+mass = 1000.0
 gravity_scale = 0.0
 custom_integrator = true
+max_contacts_reported = 1
 can_sleep = false
 lock_rotation = true
+linear_damp = 5.0
 script = ExtResource("1_w814k")
 
 [node name="ChairSprite" type="Sprite2D" parent="chair2"]

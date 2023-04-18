@@ -65,6 +65,6 @@ func _physics_process(delta):
 func check_collision(motion : Vector2):
 	if abs(motion.x) + abs(motion.y) > 1:
 		return
-	var object := get_slide_collision(0).get_collider() as Chair
-	if object: 
+	var object := get_slide_collision(0).get_collider()
+	if object is Chair:
 		object.push(motion, speed)
