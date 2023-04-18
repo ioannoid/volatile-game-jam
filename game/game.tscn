@@ -129,7 +129,7 @@ size = Vector2(12, 25)
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_du8si")
-current_scene = ExtResource("2_wwusr")
+current_scene = ExtResource("2_fxu0c")
 
 [node name="Camera" type="Camera2D" parent="."]
 z_index = 10
