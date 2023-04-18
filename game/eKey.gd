@@ -10,7 +10,6 @@ func _process(delta):
 
 func _on_key_hint_body_entered(body):
 	show()
-	print("why")
 
 func _on_body_exited(body):
 	hide()

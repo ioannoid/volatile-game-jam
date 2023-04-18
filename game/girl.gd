@@ -5,7 +5,7 @@ var prev_velocity := Vector2(0,0)
 var stopped := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position.x = -354
+	position.x = 0
 	position.y = 0
 	
 func _process(delta):
