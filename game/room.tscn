@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dkjtqok28kyh0"]
+[gd_scene load_steps=45 format=3 uid="uid://dkjtqok28kyh0"]
 
 [ext_resource type="Texture2D" uid="uid://dyn6q2har6sf0" path="res://assets/Bedroom/Bed.png" id="1_hxduw"]
 [ext_resource type="Script" path="res://chair.gd" id="1_w814k"]
@@ -21,7 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://ds3fku0dum00e" path="res://assets/Fire/Fire7.png" id="9_drg3t"]
 [ext_resource type="Script" path="res://startani.gd" id="17_frfdv"]
 [ext_resource type="Script" path="res://door.gd" id="21_t5pgb"]
+[ext_resource type="Script" path="res://eKey.gd" id="23_5rm8f"]
 [ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="23_x36iy"]
+[ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="24_uksdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekhhu"]
 size = Vector2(65, 52)
@@ -136,7 +138,7 @@ size = Vector2(894.5, 81)
 size = Vector2(90, 639)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wcw"]
-size = Vector2(898, 103)
+size = Vector2(898, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g3el"]
 size = Vector2(90, 638.5)
@@ -189,7 +191,10 @@ terrain_set_0/terrain_0/color = Color(0.501961, 0, 0.25098, 1)
 sources/10 = SubResource("TileSetAtlasSource_xks0p")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aaokk"]
-size = Vector2(63, 87.5)
+size = Vector2(63, 82.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8v1"]
+size = Vector2(78, 95)
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -416,7 +421,7 @@ position = Vector2(430, -0.5)
 shape = SubResource("RectangleShape2D_p2g0j")
 
 [node name="Bottom" type="CollisionShape2D" parent="Wall"]
-position = Vector2(0, 297.5)
+position = Vector2(0, 298)
 shape = SubResource("RectangleShape2D_c4wcw")
 
 [node name="Left" type="CollisionShape2D" parent="Wall"]
@@ -434,7 +439,8 @@ layer_0/tile_data = PackedInt32Array(-262151, 131082, 2, -262150, 10, 3, -262149
 position = Vector2(-219, -571)
 rotation = 0.00791074
 script = ExtResource("21_t5pgb")
-target_scene = "\"res://bathroom.tscn\""
+target_scene = "res://bathroom.tscn"
+player_pos = Vector2(0, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="R2BM"]
 position = Vector2(0, 282)
@@ -442,5 +448,21 @@ scale = Vector2(1, 0.984375)
 texture = ExtResource("23_x36iy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="R2BM"]
-position = Vector2(-1.62668, 300.022)
+position = Vector2(0, 270.25)
 shape = SubResource("RectangleShape2D_aaokk")
+
+[node name="KeyHint" type="Area2D" parent="."]
+position = Vector2(32, 287)
+script = ExtResource("23_5rm8f")
+
+[node name="Sprite2D" type="Sprite2D" parent="KeyHint"]
+position = Vector2(1, -61)
+scale = Vector2(0.0484032, 0.0403226)
+texture = ExtResource("24_uksdb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]
+position = Vector2(0, -25.5)
+shape = SubResource("RectangleShape2D_gt8v1")
+
+[connection signal="body_entered" from="KeyHint" to="KeyHint" method="_on_key_hint_body_entered"]
+[connection signal="body_exited" from="KeyHint" to="KeyHint" method="_on_body_exited"]

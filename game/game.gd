@@ -19,7 +19,6 @@ func _ready():
 		current_node = current_scene.instantiate()
 		add_child(current_node)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
@@ -46,4 +45,3 @@ func sequenceUpdater(seq : int):
 		GAME_STATE.endingSequence:
 			state = GAME_STATE.endingSequence
 			print("changing to ending sequence")
-

@@ -3,16 +3,10 @@ extends CharacterBody2D
 var screen_size
 var prev_velocity := Vector2(0,0)
 var stopped := false
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position.x = 0
 	position.y = 0
-
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false
 	
 func _process(delta):
 	if velocity.length() > 0:

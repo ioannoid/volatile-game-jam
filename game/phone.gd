@@ -10,7 +10,7 @@ func _input(event):
 	if event.is_action_pressed("Interact"):
 		if get_overlapping_bodies().size() > 0:
 			sequenceUpdate.emit(1)
-		
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
