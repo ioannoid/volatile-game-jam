@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dkjtqok28kyh0"]
+[gd_scene load_steps=48 format=3 uid="uid://dkjtqok28kyh0"]
 
 [ext_resource type="Texture2D" uid="uid://dyn6q2har6sf0" path="res://assets/Bedroom/Bed.png" id="1_hxduw"]
 [ext_resource type="Script" path="res://chair.gd" id="1_w814k"]
@@ -21,9 +21,13 @@
 [ext_resource type="Texture2D" uid="uid://ds3fku0dum00e" path="res://assets/Fire/Fire7.png" id="9_drg3t"]
 [ext_resource type="Script" path="res://startani.gd" id="17_frfdv"]
 [ext_resource type="Script" path="res://door.gd" id="21_t5pgb"]
-[ext_resource type="Script" path="res://eKey.gd" id="23_5rm8f"]
+[ext_resource type="Script" path="res://eKey.gd" id="23_csls6"]
 [ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="23_x36iy"]
-[ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="24_uksdb"]
+[ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="24_t8f32"]
+[ext_resource type="Texture2D" uid="uid://f4rmc1m0fyyr" path="res://assets/Generic/DoorRight.png" id="25_1fp0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaokk"]
+size = Vector2(63, 29.766)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekhhu"]
 size = Vector2(65, 52)
@@ -138,7 +142,7 @@ size = Vector2(894.5, 81)
 size = Vector2(90, 639)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4wcw"]
-size = Vector2(898, 102)
+size = Vector2(898, 103)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g3el"]
 size = Vector2(90, 638.5)
@@ -190,14 +194,34 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 0, 0.25098, 1)
 sources/10 = SubResource("TileSetAtlasSource_xks0p")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaokk"]
-size = Vector2(63, 82.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3kjb"]
+size = Vector2(64, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8v1"]
-size = Vector2(78, 95)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cg5x2"]
+size = Vector2(20, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ku37f"]
+size = Vector2(30, 60)
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
+
+[node name="R2BM" type="Area2D" parent="."]
+position = Vector2(-219, -571)
+rotation = 0.00791074
+script = ExtResource("21_t5pgb")
+target_scene = "res://bathroom.tscn"
+player_pos = Vector2(0, 1)
+room_size = Vector2(4, 3)
+
+[node name="DoorSprite" type="Sprite2D" parent="R2BM"]
+position = Vector2(0, 282)
+texture = ExtResource("23_x36iy")
+
+[node name="BathDoorCollidor" type="CollisionShape2D" parent="R2BM"]
+position = Vector2(-1.40518, 328.021)
+shape = SubResource("RectangleShape2D_aaokk")
+debug_color = Color(0.866667, 0, 0.858824, 0.419608)
 
 [node name="Bed" type="StaticBody2D" parent="."]
 
@@ -411,6 +435,7 @@ texture = ExtResource("2_45asl")
 shape = SubResource("RectangleShape2D_b6ktm")
 
 [node name="Wall" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="Top" type="CollisionShape2D" parent="Wall"]
 position = Vector2(-0.25, -305.5)
@@ -421,7 +446,7 @@ position = Vector2(430, -0.5)
 shape = SubResource("RectangleShape2D_p2g0j")
 
 [node name="Bottom" type="CollisionShape2D" parent="Wall"]
-position = Vector2(0, 298)
+position = Vector2(0, 297.5)
 shape = SubResource("RectangleShape2D_c4wcw")
 
 [node name="Left" type="CollisionShape2D" parent="Wall"]
@@ -435,34 +460,53 @@ tile_set = SubResource("TileSet_2lou2")
 format = 2
 layer_0/tile_data = PackedInt32Array(-262151, 131082, 2, -262150, 10, 3, -262149, 10, 3, -262148, 10, 3, -262147, 10, 3, -262146, 10, 3, -262145, 10, 3, -327680, 10, 3, -327679, 10, 3, -327678, 10, 3, -327677, 10, 3, -327676, 10, 3, -327675, 10, 3, -262138, 65546, 3, -262139, 131082, 3, -262140, 131082, 3, -262141, 131082, 3, -262142, 131082, 3, -262143, 131082, 3, -262144, 131082, 3, -196609, 131082, 3, -196610, 131082, 3, -196611, 131082, 3, -196612, 131082, 3, -196613, 131082, 3, -196614, 131082, 3, -196615, 262154, 2, -131079, 262154, 2, -131078, 131082, 3, -131077, 131082, 3, -131076, 131082, 3, -131075, 131082, 3, -131074, 131082, 3, -131073, 131082, 3, -196608, 131082, 3, -196607, 131082, 3, -196606, 131082, 3, -196605, 131082, 3, -196604, 131082, 3, -196603, 131082, 3, -196602, 65546, 3, -131066, 65546, 3, -65530, 65546, 3, -65531, 131082, 3, -131067, 131082, 3, -131068, 131082, 3, -131069, 131082, 3, -131070, 131082, 3, -131071, 131082, 3, -131072, 131082, 3, -65537, 131082, 3, -65538, 131082, 3, -65539, 131082, 3, -65540, 131082, 3, -65541, 131082, 3, -65542, 131082, 3, -65543, 262154, 2, -7, 262154, 2, -6, 131082, 3, -5, 131082, 3, -3, 131082, 3, -2, 131082, 3, -1, 131082, 3, -65536, 131082, 3, -65535, 131082, 3, -65534, 131082, 3, -65533, 131082, 3, -65532, 131082, 3, 6, 65546, 3, 5, 131082, 3, 4, 131082, 3, 3, 131082, 3, 2, 131082, 3, 1, 131082, 3, 0, 131082, 3, 65535, 131082, 3, 65534, 131082, 3, 65530, 131082, 3, 65531, 131082, 3, 65532, 131082, 3, 65533, 131082, 3, 65529, 262154, 2, 131065, 262154, 2, 131066, 131082, 3, 131067, 131082, 3, 131068, 131082, 3, 131069, 131082, 3, 131070, 131082, 3, 131071, 131082, 3, 65536, 131082, 3, 65537, 131082, 3, 65538, 131082, 3, 65539, 131082, 3, 65540, 131082, 3, 65541, 131082, 3, 65542, 65546, 3, 131078, 65546, 3, 131077, 131082, 3, 131076, 131082, 3, 131075, 131082, 3, 131074, 131082, 3, 131073, 131082, 3, 131072, 131082, 3, 196607, 131082, 3, 196606, 131082, 3, 196605, 196618, 3, 196604, 10, 0, 196603, 10, 7, 196602, 131082, 3, 196601, 262154, 2, 262137, 262154, 2, 262138, 131082, 3, 262139, 131082, 3, 262140, 131082, 3, 262141, 131082, 3, 262142, 131082, 3, 262143, 131082, 3, 196608, 131082, 3, 196609, 131082, 3, 196610, 131082, 3, 196611, 131082, 3, 196612, 131082, 3, 196613, 131082, 3, 196614, 65546, 3, 262150, 65546, 2, 262149, 262154, 1, 262148, 262154, 1, 262147, 262154, 1, 262146, 262154, 1, 262145, 262154, 1, 262144, 262154, 1, 327679, 262154, 1, 327678, 262154, 1, 327677, 262154, 1, 327676, 262154, 1, 327675, 262154, 1, 327674, 262154, 1, 327673, 10, 2, -4, 131082, 3, -327674, 196618, 2)
 
-[node name="R2BM" type="Area2D" parent="."]
-position = Vector2(-219, -571)
-rotation = 0.00791074
-script = ExtResource("21_t5pgb")
-target_scene = "res://bathroom.tscn"
-player_pos = Vector2(0, 3)
-
-[node name="Sprite2D" type="Sprite2D" parent="R2BM"]
-position = Vector2(0, 282)
-scale = Vector2(1, 0.984375)
-texture = ExtResource("23_x36iy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="R2BM"]
-position = Vector2(0, 270.25)
-shape = SubResource("RectangleShape2D_aaokk")
-
 [node name="KeyHint" type="Area2D" parent="."]
-position = Vector2(32, 287)
-script = ExtResource("23_5rm8f")
+z_index = 1
+position = Vector2(1, 279)
+script = ExtResource("23_csls6")
 
 [node name="Sprite2D" type="Sprite2D" parent="KeyHint"]
-position = Vector2(1, -61)
+position = Vector2(-221, -521)
 scale = Vector2(0.0484032, 0.0403226)
-texture = ExtResource("24_uksdb")
+texture = ExtResource("24_t8f32")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]
-position = Vector2(0, -25.5)
-shape = SubResource("RectangleShape2D_gt8v1")
+position = Vector2(-224, -523.5)
+shape = SubResource("RectangleShape2D_e3kjb")
+
+[node name="KeyHint2" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(517, 306)
+script = ExtResource("23_csls6")
+
+[node name="e" type="Sprite2D" parent="KeyHint2"]
+position = Vector2(-152, -528)
+scale = Vector2(0.0484032, 0.0403226)
+texture = ExtResource("24_t8f32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint2"]
+position = Vector2(-152, -531)
+shape = SubResource("RectangleShape2D_cg5x2")
+
+[node name="R2H" type="Area2D" parent="."]
+position = Vector2(345, -505)
+rotation = 0.00791074
+script = ExtResource("21_t5pgb")
+target_scene = "res://hallway.tscn"
+player_pos = Vector2(-3, -8)
+room_size = Vector2(4, 9)
+
+[node name="LivingDoorCollidor" type="CollisionShape2D" parent="R2H"]
+position = Vector2(22.2144, 279.833)
+shape = SubResource("RectangleShape2D_ku37f")
+debug_color = Color(0.933333, 0, 0.643137, 0.419608)
+
+[node name="DoorSprite" type="Sprite2D" parent="R2H"]
+position = Vector2(74.2623, 281.115)
+scale = Vector2(1.03019, 1.00905)
+texture = ExtResource("25_1fp0s")
 
 [connection signal="body_entered" from="KeyHint" to="KeyHint" method="_on_key_hint_body_entered"]
 [connection signal="body_exited" from="KeyHint" to="KeyHint" method="_on_body_exited"]
+[connection signal="body_entered" from="KeyHint2" to="KeyHint2" method="_on_key_hint_body_entered"]
+[connection signal="body_exited" from="KeyHint2" to="KeyHint2" method="_on_body_exited"]

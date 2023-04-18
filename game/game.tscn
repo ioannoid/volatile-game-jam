@@ -129,9 +129,16 @@ size = Vector2(12, 25)
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_du8si")
-current_scene = ExtResource("2_at8kr")
+current_scene = ExtResource("2_fxu0c")
 
-[node name="Girl" type="CharacterBody2D" parent="." groups=["Persist"]]
+[node name="Camera" type="Camera2D" parent="."]
+z_index = 10
+zoom = Vector2(2.5, 2.5)
+script = ExtResource("2_n54ww")
+
+[node name="PauseMenu" parent="Camera" instance=ExtResource("3_td0kf")]
+
+[node name="Girl" type="CharacterBody2D" parent="."]
 script = ExtResource("26_mf1rg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Girl"]
@@ -142,10 +149,3 @@ animation = &"forward"
 [node name="GirlCollidor" type="CollisionShape2D" parent="Girl"]
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_4hc34")
-
-[node name="Camera" type="Camera2D" parent="."]
-z_index = 10
-zoom = Vector2(2.5, 2.5)
-script = ExtResource("2_n54ww")
-
-[node name="PauseMenu" parent="Camera" instance=ExtResource("3_td0kf")]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://h5c3vkv4m2vq"]
+[gd_scene load_steps=23 format=3 uid="uid://h5c3vkv4m2vq"]
 
 [ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="2_ydbnn"]
 [ext_resource type="Script" path="res://phone.gd" id="4_yvfxy"]
 [ext_resource type="Texture2D" uid="uid://c70wt50mg7kb1" path="res://assets/Generic/Phone.png" id="5_ia5im"]
-[ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="8_die3c"]
+[ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="7_aj3ho"]
 [ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="9_j3lyb"]
 [ext_resource type="Script" path="res://eKey.gd" id="9_ttjqc"]
 [ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="30_gavoh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrs3"]
-size = Vector2(63, 61)
+size = Vector2(63, 23.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q7i6h"]
 
@@ -36,19 +36,56 @@ animations = [{
 size = Vector2(60, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj4ka"]
-size = Vector2(895, 57)
+size = Vector2(406.75, 57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjs51"]
-size = Vector2(71, 637.5)
+size = Vector2(71, 260.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgh3c"]
-size = Vector2(898, 63)
+size = Vector2(403, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42vbu"]
-size = Vector2(82, 641)
+size = Vector2(82, 267)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mal1d"]
+texture = ExtResource("7_aj3ho")
 texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+0:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xobqv"]
 texture = ExtResource("2_ydbnn")
@@ -64,7 +101,7 @@ sources/0 = SubResource("TileSetAtlasSource_mal1d")
 sources/2 = SubResource("TileSetAtlasSource_xobqv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5nxp"]
-size = Vector2(78, 60)
+size = Vector2(62, 23)
 
 [node name="Bathroom" type="Node2D"]
 y_sort_enabled = true
@@ -72,32 +109,30 @@ y_sort_enabled = true
 [node name="BR2L" type="Area2D" parent="."]
 script = ExtResource("28_wjm66")
 target_scene = "res://room.tscn"
-player_pos = Vector2(0, 3)
+player_pos = Vector2(-4, -4)
+room_size = Vector2(7, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="BR2L"]
-position = Vector2(0, 282)
-scale = Vector2(1, 0.984375)
+position = Vector2(32, 160)
 texture = ExtResource("30_gavoh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BR2L"]
-position = Vector2(0, 281)
+position = Vector2(32, 115)
 shape = SubResource("RectangleShape2D_cbrs3")
 
 [node name="Phone" type="Area2D" parent="."]
-position = Vector2(-79, -312)
+position = Vector2(20, -81)
 script = ExtResource("4_yvfxy")
 
 [node name="PhoneSprite" type="Sprite2D" parent="Phone"]
-position = Vector2(0, 282)
 scale = Vector2(1, 0.984375)
 texture = ExtResource("5_ia5im")
 
 [node name="PhoneCollision" type="CollisionShape2D" parent="Phone"]
-position = Vector2(0, 285)
 shape = SubResource("CircleShape2D_q7i6h")
 
 [node name="Sink" type="StaticBody2D" parent="."]
-position = Vector2(-250, -47)
+position = Vector2(-56, -36)
 script = ExtResource("26_hi4d8")
 
 [node name="Sink" type="AnimatedSprite2D" parent="Sink"]
@@ -110,21 +145,21 @@ shape = SubResource("RectangleShape2D_1x658")
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="Top" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-3, -343)
+position = Vector2(0, -167)
 shape = SubResource("RectangleShape2D_tj4ka")
 one_way_collision_margin = 3.5
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Right" type="CollisionShape2D" parent="Wall"]
-position = Vector2(479, -3)
+position = Vector2(230, -3.8125)
 shape = SubResource("RectangleShape2D_xjs51")
 
 [node name="Bottom" type="CollisionShape2D" parent="Wall"]
-position = Vector2(0, 345)
+position = Vector2(0.5, 168)
 shape = SubResource("RectangleShape2D_tgh3c")
 
 [node name="Left" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-479, 0.5)
+position = Vector2(-235, -0.5)
 shape = SubResource("RectangleShape2D_42vbu")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -132,19 +167,19 @@ z_index = -1
 texture_filter = 1
 tile_set = SubResource("TileSet_6w8nt")
 format = 2
-layer_0/tile_data = PackedInt32Array(-262151, 2, 0, -262150, 2, 0, -262149, 2, 0, -262148, 2, 0, -262147, 2, 0, -262146, 2, 0, -262145, 2, 0, -327680, 2, 0, -327679, 2, 0, -327678, 2, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 2, 0, -262138, 2, 0, -262139, 2, 0, -262140, 2, 0, -262141, 2, 0, -262142, 2, 0, -262143, 2, 0, -262144, 2, 0, -196609, 2, 0, -196610, 2, 0, -196611, 2, 0, -196612, 2, 0, -196613, 2, 0, -196614, 2, 0, -196615, 2, 0, -131079, 2, 0, -131078, 2, 0, -131077, 2, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -131066, 2, 0, -65530, 2, 0, -65531, 2, 0, -131067, 2, 0, -131068, 2, 0, -131069, 2, 0, -131070, 2, 0, -131071, 2, 0, -131072, 2, 0, -65537, 2, 0, -65538, 2, 0, -65539, 2, 0, -65540, 2, 0, -65541, 2, 0, -65542, 2, 0, -65543, 2, 0, -7, 2, 0, -6, 2, 0, -5, 2, 0, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, 6, 2, 0, 5, 2, 0, 4, 2, 0, 3, 2, 0, 2, 2, 0, 1, 2, 0, 0, 2, 0, 65535, 2, 0, 65534, 2, 0, 65530, 2, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65529, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 131078, 2, 0, 131077, 2, 0, 131076, 2, 0, 131075, 2, 0, 131074, 2, 0, 131073, 2, 0, 131072, 2, 0, 196607, 2, 0, 196606, 2, 0, 196605, 2, 0, 196604, 2, 0, 196603, 2, 0, 196602, 2, 0, 196601, 2, 0, 262137, 2, 0, 262138, 2, 0, 262139, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 262150, 2, 0, 262149, 2, 0, 262148, 2, 0, 262147, 2, 0, 262146, 2, 0, 262145, 2, 0, 262144, 2, 0, 327679, 2, 0, 327678, 2, 0, 327677, 2, 0, 327676, 2, 0, 327675, 2, 0, 327674, 2, 0, 327673, 2, 0)
+layer_0/tile_data = PackedInt32Array(-3, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 65536, 1, 3, 65536, 1, 2, 2, 0, 1, 2, 0, 0, 2, 0, 65535, 2, 0, 65534, 2, 0, 65533, 0, 0, 131069, 0, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 65536, 1, 131075, 196608, 0, 131074, 65536, 0, 131073, 65536, 0, 131072, 65536, 0, 196607, 65536, 0, 196606, 65536, 0, 196605, 65536, 0, -131070, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -131074, 131072, 1, -131073, 131072, 1, -196608, 131072, 1, -196607, 131072, 1, -196606, 131072, 1, -65539, 0, 0, -131075, 131072, 1, -131069, 65536, 1, -196605, 262144, 0, -131076, 0, 1, -65540, 196608, 1, -4, 196608, 1, 65532, 196608, 1, 131068, 196608, 1, 196604, 131072, 0)
 
 [node name="KeyHint" type="Area2D" parent="."]
 position = Vector2(1, 279)
 script = ExtResource("9_ttjqc")
 
 [node name="Sprite2D" type="Sprite2D" parent="KeyHint"]
-position = Vector2(1, -61)
+position = Vector2(31, -193)
 scale = Vector2(0.0484032, 0.0403226)
 texture = ExtResource("9_j3lyb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]
-position = Vector2(0, -8)
+position = Vector2(31, -164)
 shape = SubResource("RectangleShape2D_p5nxp")
 
 [connection signal="body_entered" from="KeyHint" to="KeyHint" method="_on_key_hint_body_entered"]
