@@ -3,23 +3,10 @@ extends CharacterBody2D
 var screen_size
 var prev_velocity := Vector2(0,0)
 var stopped := false
-<<<<<<< Updated upstream
-=======
-var save_nodes := get_tree().get_nodes_in_group("Persist")
-
-func fullsave():
-	for i in save_nodes:
-		save()
->>>>>>> Stashed changes
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position.x = 0
 	position.y = 0
-
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false
 	
 func _process(delta):
 	if velocity.length() > 0:
@@ -76,15 +63,6 @@ func check_collision(motion : Vector2):
 	var object := get_slide_collision(0).get_collider() as Chair
 	if object: 
 		object.push(motion, speed)
-<<<<<<< Updated upstream
-=======
-
-func save():
-	var savedict = {
-		"pos_x" : position.x,
-		"pos_y" : position.y 
-	}
-	return savedict
 
 
 
@@ -100,6 +78,3 @@ func save():
 
 
 
-
-
->>>>>>> Stashed changes

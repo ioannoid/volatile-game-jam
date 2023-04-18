@@ -10,6 +10,7 @@ enum GAME_STATE{
 	aloneSequence,
 	endingSequence
 }
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if !current_scene:
@@ -17,16 +18,15 @@ func _ready():
 	else:
 		current_node = current_scene.instantiate()
 		add_child(current_node)
-		save_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
-func switch_room(scene : PackedScene):
+func switch_room(scene : String):
 	print("Switching room..")
 	current_node.queue_free()
-	current_scene = scene 
+	current_scene = load(scene) 
 	current_node = current_scene.instantiate()
 	add_child(current_node)
 	return OK
