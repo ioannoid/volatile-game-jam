@@ -23,9 +23,10 @@ func _ready():
 func _process(_delta):
 	pass
 
-func switch_room(path : String):
+func switch_room(scene : String):
+	print("Switching room..")
 	current_node.queue_free()
-	current_scene = load(path)
+	current_scene = load(scene) 
 	current_node = current_scene.instantiate()
 	add_child(current_node)
 	return OK

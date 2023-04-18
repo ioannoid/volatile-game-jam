@@ -69,6 +69,7 @@ var credits = [
 ]
 
 func _process(delta):
+	@warning_ignore("shadowed_variable")
 	var scroll_speed = base_speed * delta
 	
 	if section_next:

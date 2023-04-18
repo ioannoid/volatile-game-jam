@@ -64,9 +64,17 @@ func check_collision(motion : Vector2):
 	if object: 
 		object.push(motion, speed)
 
-func save():
-	var savedict = {
-		"pos_x" : position.x,
-		"pos_y" : position.y 
-	}
-	return savedict
+
+
+
+
+
+
+
+
+
+
+
+
+
+

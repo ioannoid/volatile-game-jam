@@ -3,7 +3,7 @@ extends Node
 var main_menu
 var game
 var credits
-
+var pause
 var i = 0
 
 var started = false
@@ -14,6 +14,7 @@ func _ready():
 		main_menu = load("res://main_menu.tscn")
 		game = preload("res://game.tscn")
 		credits = load("res://credits.tscn")
+		pause = preload("res://main_menu.tscn")
 		started = true
 	var instance = main_menu.instantiate()
 	add_child(instance)
