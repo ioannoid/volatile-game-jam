@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3vbjf0k8x0t0"]
+
+[ext_resource type="Script" path="res://settings_menu.gd" id="1_0e7bq"]
+
+[node name="settings_menu" type="Popup"]
+position = Vector2i(180, 65)
+size = Vector2i(920, 590)
+visible = true
+borderless = false
+script = ExtResource("1_0e7bq")
+
+[node name="background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.0823529)
+
+[node name="settings_tab" type="TabContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Video" type="TabBar" parent="settings_tab"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="settings_tab/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="video_settings" type="GridContainer" parent="settings_tab/Video/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="display_mode" type="Label" parent="settings_tab/Video/MarginContainer/video_settings"]
+layout_mode = 2
+text = "Display"
+uppercase = true
+
+[node name="display" type="OptionButton" parent="settings_tab/Video/MarginContainer/video_settings"]
+layout_direction = 3
+layout_mode = 2
+theme_override_constants/arrow_margin = 1
+theme_override_font_sizes/font_size = 12
+item_count = 2
+selected = 1
+popup/item_0/text = "Window"
+popup/item_0/id = 1
+popup/item_1/text = "Full Screen"
+popup/item_1/id = 2
+
+[node name="Vsynclabel" type="Label" parent="settings_tab/Video/MarginContainer/video_settings"]
+layout_mode = 2
+text = "VSync "
+
+[node name="CheckBox" type="CheckBox" parent="settings_tab/Video/MarginContainer/video_settings"]
+layout_mode = 2
+text = "OFF
+"
