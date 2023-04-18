@@ -172,7 +172,7 @@ script = ExtResource("9_ttjqc")
 
 [node name="Sprite2D" type="Sprite2D" parent="KeyHint"]
 position = Vector2(31, -193)
-scale = Vector2(0.0484032, 0.0403226)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_j3lyb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]
