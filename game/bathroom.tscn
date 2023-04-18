@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://h5c3vkv4m2vq"]
+[gd_scene load_steps=20 format=3 uid="uid://h5c3vkv4m2vq"]
 
-[ext_resource type="PackedScene" uid="uid://cr4yomj8j45o6" path="res://room.tscn" id="2_v7sn0"]
+[ext_resource type="PackedScene" path="res://room.tscn" id="2_v7sn0"]
 [ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="2_ydbnn"]
+[ext_resource type="Script" path="res://phone.gd" id="4_yvfxy"]
+[ext_resource type="Texture2D" uid="uid://c70wt50mg7kb1" path="res://assets/Generic/Phone.png" id="5_ia5im"]
 [ext_resource type="Script" path="res://sink.gd" id="26_hi4d8"]
 [ext_resource type="Texture2D" uid="uid://bsybetnn3jjne" path="res://assets/Bathroom/Sink/Sink Empty.png" id="26_sdxqh"]
 [ext_resource type="Script" path="res://door.gd" id="28_wjm66"]
@@ -9,6 +11,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbrs3"]
 size = Vector2(63, 61)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q7i6h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvovs"]
 animations = [{
@@ -72,6 +76,19 @@ texture = ExtResource("30_gavoh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BR2L"]
 position = Vector2(0, 281)
 shape = SubResource("RectangleShape2D_cbrs3")
+
+[node name="Phone" type="Area2D" parent="."]
+position = Vector2(-79, -312)
+script = ExtResource("4_yvfxy")
+
+[node name="PhoneSprite" type="Sprite2D" parent="Phone"]
+position = Vector2(0, 282)
+scale = Vector2(1, 0.984375)
+texture = ExtResource("5_ia5im")
+
+[node name="PhoneCollision" type="CollisionShape2D" parent="Phone"]
+position = Vector2(0, 285)
+shape = SubResource("CircleShape2D_q7i6h")
 
 [node name="Sink" type="StaticBody2D" parent="."]
 position = Vector2(-250, -47)
