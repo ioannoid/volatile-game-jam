@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://cl8w5fyypk7es"]
+[gd_scene load_steps=26 format=3 uid="uid://cl8w5fyypk7es"]
 
+[ext_resource type="Texture2D" uid="uid://bbkukuoj36h81" path="res://assets/Generic/Table.png" id="1_j0j6c"]
 [ext_resource type="Script" path="res://door.gd" id="1_yuo0u"]
 [ext_resource type="Texture2D" uid="uid://cuwedkw0ocmth" path="res://assets/Generic/DoorLeft.png" id="2_k5im0"]
 [ext_resource type="Script" path="res://eKey.gd" id="3_mfic2"]
@@ -7,8 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="5_kt872"]
 [ext_resource type="Script" path="res://phone.gd" id="6_7x3c4"]
 [ext_resource type="Texture2D" uid="uid://c70wt50mg7kb1" path="res://assets/Generic/Phone.png" id="7_5qacm"]
+[ext_resource type="Texture2D" uid="uid://dbjnrys3e5ln2" path="res://assets/Kitchen/Stove.png" id="8_f3gm4"]
+[ext_resource type="Texture2D" uid="uid://dp5n1x7dbd4m4" path="res://assets/Kitchen/Counter.png" id="9_ienol"]
+[ext_resource type="Texture2D" uid="uid://daisret7ajaha" path="res://assets/Generic/Chair Front.png" id="11_uykoo"]
+[ext_resource type="Texture2D" uid="uid://cuplik3v020y8" path="res://assets/Generic/Chair Left.png" id="12_j5iiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdwse"]
+size = Vector2(58, 34)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v76il"]
+radius = 16.5529
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dusx"]
 size = Vector2(34.2451, 60.8487)
@@ -75,18 +84,44 @@ size = Vector2(66, 502)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3y8k"]
 size = Vector2(657, 81)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0mmh"]
+size = Vector2(132, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wglv"]
+size = Vector2(16.25, 11.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2q1w"]
+size = Vector2(32, 13)
+
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
 
+[node name="Table" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(171, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_jdwse")
+
+[node name="Sprite2D" type="Sprite2D" parent="Table"]
+texture = ExtResource("1_j0j6c")
+
 [node name="Phone" type="Area2D" parent="."]
-position = Vector2(20, -81)
+y_sort_enabled = true
+position = Vector2(17, -85)
 script = ExtResource("6_7x3c4")
 
 [node name="PhoneSprite" type="Sprite2D" parent="Phone"]
-scale = Vector2(1, 0.984375)
+z_index = 1
+texture_filter = 1
+position = Vector2(154, 65)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_5qacm")
 
 [node name="PhoneCollision" type="CollisionShape2D" parent="Phone"]
+z_index = 1
+position = Vector2(153, 129)
 shape = SubResource("CircleShape2D_v76il")
 
 [node name="K2HDoor" type="Area2D" parent="."]
@@ -125,9 +160,10 @@ z_index = -1
 texture_filter = 1
 tile_set = SubResource("TileSet_2lou2")
 format = 2
-layer_0/tile_data = PackedInt32Array(-131076, 196618, 3, -65540, 196618, 3, -4, 196618, 3, 65532, 196618, 3, 131068, 196618, 3, 196604, 196618, 3, -131075, 196618, 3, -65539, 196618, 3, -3, 196618, 3, 65533, 196618, 3, 131069, 196618, 3, 196605, 196618, 3, -131074, 196618, 3, -65538, 196618, 3, -2, 196618, 3, 65534, 196618, 3, 131070, 196618, 3, 196606, 196618, 3, -131073, 196618, 3, -65537, 196618, 3, -1, 196618, 3, 65535, 196618, 3, 131071, 196618, 3, 196607, 196618, 3, -196608, 196618, 3, -131072, 196618, 3, -65536, 196618, 3, 0, 196618, 3, 65536, 196618, 3, 131072, 196618, 3, -196607, 196618, 3, -131071, 196618, 3, -65535, 196618, 3, 1, 196618, 3, 65537, 196618, 3, 131073, 196618, 3, -196606, 196618, 3, -131070, 196618, 3, -65534, 196618, 3, 2, 196618, 3, 65538, 196618, 3, 131074, 196618, 3, -196605, 196618, 3, -131069, 196618, 3, -65533, 196618, 3, 3, 196618, 3, 65539, 196618, 3, 131075, 196618, 3, -196604, 196618, 3, -131068, 196618, 3, -65532, 196618, 3, 4, 196618, 3, 65540, 196618, 3, 131076, 196618, 3, -131077, 196618, 3, -65541, 196618, 3, -5, 196618, 3, 65531, 196618, 3, 131067, 196618, 3, 196603, 196618, 3, -196613, 10, 5, -196612, 10, 5, -196611, 10, 5, -196610, 10, 5, -196609, 10, 5, -262144, 10, 5, -262143, 10, 5, -262142, 10, 5, -262141, 10, 5, -262140, 10, 5, 262139, 262154, 3, 262140, 262154, 3, 262141, 262154, 3, 262142, 262154, 3, 262143, 262154, 3, 196608, 262154, 3, 196609, 262154, 3, 196610, 262154, 3, 196611, 262154, 3, 196612, 262154, 3, -131078, 262154, 4, -65542, 262154, 4, -6, 262154, 4, 65530, 262154, 4, 262138, 10, 4, -196614, 196618, 4, -262139, 131082, 4, -196603, 65546, 5, -131067, 65546, 5, -65531, 65546, 5, 5, 65546, 5, 65541, 65546, 5, 131077, 65546, 5, 196613, 65546, 4, 131066, 262154, 4, 196602, 262154, 4)
+layer_0/tile_data = PackedInt32Array(-131076, 196618, 3, -65540, 196618, 3, -4, 196618, 3, 65532, 196618, 3, 131068, 196618, 3, 196604, 196618, 3, -131075, 196618, 3, -65539, 196618, 3, -3, 196618, 3, 65533, 196618, 3, 131069, 196618, 3, 196605, 196618, 3, -131074, 262154, 3, -65538, 196618, 3, -2, 196618, 3, 65534, 196618, 3, 131070, 196618, 3, 196606, 196618, 3, -131073, 262154, 3, -65537, 196618, 3, -1, 196618, 3, 65535, 196618, 3, 131071, 196618, 3, 196607, 196618, 3, -196608, 196618, 3, -131072, 196618, 3, -65536, 196618, 3, 0, 196618, 3, 65536, 196618, 3, 131072, 196618, 3, -196607, 196618, 3, -131071, 196618, 3, -65535, 196618, 3, 1, 196618, 3, 65537, 196618, 3, 131073, 196618, 3, -196606, 196618, 3, -131070, 196618, 3, -65534, 196618, 3, 2, 196618, 3, 65538, 196618, 3, 131074, 196618, 3, -196605, 196618, 3, -131069, 196618, 3, -65533, 196618, 3, 3, 196618, 3, 65539, 196618, 3, 131075, 196618, 3, -196604, 196618, 3, -131068, 196618, 3, -65532, 196618, 3, 4, 196618, 3, 65540, 196618, 3, 131076, 196618, 3, -131077, 196618, 3, -65541, 196618, 3, -5, 196618, 3, 65531, 196618, 3, 131067, 196618, 3, 196603, 196618, 3, -196613, 10, 5, -196612, 10, 5, -196611, 10, 5, -196610, 10, 5, -196609, 10, 5, -262144, 10, 5, -262143, 10, 5, -262142, 10, 5, -262141, 10, 5, -262140, 10, 5, 262139, 262154, 3, 262140, 262154, 3, 262141, 262154, 3, 262142, 262154, 3, 262143, 262154, 3, 196608, 262154, 3, 196609, 262154, 3, 196610, 262154, 3, 196611, 262154, 3, 196612, 262154, 3, -131078, 262154, 4, -65542, 262154, 4, -6, 262154, 4, 65530, 262154, 4, 262138, 10, 4, -196614, 196618, 4, -262139, 131082, 4, -196603, 65546, 5, -131067, 65546, 5, -65531, 65546, 5, 5, 65546, 5, 65541, 65546, 5, 131077, 65546, 5, 196613, 65546, 4, 131066, 262154, 4, 196602, 262154, 4)
 
 [node name="Walls" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="Right" type="CollisionShape2D" parent="Walls"]
 position = Vector2(352.5, -0.5)
@@ -145,5 +181,60 @@ shape = SubResource("RectangleShape2D_v77fw")
 position = Vector2(-0.5, 215.5)
 shape = SubResource("RectangleShape2D_h3y8k")
 
+[node name="Countertop" type="StaticBody2D" parent="."]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="Countertop"]
+position = Vector2(-64, -158)
+texture = ExtResource("8_f3gm4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Countertop"]
+position = Vector2(-108, -159)
+texture = ExtResource("9_ienol")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Countertop"]
+position = Vector2(-21, -157)
+texture = ExtResource("9_ienol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Countertop"]
+position = Vector2(-64, -159.5)
+shape = SubResource("RectangleShape2D_l0mmh")
+
+[node name="PhoneKey" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(441, 581)
+script = ExtResource("3_mfic2")
+
+[node name="Sprite2D" type="Sprite2D" parent="PhoneKey"]
+position = Vector2(-270, -536)
+scale = Vector2(0.0484032, 0.0403226)
+texture = ExtResource("4_u26bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhoneKey"]
+position = Vector2(-273, -537)
+shape = SubResource("RectangleShape2D_0wglv")
+
+[node name="TopChair" type="StaticBody2D" parent="."]
+position = Vector2(169, -43)
+
+[node name="Sprite2D" type="Sprite2D" parent="TopChair"]
+texture = ExtResource("11_uykoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopChair"]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_o2q1w")
+
+[node name="LeftChair" type="StaticBody2D" parent="."]
+position = Vector2(223, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftChair"]
+texture = ExtResource("12_j5iiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftChair"]
+position = Vector2(1, 4)
+shape = SubResource("RectangleShape2D_o2q1w")
+
 [connection signal="body_entered" from="K2Hkey" to="K2Hkey" method="_on_key_hint_body_entered"]
 [connection signal="body_exited" from="K2Hkey" to="K2Hkey" method="_on_body_exited"]
+[connection signal="body_entered" from="PhoneKey" to="PhoneKey" method="_on_key_hint_body_entered"]
+[connection signal="body_exited" from="PhoneKey" to="PhoneKey" method="_on_body_exited"]
