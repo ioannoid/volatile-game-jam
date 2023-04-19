@@ -48,3 +48,6 @@ func sequenceUpdater(seq : int):
 		GAME_STATE.endingSequence:
 			state = GAME_STATE.endingSequence
 			print("changing to ending sequence")
+
+func music_updater(scene : int):
+	
