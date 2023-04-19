@@ -16,7 +16,7 @@ func next_room():
 	get_parent().get_parent().get_node("Girl").position.x = 32 + 64 * player_pos.x
 	get_parent().get_parent().get_node("Girl").position.y = 32 + 64 * player_pos.y
 	music_update.emit(3) 
-	var ERR = get_parent().get_parent().switch_room(target_scene)
+	var ERR = get_tree().change_scene_to_file(target_scene)
 	if ERR != OK:
 		print("Something failed in the door scene")
 

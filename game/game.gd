@@ -70,6 +70,7 @@ func music_updater(scene : int):
 			$walkingTheme.stop()
 			$kitchenTheme.stop()
 			$bathroomTheme.stop()
-			$Girl.hide()
 			$creditsTheme.play()
+			$Girl.hide()
+			$Girl.crying = true
 			print("Credits theme!")
