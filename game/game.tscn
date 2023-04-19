@@ -190,7 +190,7 @@ texture = ExtResource("6_cg0by")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yjxj7")
 animation = &"crying"
-frame_progress = 0.252765
+frame_progress = 0.864153
 
 [node name="GirlCollidor" type="CollisionShape2D" parent="Girl"]
 position = Vector2(0, 8.5)

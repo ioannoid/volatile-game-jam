@@ -37,7 +37,7 @@ func get_button(buttonname):
 	match buttonname:
 		"NewGame":
 			return 0
-		"Continue":
+		"Story":
 			return 1
 		"Settings":
 			return 2

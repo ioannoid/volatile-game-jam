@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmvghfgwaaf3i"]
+
+[ext_resource type="Script" path="res://story.gd" id="1_jqfi0"]
+
+[sub_resource type="FontVariation" id="FontVariation_iolpg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00392157, 0.00784314, 0, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="story" type="Node2D" parent="Control"]
+script = ExtResource("1_jqfi0")
+
+[node name="StoryContainer" type="Control" parent="Control/story"]
+custom_minimum_size = Vector2(10, 20)
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -5.0
+offset_right = 5.0
+offset_bottom = 20.0
+grow_horizontal = 2
+
+[node name="Line" type="Label" parent="Control/story/StoryContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.996078, 0.992157, 1)
+theme_override_fonts/font = SubResource("FontVariation_iolpg")
+theme_override_font_sizes/font_size = 35

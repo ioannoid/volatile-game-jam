@@ -77,10 +77,11 @@ fit_content = true
 autowrap_mode = 0
 script = ExtResource("2_uimo6")
 
-[node name="Continue" type="RichTextLabel" parent="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems"]
+[node name="Story" type="RichTextLabel" parent="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 35
-text = "Continue"
+text = "Story
+"
 fit_content = true
 autowrap_mode = 0
 script = ExtResource("2_uimo6")
@@ -122,9 +123,9 @@ script = SubResource("GDScript_f5w83")
 [connection signal="gui_input" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame" method="_on_mouse_exited"]
-[connection signal="gui_input" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" method="_on_gui_input"]
-[connection signal="mouse_entered" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue" method="_on_mouse_exited"]
+[connection signal="gui_input" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" method="_on_mouse_exited"]
 [connection signal="gui_input" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_mouse_exited"]
