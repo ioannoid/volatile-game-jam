@@ -4,6 +4,7 @@ var main_menu
 var game
 var credits
 var pause
+var story
 var i = 0
 
 var started = false
@@ -14,6 +15,7 @@ func _ready():
 		main_menu = load("res://main_menu.tscn")
 		game = preload("res://game.tscn")
 		credits = load("res://credits.tscn")
+		story = load("res://story.tscn")
 		pause = preload("res://main_menu.tscn")
 		started = true
 	var instance = main_menu.instantiate()
@@ -22,7 +24,7 @@ func _ready():
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit.option_clicked.connect(menu_handler)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits.option_clicked.connect(menu_handler)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings.option_clicked.connect(menu_handler)
-	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Continue.option_clicked.connect(menu_handler)
+	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story.option_clicked.connect(menu_handler)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,7 +48,11 @@ func menu_handler(button):
 		0:
 			_switch_scene()
 		1:
-			pass
+			for n in get_children():
+				n.queue_free()
+			var instance = story.instantiate()
+			add_child(instance)
+			$Control/Control/story.exit_credits.connect(menu_handler)
 		2: 
 			pass
 		3: 
