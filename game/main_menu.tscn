@@ -60,7 +60,7 @@ theme_override_constants/separation = 20
 [node name="Title" type="RichTextLabel" parent="Layout/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 50
-text = "Volatile
+text = "Summer
 "
 fit_content = true
 autowrap_mode = 0
