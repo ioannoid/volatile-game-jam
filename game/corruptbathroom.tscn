@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://bdxbo6nw1rrui"]
 
-[ext_resource type="Script" path="res://door.gd" id="1_s8npv"]
 [ext_resource type="Texture2D" uid="uid://osrybwk7ka0t" path="res://assets/Generic/Door.png" id="2_okei4"]
 [ext_resource type="Texture2D" uid="uid://cy2sfp5qmgqp4" path="res://assets/atlas/tile_atlas.png" id="5_81m8i"]
+[ext_resource type="Script" path="res://credits_door.gd" id="5_pa8mo"]
 [ext_resource type="Texture2D" uid="uid://c4nhmwiddwxdx" path="res://assets/Bathroom/Bathroom Tile.png" id="6_b1qs8"]
 [ext_resource type="Script" path="res://eKey.gd" id="7_wvnwx"]
 [ext_resource type="Texture2D" uid="uid://cwtnfkq0sixe5" path="res://assets/Generic/eKey.png" id="8_oq78w"]
@@ -82,7 +82,7 @@ size = Vector2(62, 23)
 y_sort_enabled = true
 
 [node name="BR2L" type="Area2D" parent="."]
-script = ExtResource("1_s8npv")
+script = ExtResource("5_pa8mo")
 target_scene = "res://credits.tscn"
 room_size = Vector2(100, 100)
 
@@ -127,7 +127,7 @@ script = ExtResource("7_wvnwx")
 
 [node name="Sprite2D" type="Sprite2D" parent="KeyHint"]
 position = Vector2(31, -193)
-scale = Vector2(0.0484032, 0.0403226)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_oq78w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyHint"]

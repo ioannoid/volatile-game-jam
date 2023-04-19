@@ -256,7 +256,6 @@ position = Vector2(-54.9494, 259.443)
 texture = ExtResource("5_o7a5d")
 
 [node name="Walls" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="Bottom" type="CollisionShape2D" parent="Walls"]
 position = Vector2(0, 535)
@@ -277,7 +276,7 @@ shape = SubResource("RectangleShape2D_gpvso")
 [node name="LockedDoorIcon" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(441, 59)
-script = ExtResource("11_ce78b")
+script = ExtResource("2_anhm2")
 
 [node name="Sprite" type="Sprite2D" parent="LockedDoorIcon"]
 position = Vector2(-268.653, -539.137)
@@ -291,8 +290,8 @@ shape = SubResource("RectangleShape2D_e3kjb")
 [node name="Masterbedroom Door" type="Sprite2D" parent="."]
 visibility_layer = 2
 y_sort_enabled = true
-position = Vector2(225, -481)
-scale = Vector2(1.04688, 0.953125)
+position = Vector2(224.5, -481)
+scale = Vector2(1.01563, 0.953125)
 texture = ExtResource("6_cdniw")
 
 [node name="H2LRKey" type="Area2D" parent="."]

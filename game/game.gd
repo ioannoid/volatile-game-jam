@@ -50,4 +50,26 @@ func sequenceUpdater(seq : int):
 			print("changing to ending sequence")
 
 func music_updater(scene : int):
-	
+	match scene:
+		0:
+			$kitchenTheme.stop()
+			$bathroomTheme.stop()
+			$walkingTheme.play()
+			print("Walking theme!")
+		1:
+			$bathroomTheme.stop()
+			$walkingTheme.stop()
+			$kitchenTheme.play()
+			print("Kitchen theme!")
+		2:
+			$walkingTheme.stop()
+			$kitchenTheme.stop()
+			$bathroomTheme.play()
+			print("Bathroom theme!")
+		3:
+			$walkingTheme.stop()
+			$kitchenTheme.stop()
+			$bathroomTheme.stop()
+			$Girl.hide()
+			$creditsTheme.play()
+			print("Credits theme!")

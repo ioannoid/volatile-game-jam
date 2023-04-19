@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cggin0u8li4pl"]
+[gd_scene load_steps=41 format=3 uid="uid://cggin0u8li4pl"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_du8si"]
 [ext_resource type="PackedScene" uid="uid://dkjtqok28kyh0" path="res://room.tscn" id="2_fxu0c"]
@@ -34,6 +34,10 @@
 [ext_resource type="Texture2D" uid="uid://dcyct8qooe675" path="res://assets/Movement/Left/MC_LeftFacing6.png" id="22_20tty"]
 [ext_resource type="Texture2D" uid="uid://bkeggsvyup2qr" path="res://assets/Movement/Left/MC_LeftFacing7.png" id="23_gr0dv"]
 [ext_resource type="Script" path="res://girl.gd" id="26_mf1rg"]
+[ext_resource type="AudioStream" uid="uid://5u5miwtpmkd4" path="res://Music/volatile_walking_theme2.wav" id="35_6ggtt"]
+[ext_resource type="AudioStream" uid="uid://c4w2yjw1wrfa6" path="res://Music/volatile_tension2.wav" id="37_bktm2"]
+[ext_resource type="AudioStream" uid="uid://biimlkajruj7j" path="res://Music/volatile_credits.wav" id="38_k8a2u"]
+[ext_resource type="AudioStream" uid="uid://cooflnwbsstvb" path="res://Music/volatile_buildup.wav" id="38_opv5n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yjxj7"]
 animations = [{
@@ -201,3 +205,16 @@ offset_top = -170.0
 offset_right = 296.0
 offset_bottom = 192.0
 color = Color(0, 0, 0, 1)
+
+[node name="walkingTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_6ggtt")
+autoplay = true
+
+[node name="kitchenTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_bktm2")
+
+[node name="bathroomTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_opv5n")
+
+[node name="creditsTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_k8a2u")
