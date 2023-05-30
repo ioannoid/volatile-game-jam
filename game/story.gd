@@ -1,5 +1,5 @@
 extends Node2D
-signal exit_credits
+signal exit_story
 
 const section_time := 4.0
 const line_time := 0.3
@@ -69,7 +69,7 @@ func _process(delta):
 				lines.erase(l)
 				l.queue_free()
 	elif started:
-		exit_credits.emit(-1)
+		exit_story.emit(-1)
 		
 func add_line():
 	var new_line = line.duplicate()
@@ -87,7 +87,7 @@ func add_line():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		exit_credits.emit(-1)	
+		exit_story.emit(-1)	
 	if event.is_action_pressed("ui_down") and !event.is_echo():
 		speed_up = true
 	if event.is_action_released("ui_down") and !event.is_echo():

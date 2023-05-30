@@ -84,7 +84,6 @@ func _process(delta):
 				section = credits.pop_front()
 				curr_line = 0
 				add_line()
-	
 	else:
 		line_timer += delta * speed_up_multiplier if speed_up else delta
 		if line_timer >= line_time:

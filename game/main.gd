@@ -23,7 +23,7 @@ func _ready():
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/NewGame.option_clicked.connect(menu_handler)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Exit.option_clicked.connect(menu_handler)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits.option_clicked.connect(menu_handler)
-	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings.option_clicked.connect(menu_handler)
+	#$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings.option_clicked.connect(menu_handler)
 	$MainMenu/Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story.option_clicked.connect(menu_handler)
 
 
@@ -43,8 +43,6 @@ func menu_handler(button):
 			for n in get_children():
 				n.queue_free()
 			_ready()
-			#var instance = main_menu.instantiate()
-			#add_child(instance)
 		0:
 			_switch_scene()
 		1:
@@ -52,7 +50,7 @@ func menu_handler(button):
 				n.queue_free()
 			var instance = story.instantiate()
 			add_child(instance)
-			$Control/Control/story.exit_credits.connect(menu_handler)
+			$Control/Control/story.exit_story.connect(menu_handler)
 		2: 
 			pass
 		3: 

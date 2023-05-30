@@ -1,10 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://lttu1b1kygi2"]
 
 [ext_resource type="AudioStream" uid="uid://db0ru0oaatdwd" path="res://Music/volatile_title.wav" id="2_1j2a1"]
+[ext_resource type="Texture2D" uid="uid://bgj0cr02fyd6b" path="res://assets/Generic/Title.png" id="2_g5tqt"]
 [ext_resource type="Script" path="res://menu_options.gd" id="2_uimo6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfy6t"]
-bg_color = Color(0.219608, 0.219608, 0.219608, 1)
 
 [sub_resource type="GDScript" id="GDScript_f5w83"]
 script/source = "extends AudioStreamPlayer
@@ -28,14 +26,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Layout"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bfy6t")
+[node name="TextureRect" type="TextureRect" parent="Layout"]
+z_index = -1
+y_sort_enabled = true
+layout_mode = 2
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1279.0
+offset_bottom = 720.0
+texture = ExtResource("2_g5tqt")
 
 [node name="MarginContainer" type="MarginContainer" parent="Layout"]
 layout_mode = 1
@@ -85,15 +84,6 @@ fit_content = true
 autowrap_mode = 0
 script = ExtResource("2_uimo6")
 
-[node name="Settings" type="RichTextLabel" parent="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 35
-text = "Settings
-"
-fit_content = true
-autowrap_mode = 0
-script = ExtResource("2_uimo6")
-
 [node name="Credits" type="RichTextLabel" parent="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 35
@@ -125,9 +115,6 @@ script = SubResource("GDScript_f5w83")
 [connection signal="gui_input" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Story" method="_on_mouse_exited"]
-[connection signal="gui_input" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_gui_input"]
-[connection signal="mouse_entered" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Settings" method="_on_mouse_exited"]
 [connection signal="gui_input" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" to="Layout/MarginContainer/HBoxContainer/VBoxContainer/MenuItems/Credits" method="_on_mouse_exited"]
